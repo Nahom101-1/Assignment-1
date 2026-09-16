@@ -1,0 +1,9 @@
+# keep the Docker build context small and reproducible
+.git
+.idea
+target
+output
+*.iml
+README.md
+scripts
+

@@ -1,0 +1,66 @@
+# One container for the proxy, one per zone server, one for the client.
+# All containers share the network "ass1", so they can reach each other by name.
+#
+#   docker compose build
+#   docker compose up            # naive run, T = 50 ms
+#   SERVER_CACHE=fifo OUTPUT=output/server_cache.txt docker compose up
+#   CLIENT_CACHE=fifo OUTPUT=output/client_cache.txt docker compose up
+#   DELAY=20 docker compose up   # the second required measurement
+
+name: ass1-rmi
+
+x-server: &server
+  build: .
+  depends_on: [proxy]
+  volumes:
+    - ./output:/app/output
+  networks: [ass1]
+
+services:
+  proxy:
+    build: .
+    command: ["proxy", "--host", "proxy", "--port", "1099"]
+    ports: ["1099:1099"]
+    networks: [ass1]
+
+  zone1:
+    <<: *server
+    command: ["server", "--host", "zone1", "--port", "1101", "--proxy-host", "proxy",
+              "--cache", "${SERVER_CACHE:-none}", "--start-delay", "1000"]
+
+  zone2:
+    <<: *server
+    command: ["server", "--host", "zone2", "--port", "1102", "--proxy-host", "proxy",
+              "--cache", "${SERVER_CACHE:-none}", "--start-delay", "2000"]
+
+  zone3:
+    <<: *server
+    command: ["server", "--host", "zone3", "--port", "1103", "--proxy-host", "proxy",
+              "--cache", "${SERVER_CACHE:-none}", "--start-delay", "3000"]
+
+  zone4:
+    <<: *server
+    command: ["server", "--host", "zone4", "--port", "1104", "--proxy-host", "proxy",
+              "--cache", "${SERVER_CACHE:-none}", "--start-delay", "4000"]
+
+  zone5:
+    <<: *server
+    command: ["server", "--host", "zone5", "--port", "1105", "--proxy-host", "proxy",
+              "--cache", "${SERVER_CACHE:-none}", "--start-delay", "5000"]
+
+  client:
+    build: .
+    depends_on: [zone1, zone2, zone3, zone4, zone5]
+    volumes:
+      - ./output:/app/output
+    networks: [ass1]
+    command: ["client", "--proxy-host", "proxy",
+              "--input", "data/exercise_1_input.txt",
+              "--output", "${OUTPUT:-output/naive_server.txt}",
+              "--delay", "${DELAY:-50}",
+              "--client-cache", "${CLIENT_CACHE:-none}"]
+
+networks:
+  ass1:
+    driver: bridge
+
