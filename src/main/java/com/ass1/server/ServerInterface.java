@@ -8,5 +8,6 @@ interface ServerInterFace extends Remote {
     int getNumberofCountries(String citycount, int threshold, String comp); 
     int getNumberofCountriesMM(int citycount, int minpopulation, int taxpopulation); 
     int getCurrentWorkload(); 
+    int getZone(); 
 
 }
