@@ -124,6 +124,9 @@ class NumberOfCountriesMM extends Query {
  */
 public class Client {
     private final List<Query> queries = new ArrayList<>();
+    public List<Query> getQueries() {
+        return queries;
+    }
     public void readQueries(String filePath) throws IOException {
 
         try (BufferedReader reader =
