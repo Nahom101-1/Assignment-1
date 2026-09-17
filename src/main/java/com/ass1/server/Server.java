@@ -1,19 +1,27 @@
 package com.ass1.server;
 
-public class Server implements ServerInterface{
-    public int getPopulationofCountry(String countryName) {
-        return 0;
-    }
-    public int getNumberofCities(String countryName, int threshold, String comp) {
+import com.ass1.common.Comparison;
+import com.ass1.common.QueryResult;
 
+public class Server implements ServerInterface {
+    @Override
+    public QueryResult getPopulationOfCountry(String countryName, int clientZone){
+        return null;
+    }
+    @Override
+    public QueryResult getNumberOfCities(String countryName, int threshold, Comparison comp, int clientZone){
+        return null;
+    }
+    @Override
+    public QueryResult getNumberOfCountries(int cityCount, int threshold, Comparison comp, int clientZone){
+        return null;
+    }
+    @Override
+    public QueryResult getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation, int clientZone){
+        return null;
+    }
+    @Override
+    public int getCurrentWorkload(){
         return 0;
     }
-    public int getNumberofCountries(String citycount, int threshold, String comp) {
-        return 0;
-    }
-    public int getNumberofCountriesMM(int citycount, int minpopulation, int taxpopulation) {
-        return 0;
-    }
-
-
 }

@@ -1,0 +1,3166 @@
+getPopulationofCountry French Guiana Zone:4
+getPopulationofCountry Seychelles Zone:1
+getPopulationofCountry Canada Zone:1
+getPopulationofCountry Equatorial Guinea Zone:2
+getPopulationofCountry Equatorial Guinea Zone:2
+getPopulationofCountry Tokelau Zone:4
+getPopulationofCountry Swaziland Zone:1
+getPopulationofCountry Swaziland Zone:1
+getPopulationofCountry Swaziland Zone:1
+getPopulationofCountry Palau Zone:4
+getPopulationofCountry Uganda Zone:4
+getPopulationofCountry Uganda Zone:4
+getPopulationofCountry Kenya Zone:2
+getPopulationofCountry Chad Zone:4
+getPopulationofCountry Guatemala Zone:3
+getPopulationofCountry Ukraine Zone:4
+getPopulationofCountry Ukraine Zone:4
+getPopulationofCountry Ukraine Zone:4
+getPopulationofCountry Ukraine Zone:4
+getPopulationofCountry Paraguay Zone:4
+getPopulationofCountry Tokelau Zone:4
+getPopulationofCountry Bhutan Zone:1
+getPopulationofCountry Guatemala Zone:2
+getPopulationofCountry Guatemala Zone:2
+getPopulationofCountry Comoros Zone:4
+getPopulationofCountry Honduras Zone:2
+getPopulationofCountry Honduras Zone:2
+getPopulationofCountry Honduras Zone:2
+getPopulationofCountry Brazil Zone:3
+getPopulationofCountry Peru Zone:5
+getPopulationofCountry Peru Zone:5
+getPopulationofCountry Tajikistan Zone:3
+getPopulationofCountry Poland Zone:4
+getPopulationofCountry Togo Zone:5
+getPopulationofCountry Peru Zone:2
+getPopulationofCountry Peru Zone:2
+getPopulationofCountry Peru Zone:2
+getPopulationofCountry Peru Zone:2
+getPopulationofCountry Guyana Zone:2
+getPopulationofCountry Guadeloupe Zone:5
+getPopulationofCountry Guadeloupe Zone:3
+getPopulationofCountry Nepal Zone:4
+getPopulationofCountry Nepal Zone:4
+getPopulationofCountry Japan Zone:3
+getPopulationofCountry Guatemala Zone:3
+getPopulationofCountry Guatemala Zone:3
+getPopulationofCountry Guatemala Zone:3
+getPopulationofCountry Tajikistan Zone:1
+getPopulationofCountry Belgium Zone:5
+getPopulationofCountry Belgium Zone:5
+getPopulationofCountry Belgium Zone:4
+getPopulationofCountry Peru Zone:5
+getPopulationofCountry Palau Zone:3
+getPopulationofCountry Comoros Zone:5
+getPopulationofCountry Comoros Zone:5
+getPopulationofCountry Comoros Zone:5
+getPopulationofCountry Comoros Zone:5
+getPopulationofCountry Bhutan Zone:1
+getPopulationofCountry Seychelles Zone:1
+getPopulationofCountry Serbia Zone:2
+getPopulationofCountry Seychelles Zone:4
+getPopulationofCountry Seychelles Zone:4
+getPopulationofCountry Honduras Zone:1
+getPopulationofCountry Serbia Zone:5
+getPopulationofCountry Serbia Zone:5
+getPopulationofCountry Serbia Zone:5
+getPopulationofCountry Honduras Zone:2
+getPopulationofCountry Romania Zone:4
+getPopulationofCountry Romania Zone:4
+getPopulationofCountry Bahamas Zone:4
+getPopulationofCountry Guinea Zone:1
+getPopulationofCountry Tunisia Zone:3
+getPopulationofCountry Peru Zone:1
+getPopulationofCountry Peru Zone:1
+getPopulationofCountry Peru Zone:1
+getPopulationofCountry Peru Zone:1
+getPopulationofCountry Tokelau Zone:3
+getPopulationofCountry French Guiana Zone:3
+getPopulationofCountry United States Zone:1
+getPopulationofCountry Pakistan Zone:1
+getPopulationofCountry Pakistan Zone:1
+getPopulationofCountry Togo Zone:4
+getPopulationofCountry Suriname Zone:1
+getPopulationofCountry Suriname Zone:1
+getPopulationofCountry Suriname Zone:1
+getPopulationofCountry Swaziland Zone:4
+getPopulationofCountry Suriname Zone:5
+getPopulationofCountry Suriname Zone:5
+getPopulationofCountry Brazil Zone:5
+getPopulationofCountry Bhutan Zone:3
+getPopulationofCountry Thailand Zone:1
+getPopulationofCountry Belarus Zone:2
+getPopulationofCountry Belarus Zone:2
+getPopulationofCountry Belarus Zone:2
+getPopulationofCountry Belarus Zone:2
+getPopulationofCountry Bhutan Zone:1
+getPopulationofCountry Turkey Zone:4
+getPopulationofCountry Greece Zone:2
+getPopulationofCountry Slovakia Zone:3
+getPopulationofCountry Slovakia Zone:3
+getPopulationofCountry Switzerland Zone:3
+getPopulationofCountry Slovakia Zone:2
+getPopulationofCountry Slovakia Zone:2
+getPopulationofCountry Slovakia Zone:2
+getPopulationofCountry Kenya Zone:1
+getPopulationofCountry Guatemala Zone:4
+getPopulationofCountry Guatemala Zone:4
+getPopulationofCountry Gambia Zone:1
+getPopulationofCountry Romania Zone:4
+getPopulationofCountry Serbia Zone:3
+getPopulationofCountry Suriname Zone:4
+getPopulationofCountry Suriname Zone:4
+getPopulationofCountry Suriname Zone:4
+getPopulationofCountry Suriname Zone:4
+getPopulationofCountry Guatemala Zone:1
+getPopulationofCountry Kenya Zone:3
+getPopulationofCountry Israel Zone:5
+getPopulationofCountry French Guiana Zone:3
+getPopulationofCountry French Guiana Zone:3
+getPopulationofCountry Guyana Zone:3
+getPopulationofCountry Senegal Zone:1
+getPopulationofCountry Senegal Zone:1
+getPopulationofCountry Senegal Zone:1
+getPopulationofCountry Benin Zone:2
+getPopulationofCountry Mexico Zone:5
+getPopulationofCountry Mexico Zone:5
+getPopulationofCountry Sweden Zone:2
+getPopulationofCountry Uganda Zone:4
+getPopulationofCountry United States Zone:4
+getPopulationofCountry Slovenia Zone:4
+getPopulationofCountry Slovenia Zone:4
+getPopulationofCountry Slovenia Zone:4
+getPopulationofCountry Slovenia Zone:4
+getPopulationofCountry Turkey Zone:4
+getPopulationofCountry Switzerland Zone:5
+getPopulationofCountry Brazil Zone:2
+getPopulationofCountry Ghana Zone:5
+getPopulationofCountry Ghana Zone:5
+getPopulationofCountry Kuwait Zone:4
+getPopulationofCountry Cambodia Zone:5
+getPopulationofCountry Cambodia Zone:5
+getPopulationofCountry Cambodia Zone:5
+getPopulationofCountry Tuvalu Zone:4
+getPopulationofCountry Japan Zone:5
+getPopulationofCountry Japan Zone:5
+getPopulationofCountry Guam Zone:1
+getPopulationofCountry Botswana Zone:2
+getPopulationofCountry Guadeloupe Zone:2
+getPopulationofCountry Oman Zone:4
+getPopulationofCountry Oman Zone:4
+getPopulationofCountry Oman Zone:4
+getPopulationofCountry Oman Zone:4
+getPopulationofCountry Togo Zone:1
+getPopulationofCountry Turkey Zone:5
+getPopulationofCountry Uganda Zone:3
+getPopulationofCountry Canada Zone:5
+getPopulationofCountry Canada Zone:5
+getPopulationofCountry Nepal Zone:2
+getPopulationofCountry Slovakia Zone:5
+getPopulationofCountry Slovakia Zone:5
+getPopulationofCountry Slovakia Zone:5
+getPopulationofCountry Netherlands Zone:4
+getPopulationofCountry Belgium Zone:2
+getPopulationofCountry Belgium Zone:2
+getPopulationofCountry Serbia Zone:5
+getPopulationofCountry Philippines Zone:1
+getPopulationofCountry Bolivia Zone:1
+getPopulationofCountry Equatorial Guinea Zone:4
+getPopulationofCountry Equatorial Guinea Zone:4
+getPopulationofCountry Equatorial Guinea Zone:4
+getPopulationofCountry Equatorial Guinea Zone:4
+getPopulationofCountry Sweden Zone:4
+getPopulationofCountry United Kingdom Zone:3
+getPopulationofCountry Nepal Zone:3
+getPopulationofCountry Equatorial Guinea Zone:5
+getPopulationofCountry Equatorial Guinea Zone:5
+getPopulationofCountry Honduras Zone:3
+getPopulationofCountry Belarus Zone:4
+getPopulationofCountry Belarus Zone:4
+getPopulationofCountry Belarus Zone:4
+getPopulationofCountry United States Zone:5
+getPopulationofCountry Netherlands Zone:4
+getPopulationofCountry Netherlands Zone:4
+getPopulationofCountry Togo Zone:1
+getPopulationofCountry Suriname Zone:5
+getPopulationofCountry Guatemala Zone:5
+getPopulationofCountry Brazil Zone:2
+getPopulationofCountry Brazil Zone:2
+getPopulationofCountry Brazil Zone:2
+getPopulationofCountry Brazil Zone:2
+getPopulationofCountry Indonesia Zone:2
+getPopulationofCountry Panama Zone:1
+getPopulationofCountry Paraguay Zone:3
+getPopulationofCountry Norway Zone:5
+getPopulationofCountry Norway Zone:5
+getPopulationofCountry Slovenia Zone:1
+getPopulationofCountry Kyrgyzstan Zone:2
+getPopulationofCountry Kyrgyzstan Zone:2
+getPopulationofCountry Kyrgyzstan Zone:2
+getPopulationofCountry Guam Zone:5
+getPopulationofCountry Ireland Zone:3
+getPopulationofCountry Ireland Zone:3
+getPopulationofCountry Guadeloupe Zone:4
+getPopulationofCountry Swaziland Zone:4
+getPopulationofCountry Slovenia Zone:2
+getPopulationofCountry Tuvalu Zone:5
+getPopulationofCountry Tuvalu Zone:5
+getPopulationofCountry Tuvalu Zone:5
+getPopulationofCountry Tuvalu Zone:5
+getPopulationofCountry Croatia Zone:2
+getPopulationofCountry Bahamas Zone:4
+getPopulationofCountry Comoros Zone:3
+getPopulationofCountry Panama Zone:3
+getPopulationofCountry Panama Zone:3
+getPopulationofCountry Tajikistan Zone:1
+getPopulationofCountry Guatemala Zone:3
+getPopulationofCountry Guatemala Zone:3
+getPopulationofCountry Guatemala Zone:3
+getPopulationofCountry Greenland Zone:1
+getPopulationofCountry Oman Zone:1
+getPopulationofCountry Oman Zone:1
+getPopulationofCountry Uganda Zone:1
+getPopulationofCountry Indonesia Zone:4
+getPopulationofCountry Belarus Zone:3
+getPopulationofCountry Swaziland Zone:1
+getPopulationofCountry Swaziland Zone:1
+getPopulationofCountry Swaziland Zone:1
+getPopulationofCountry Swaziland Zone:1
+getPopulationofCountry Zone:3
+getPopulationofCountry China Zone:3
+getPopulationofCountry Equatorial Guinea Zone:5
+getPopulationofCountry Slovenia Zone:5
+getPopulationofCountry Slovenia Zone:5
+getPopulationofCountry Portugal Zone:4
+getPopulationofCountry United States Zone:4
+getPopulationofCountry United States Zone:4
+getPopulationofCountry United States Zone:4
+getPopulationofCountry Romania Zone:3
+getPopulationofCountry French Guiana Zone:2
+getPopulationofCountry French Guiana Zone:2
+getPopulationofCountry Gambia Zone:4
+getPopulationofCountry Ghana Zone:1
+getPopulationofCountry Togo Zone:2
+getPopulationofCountry Kuwait Zone:1
+getPopulationofCountry Kuwait Zone:1
+getPopulationofCountry Kuwait Zone:1
+getPopulationofCountry Kuwait Zone:1
+getPopulationofCountry Indonesia Zone:5
+getPopulationofCountry Bolivia Zone:5
+getPopulationofCountry Suriname Zone:2
+getPopulationofCountry Belgium Zone:2
+getPopulationofCountry Belgium Zone:2
+getPopulationofCountry Philippines Zone:3
+getPopulationofCountry Ireland Zone:3
+getPopulationofCountry Ireland Zone:3
+getPopulationofCountry Ireland Zone:3
+getPopulationofCountry Belgium Zone:2
+getPopulationofCountry Senegal Zone:4
+getPopulationofCountry Senegal Zone:4
+getPopulationofCountry Poland Zone:5
+getPopulationofCountry Comoros Zone:2
+getPopulationofCountry Greece Zone:2
+getPopulationofCountry Guadeloupe Zone:5
+getPopulationofCountry Guadeloupe Zone:5
+getPopulationofCountry Guadeloupe Zone:5
+getPopulationofCountry Guadeloupe Zone:5
+getPopulationofCountry Turkey Zone:4
+getPopulationofCountry Sweden Zone:5
+getPopulationofCountry Switzerland Zone:2
+getPopulationofCountry Tonga Zone:1
+getPopulationofCountry Tonga Zone:1
+getPopulationofCountry Honduras Zone:2
+getPopulationofCountry Ukraine Zone:3
+getPopulationofCountry Ukraine Zone:3
+getPopulationofCountry Ukraine Zone:3
+getPopulationofCountry Guyana Zone:4
+getPopulationofCountry Comoros Zone:1
+getPopulationofCountry Comoros Zone:1
+getPopulationofCountry Belgium Zone:5
+getPopulationofCountry Japan Zone:4
+getPopulationofCountry Guyana Zone:1
+getPopulationofCountry Swaziland Zone:5
+getPopulationofCountry Swaziland Zone:5
+getPopulationofCountry Swaziland Zone:5
+getPopulationofCountry Swaziland Zone:5
+getPopulationofCountry Cambodia Zone:5
+getPopulationofCountry Cameroon Zone:4
+getPopulationofCountry Switzerland Zone:1
+getPopulationofCountry Tajikistan Zone:5
+getPopulationofCountry Tajikistan Zone:5
+getPopulationofCountry United States Zone:1
+getPopulationofCountry Belgium Zone:3
+getPopulationofCountry Belgium Zone:3
+getPopulationofCountry Belgium Zone:3
+getPopulationofCountry Tonga Zone:3
+getPopulationofCountry Ireland Zone:1
+getPopulationofCountry Ireland Zone:1
+getPopulationofCountry Thailand Zone:2
+getPopulationofCountry Tokelau Zone:1
+getPopulationofCountry Suriname Zone:2
+getPopulationofCountry Uganda Zone:1
+getPopulationofCountry Uganda Zone:1
+getPopulationofCountry Uganda Zone:1
+getPopulationofCountry Uganda Zone:1
+getPopulationofCountry Norway Zone:4
+getPopulationofCountry Sweden Zone:2
+getPopulationofCountry Thailand Zone:1
+getPopulationofCountry Guam Zone:2
+getPopulationofCountry Guam Zone:2
+getPopulationofCountry Kenya Zone:3
+getPopulationofCountry Bahamas Zone:1
+getPopulationofCountry Bahamas Zone:1
+getPopulationofCountry Bahamas Zone:1
+getPopulationofCountry Panama Zone:1
+getPopulationofCountry Kenya Zone:1
+getPopulationofCountry Kenya Zone:1
+getPopulationofCountry Tokelau Zone:2
+getPopulationofCountry Swaziland Zone:1
+getPopulationofCountry Kazakhstan Zone:2
+getPopulationofCountry United Kingdom Zone:2
+getPopulationofCountry United Kingdom Zone:2
+getPopulationofCountry United Kingdom Zone:2
+getPopulationofCountry United Kingdom Zone:2
+getPopulationofCountry Guatemala Zone:2
+getPopulationofCountry Honduras Zone:2
+getPopulationofCountry Togo Zone:5
+getPopulationofCountry Switzerland Zone:4
+getPopulationofCountry Switzerland Zone:4
+getPopulationofCountry Guyana Zone:4
+getPopulationofCountry Belarus Zone:4
+getPopulationofCountry Belarus Zone:4
+getPopulationofCountry Belarus Zone:4
+getPopulationofCountry Greenland Zone:1
+getPopulationofCountry Brazil Zone:3
+getPopulationofCountry Brazil Zone:3
+getPopulationofCountry Romania Zone:4
+getPopulationofCountry Belgium Zone:5
+getPopulationofCountry French Guiana Zone:5
+getPopulationofCountry Cambodia Zone:3
+getPopulationofCountry Cambodia Zone:3
+getPopulationofCountry Cambodia Zone:3
+getPopulationofCountry Cambodia Zone:3
+getPopulationofCountry Indonesia Zone:2
+getPopulationofCountry Ireland Zone:2
+getPopulationofCountry Guyana Zone:1
+getPopulationofCountry Tonga Zone:5
+getPopulationofCountry Tonga Zone:5
+getPopulationofCountry Equatorial Guinea Zone:5
+getPopulationofCountry Romania Zone:5
+getPopulationofCountry Romania Zone:5
+getPopulationofCountry Romania Zone:5
+getPopulationofCountry Oman Zone:4
+getPopulationofCountry Thailand Zone:5
+getPopulationofCountry Thailand Zone:5
+getPopulationofCountry Hungary Zone:2
+getPopulationofCountry Seychelles Zone:1
+getPopulationofCountry China Zone:3
+getPopulationofCountry Canada Zone:4
+getPopulationofCountry Canada Zone:4
+getPopulationofCountry Canada Zone:4
+getPopulationofCountry Canada Zone:4
+getPopulationofCountry Norway Zone:4
+getPopulationofCountry Panama Zone:4
+getPopulationofCountry Peru Zone:5
+getPopulationofCountry Norway Zone:2
+getPopulationofCountry Norway Zone:2
+getPopulationofCountry Senegal Zone:4
+getPopulationofCountry Tunisia Zone:2
+getPopulationofCountry Tunisia Zone:2
+getPopulationofCountry Tunisia Zone:2
+getPopulationofCountry Turkey Zone:2
+getPopulationofCountry Netherlands Zone:5
+getPopulationofCountry Netherlands Zone:5
+getPopulationofCountry Guyana Zone:5
+getPopulationofCountry Slovenia Zone:3
+getPopulationofCountry Serbia Zone:3
+getPopulationofCountry Guyana Zone:2
+getPopulationofCountry Guyana Zone:2
+getPopulationofCountry Guyana Zone:2
+getPopulationofCountry Guyana Zone:2
+getPopulationofCountry Sweden Zone:3
+getPopulationofCountry Senegal Zone:4
+getPopulationofCountry Philippines Zone:1
+getPopulationofCountry Benin Zone:1
+getPopulationofCountry Benin Zone:1
+getPopulationofCountry Kuwait Zone:2
+getPopulationofCountry Slovakia Zone:1
+getPopulationofCountry Slovakia Zone:1
+getPopulationofCountry Slovakia Zone:1
+getPopulationofCountry Guinea Zone:5
+getPopulationofCountry Uganda Zone:3
+getPopulationofCountry Uganda Zone:3
+getPopulationofCountry Panama Zone:1
+getPopulationofCountry Peru Zone:3
+getPopulationofCountry Brazil Zone:3
+getPopulationofCountry Guinea Zone:2
+getPopulationofCountry Guinea Zone:2
+getPopulationofCountry Guinea Zone:2
+getPopulationofCountry Guinea Zone:2
+getPopulationofCountry Turkey Zone:4
+getPopulationofCountry Romania Zone:1
+getPopulationofCountry Zone:5
+getPopulationofCountry Kenya Zone:5
+getPopulationofCountry Kenya Zone:5
+getPopulationofCountry Philippines Zone:1
+getPopulationofCountry Gambia Zone:5
+getPopulationofCountry Gambia Zone:5
+getPopulationofCountry Gambia Zone:5
+getPopulationofCountry Japan Zone:1
+getPopulationofCountry Swaziland Zone:4
+getPopulationofCountry Swaziland Zone:4
+getPopulationofCountry Guatemala Zone:3
+getPopulationofCountry Uganda Zone:3
+getPopulationofCountry Tajikistan Zone:3
+getPopulationofCountry Guatemala Zone:1
+getPopulationofCountry Guatemala Zone:1
+getPopulationofCountry Guatemala Zone:1
+getPopulationofCountry Guatemala Zone:1
+getPopulationofCountry Ireland Zone:4
+getPopulationofCountry Canada Zone:3
+getPopulationofCountry Cambodia Zone:2
+getPopulationofCountry Burundi Zone:5
+getPopulationofCountry Burundi Zone:5
+getPopulationofCountry Tuvalu Zone:2
+getPopulationofCountry Tajikistan Zone:2
+getPopulationofCountry Tajikistan Zone:2
+getPopulationofCountry Tajikistan Zone:2
+getPopulationofCountry Tokelau Zone:5
+getPopulationofCountry Slovakia Zone:2
+getPopulationofCountry Slovakia Zone:2
+getPopulationofCountry Bhutan Zone:5
+getPopulationofCountry Benin Zone:4
+getPopulationofCountry Tunisia Zone:1
+getPopulationofCountry Canada Zone:3
+getPopulationofCountry Canada Zone:3
+getPopulationofCountry Canada Zone:3
+getPopulationofCountry Canada Zone:3
+getPopulationofCountry Kuwait Zone:5
+getPopulationofCountry Japan Zone:2
+getPopulationofCountry Equatorial Guinea Zone:5
+getPopulationofCountry Paraguay Zone:5
+getPopulationofCountry Paraguay Zone:5
+getPopulationofCountry Georgia Zone:1
+getPopulationofCountry Cameroon Zone:1
+getPopulationofCountry Cameroon Zone:1
+getPopulationofCountry Cameroon Zone:1
+getPopulationofCountry Belgium Zone:4
+getPopulationofCountry Indonesia Zone:1
+getPopulationofCountry Indonesia Zone:1
+getPopulationofCountry Canada Zone:5
+getPopulationofCountry Haiti Zone:3
+getPopulationofCountry Chile Zone:3
+getPopulationofCountry Norway Zone:3
+getPopulationofCountry Norway Zone:3
+getPopulationofCountry Norway Zone:3
+getPopulationofCountry Norway Zone:3
+getPopulationofCountry Haiti Zone:3
+getPopulationofCountry Honduras Zone:1
+getPopulationofCountry Poland Zone:4
+getPopulationofCountry Serbia Zone:5
+getPopulationofCountry Serbia Zone:5
+getPopulationofCountry Gambia Zone:3
+getPopulationofCountry United States Zone:1
+getPopulationofCountry United States Zone:1
+getPopulationofCountry United States Zone:1
+getPopulationofCountry Gambia Zone:3
+getPopulationofCountry Ukraine Zone:3
+getPopulationofCountry Ukraine Zone:3
+getPopulationofCountry Switzerland Zone:3
+getPopulationofCountry Mexico Zone:3
+getPopulationofCountry Nepal Zone:2
+getPopulationofCountry Sweden Zone:5
+getPopulationofCountry Sweden Zone:5
+getPopulationofCountry Sweden Zone:5
+getPopulationofCountry Sweden Zone:5
+getPopulationofCountry Panama Zone:2
+getPopulationofCountry Pakistan Zone:5
+getPopulationofCountry Guadeloupe Zone:2
+getPopulationofCountry United States Zone:1
+getPopulationofCountry United States Zone:1
+getPopulationofCountry Indonesia Zone:2
+getPopulationofCountry Kenya Zone:1
+getPopulationofCountry Kenya Zone:1
+getPopulationofCountry Kenya Zone:1
+getPopulationofCountry Bolivia Zone:5
+getPopulationofCountry Bolivia Zone:5
+getPopulationofCountry Bolivia Zone:5
+getPopulationofCountry Oman Zone:4
+getPopulationofCountry Oman Zone:5
+getPopulationofCountry Burundi Zone:1
+getPopulationofCountry Pakistan Zone:5
+getPopulationofCountry Pakistan Zone:5
+getPopulationofCountry Pakistan Zone:5
+getPopulationofCountry Pakistan Zone:5
+getPopulationofCountry Panama Zone:4
+getPopulationofCountry Kazakhstan Zone:1
+getPopulationofCountry Kuwait Zone:2
+getPopulationofCountry Belgium Zone:4
+getPopulationofCountry Belgium Zone:4
+getPopulationofCountry Benin Zone:4
+getPopulationofCountry Thailand Zone:4
+getPopulationofCountry Thailand Zone:4
+getPopulationofCountry Thailand Zone:4
+getPopulationofCountry Serbia Zone:2
+getPopulationofCountry Israel Zone:3
+getPopulationofCountry Israel Zone:3
+getPopulationofCountry Guatemala Zone:5
+getPopulationofCountry Israel Zone:2
+getPopulationofCountry French Guiana Zone:4
+getPopulationofCountry Guam Zone:1
+getPopulationofCountry Guam Zone:1
+getPopulationofCountry Guam Zone:1
+getPopulationofCountry Guam Zone:1
+getPopulationofCountry Tajikistan Zone:1
+getPopulationofCountry Thailand Zone:4
+getPopulationofCountry Burundi Zone:1
+getPopulationofCountry Israel Zone:4
+getPopulationofCountry Israel Zone:4
+getPopulationofCountry Chile Zone:3
+getPopulationofCountry Comoros Zone:5
+getPopulationofCountry Comoros Zone:5
+getPopulationofCountry Comoros Zone:5
+getPopulationofCountry Brazil Zone:5
+getPopulationofCountry Guadeloupe Zone:2
+getPopulationofCountry Guadeloupe Zone:2
+getPopulationofCountry Turkey Zone:1
+getPopulationofCountry Ukraine Zone:4
+getPopulationofCountry Comoros Zone:3
+getPopulationofCountry Paraguay Zone:2
+getPopulationofCountry Paraguay Zone:2
+getPopulationofCountry Paraguay Zone:2
+getPopulationofCountry Paraguay Zone:2
+getPopulationofCountry Guadeloupe Zone:3
+getPopulationofCountry Cambodia Zone:2
+getPopulationofCountry Ghana Zone:1
+getPopulationofCountry Romania Zone:1
+getPopulationofCountry Romania Zone:1
+getPopulationofCountry Portugal Zone:4
+getPopulationofCountry Slovenia Zone:2
+getPopulationofCountry Slovenia Zone:2
+getPopulationofCountry Slovenia Zone:2
+getPopulationofCountry Senegal Zone:3
+getPopulationofCountry Honduras Zone:1
+getPopulationofCountry Honduras Zone:1
+getPopulationofCountry China Zone:2
+getPopulationofCountry Bahamas Zone:1
+getPopulationofCountry Hungary Zone:3
+getPopulationofCountry Israel Zone:2
+getPopulationofCountry Israel Zone:2
+getPopulationofCountry Israel Zone:2
+getPopulationofCountry Israel Zone:2
+getPopulationofCountry Philippines Zone:2
+getPopulationofCountry United States Zone:5
+getPopulationofCountry Bahamas Zone:1
+getPopulationofCountry Slovakia Zone:5
+getPopulationofCountry Slovakia Zone:5
+getPopulationofCountry Cameroon Zone:3
+getPopulationofCountry Ukraine Zone:1
+getPopulationofCountry Ukraine Zone:1
+getPopulationofCountry Ukraine Zone:1
+getPopulationofCountry Botswana Zone:1
+getPopulationofCountry Switzerland Zone:2
+getPopulationofCountry Switzerland Zone:2
+getPopulationofCountry Honduras Zone:2
+getPopulationofCountry Belarus Zone:2
+getPopulationofCountry Togo Zone:2
+getPopulationofCountry Bolivia Zone:5
+getPopulationofCountry Bolivia Zone:5
+getPopulationofCountry Bolivia Zone:5
+getPopulationofCountry Bolivia Zone:5
+getPopulationofCountry Tuvalu Zone:1
+getPopulationofCountry Kazakhstan Zone:3
+getPopulationofCountry Burundi Zone:3
+getPopulationofCountry Serbia Zone:1
+getPopulationofCountry Serbia Zone:1
+getPopulationofCountry Tunisia Zone:2
+getPopulationofCountry Ghana Zone:5
+getPopulationofCountry Ghana Zone:5
+getPopulationofCountry Ghana Zone:5
+getPopulationofCountry Indonesia Zone:1
+getPopulationofCountry Philippines Zone:4
+getPopulationofCountry Philippines Zone:4
+getPopulationofCountry Guinea Zone:3
+getPopulationofCountry Georgia Zone:4
+getPopulationofCountry Japan Zone:1
+getPopulationofCountry French Guiana Zone:3
+getPopulationofCountry French Guiana Zone:3
+getPopulationofCountry French Guiana Zone:3
+getPopulationofCountry French Guiana Zone:3
+getPopulationofCountry Tajikistan Zone:2
+getPopulationofCountry Brazil Zone:3
+getPopulationofCountry Belarus Zone:1
+getPopulationofCountry Serbia Zone:5
+getPopulationofCountry Serbia Zone:5
+getPopulationofCountry Ghana Zone:5
+getPopulationofCountry Comoros Zone:3
+getPopulationofCountry Comoros Zone:3
+getPopulationofCountry Comoros Zone:3
+getPopulationofCountry Tunisia Zone:5
+getPopulationofCountry Tuvalu Zone:1
+getPopulationofCountry Tuvalu Zone:1
+getPopulationofCountry Croatia Zone:3
+getPopulationofCountry Oman Zone:4
+getPopulationofCountry Bahamas Zone:2
+getPopulationofCountry China Zone:4
+getPopulationofCountry China Zone:4
+getPopulationofCountry China Zone:4
+getPopulationofCountry China Zone:4
+getPopulationofCountry Sweden Zone:1
+getPopulationofCountry Canada Zone:1
+getPopulationofCountry Tunisia Zone:3
+getPopulationofCountry Guinea Zone:5
+getPopulationofCountry Guinea Zone:5
+getPopulationofCountry Indonesia Zone:3
+getPopulationofCountry Greece Zone:2
+getPopulationofCountry Greece Zone:2
+getPopulationofCountry Greece Zone:2
+getPopulationofCountry Chile Zone:4
+getPopulationofCountry Benin Zone:2
+getPopulationofCountry Benin Zone:2
+getPopulationofCountry Ghana Zone:5
+getPopulationofCountry Belarus Zone:3
+getPopulationofCountry Philippines Zone:3
+getPopulationofCountry Peru Zone:3
+getPopulationofCountry Peru Zone:3
+getPopulationofCountry Peru Zone:3
+getPopulationofCountry Peru Zone:3
+getPopulationofCountry Haiti Zone:5
+getPopulationofCountry Guam Zone:5
+getPopulationofCountry Greece Zone:1
+getPopulationofCountry Honduras Zone:4
+getPopulationofCountry Honduras Zone:4
+getPopulationofCountry Turkey Zone:2
+getPopulationofCountry Slovakia Zone:5
+getPopulationofCountry Slovakia Zone:5
+getPopulationofCountry Slovakia Zone:5
+getPopulationofCountry Tajikistan Zone:5
+getPopulationofCountry Oman Zone:3
+getPopulationofCountry Oman Zone:3
+getPopulationofCountry Belgium Zone:2
+getPopulationofCountry Guatemala Zone:3
+getPopulationofCountry Chad Zone:2
+getPopulationofCountry Chad Zone:1
+getPopulationofCountry Chad Zone:1
+getPopulationofCountry Chad Zone:1
+getPopulationofCountry Chad Zone:1
+getPopulationofCountry Sweden Zone:3
+getPopulationofCountry Bhutan Zone:1
+getPopulationofCountry Tokelau Zone:2
+getPopulationofCountry Nepal Zone:2
+getPopulationofCountry Nepal Zone:2
+getPopulationofCountry Bolivia Zone:1
+getPopulationofCountry China Zone:1
+getPopulationofCountry China Zone:1
+getPopulationofCountry China Zone:1
+getPopulationofCountry Brazil Zone:4
+getPopulationofCountry Brazil Zone:1
+getPopulationofCountry Brazil Zone:1
+getPopulationofCountry Sweden Zone:3
+getPopulationofCountry Tunisia Zone:3
+getPopulationofCountry Guyana Zone:5
+getPopulationofCountry Cambodia Zone:2
+getPopulationofCountry Cambodia Zone:2
+getPopulationofCountry Cambodia Zone:2
+getPopulationofCountry Cambodia Zone:2
+getPopulationofCountry Benin Zone:2
+getPopulationofCountry Greece Zone:2
+getPopulationofCountry Guatemala Zone:2
+getPopulationofCountry Belarus Zone:3
+getPopulationofCountry Belarus Zone:3
+getPopulationofCountry Switzerland Zone:1
+getPopulationofCountry Uganda Zone:5
+getPopulationofCountry Uganda Zone:5
+getPopulationofCountry Uganda Zone:5
+getPopulationofCountry Sweden Zone:1
+getPopulationofCountry Greece Zone:4
+getPopulationofCountry Greece Zone:4
+getPopulationofCountry Thailand Zone:1
+getPopulationofCountry Pakistan Zone:2
+getPopulationofCountry Oman Zone:1
+getPopulationofCountry Benin Zone:4
+getPopulationofCountry Benin Zone:4
+getPopulationofCountry Benin Zone:4
+getPopulationofCountry Benin Zone:4
+getPopulationofCountry Portugal Zone:3
+getPopulationofCountry Bolivia Zone:4
+getPopulationofCountry Hungary Zone:1
+getPopulationofCountry Bhutan Zone:2
+getPopulationofCountry Bhutan Zone:2
+getPopulationofCountry Kazakhstan Zone:3
+getPopulationofCountry Ireland Zone:3
+getPopulationofCountry Ireland Zone:3
+getPopulationofCountry Ireland Zone:3
+getPopulationofCountry Croatia Zone:5
+getPopulationofCountry Japan Zone:4
+getPopulationofCountry Japan Zone:4
+getPopulationofCountry Bahamas Zone:3
+getPopulationofCountry Tajikistan Zone:5
+getPopulationofCountry Honduras Zone:2
+getPopulationofCountry United States Zone:3
+getPopulationofCountry United States Zone:3
+getPopulationofCountry United States Zone:3
+getPopulationofCountry United States Zone:3
+getPopulationofCountry Senegal Zone:5
+getPopulationofCountry Togo Zone:5
+getPopulationofCountry Cambodia Zone:1
+getPopulationofCountry Tunisia Zone:4
+getPopulationofCountry Tunisia Zone:4
+getPopulationofCountry Swaziland Zone:4
+getPopulationofCountry Israel Zone:2
+getPopulationofCountry Israel Zone:2
+getPopulationofCountry Israel Zone:2
+getPopulationofCountry Norway Zone:1
+getPopulationofCountry Brazil Zone:5
+getPopulationofCountry Brazil Zone:5
+getPopulationofCountry Honduras Zone:3
+getPopulationofCountry Gambia Zone:5
+getPopulationofCountry Tajikistan Zone:1
+getPopulationofCountry Belgium Zone:1
+getPopulationofCountry Belgium Zone:1
+getPopulationofCountry Belgium Zone:1
+getPopulationofCountry Belgium Zone:1
+getPopulationofCountry Tonga Zone:3
+getPopulationofCountry United Kingdom Zone:1
+getPopulationofCountry Romania Zone:3
+getPopulationofCountry Serbia Zone:2
+getPopulationofCountry Serbia Zone:2
+getPopulationofCountry United Kingdom Zone:2
+getPopulationofCountry Cambodia Zone:4
+getPopulationofCountry Cambodia Zone:4
+getPopulationofCountry Cambodia Zone:4
+getPopulationofCountry Belgium Zone:3
+getPopulationofCountry Panama Zone:2
+getPopulationofCountry Panama Zone:2
+getPopulationofCountry Indonesia Zone:5
+getPopulationofCountry Senegal Zone:3
+getPopulationofCountry Uganda Zone:3
+getPopulationofCountry Pakistan Zone:3
+getPopulationofCountry Pakistan Zone:3
+getPopulationofCountry Pakistan Zone:3
+getPopulationofCountry Pakistan Zone:3
+getPopulationofCountry China Zone:5
+getPopulationofCountry United Kingdom Zone:3
+getPopulationofCountry Pakistan Zone:5
+getPopulationofCountry Uganda Zone:4
+getPopulationofCountry Uganda Zone:4
+getPopulationofCountry Belgium Zone:3
+getPopulationofCountry Kazakhstan Zone:4
+getPopulationofCountry Kazakhstan Zone:4
+getPopulationofCountry Kazakhstan Zone:4
+getPopulationofCountry Guatemala Zone:1
+getPopulationofCountry China Zone:2
+getPopulationofCountry China Zone:2
+getPopulationofCountry Croatia Zone:1
+getPopulationofCountry Swaziland Zone:4
+getPopulationofCountry Senegal Zone:3
+getPopulationofCountry Nepal Zone:5
+getPopulationofCountry Nepal Zone:5
+getPopulationofCountry Nepal Zone:5
+getPopulationofCountry Nepal Zone:5
+getPopulationofCountry Comoros Zone:3
+getPopulationofCountry Cambodia Zone:2
+getPopulationofCountry Tokelau Zone:1
+getPopulationofCountry Kyrgyzstan Zone:1
+getPopulationofCountry Kyrgyzstan Zone:1
+getPopulationofCountry Guam Zone:4
+getPopulationofCountry Kyrgyzstan Zone:1
+getPopulationofCountry Kyrgyzstan Zone:1
+getPopulationofCountry Kyrgyzstan Zone:1
+getPopulationofCountry Gambia Zone:2
+getPopulationofCountry Botswana Zone:5
+getPopulationofCountry Botswana Zone:5
+getPopulationofCountry Belgium Zone:3
+getPopulationofCountry Sweden Zone:2
+getPopulationofCountry Kyrgyzstan Zone:2
+getPopulationofCountry Hungary Zone:5
+getPopulationofCountry Hungary Zone:5
+getPopulationofCountry Hungary Zone:5
+getPopulationofCountry Hungary Zone:5
+getPopulationofCountry Hungary Zone:4
+getPopulationofCountry Guinea Zone:4
+getPopulationofCountry Gambia Zone:2
+getPopulationofCountry Serbia Zone:2
+getPopulationofCountry Serbia Zone:2
+getPopulationofCountry Honduras Zone:4
+getPopulationofCountry Philippines Zone:2
+getPopulationofCountry Philippines Zone:2
+getPopulationofCountry Philippines Zone:2
+getPopulationofCountry Oman Zone:1
+getPopulationofCountry Guyana Zone:2
+getPopulationofCountry Guyana Zone:2
+getNumberofCities Honduras 40894 max Zone:5
+getNumberofCities China 76957 min Zone:1
+getNumberofCities Paraguay 60264 min Zone:1
+getNumberofCities Uganda 66374 max Zone:2
+getNumberofCities Uganda 66374 min Zone:2
+getNumberofCities Uganda 66374 min Zone:2
+getNumberofCities Uganda 66374 min Zone:2
+getNumberofCities Palau 61720 max Zone:2
+getNumberofCities Guinea 43661 min Zone:2
+getNumberofCities Gambia 76348 max Zone:1
+getNumberofCities Philippines 58068 min Zone:5
+getNumberofCities Philippines 58068 max Zone:5
+getNumberofCities Kazakhstan 28259 min Zone:4
+getNumberofCities Cambodia 24884 min Zone:3
+getNumberofCities Cambodia 24884 min Zone:3
+getNumberofCities Cambodia 24884 min Zone:3
+getNumberofCities Poland 92826 min Zone:3
+getNumberofCities Tokelau 20003 min Zone:2
+getNumberofCities Tokelau 20003 max Zone:2
+getNumberofCities Honduras 53708 min Zone:2
+getNumberofCities Chile 51298 min Zone:2
+getNumberofCities Slovakia 14491 min Zone:1
+getNumberofCities Panama 23578 min Zone:3
+getNumberofCities Panama 23578 min Zone:3
+getNumberofCities Panama 23578 min Zone:3
+getNumberofCities Panama 23578 max Zone:3
+getNumberofCities French Guiana 12927 max Zone:3
+getNumberofCities Cambodia 50967 max Zone:1
+getNumberofCities Kenya 33072 max Zone:3
+getNumberofCities Kenya 40936 max Zone:4
+getNumberofCities Kenya 40936 min Zone:4
+getNumberofCities Israel 43178 min Zone:2
+getNumberofCities Swaziland 90025 min Zone:3
+getNumberofCities Swaziland 90025 min Zone:3
+getNumberofCities Swaziland 90025 max Zone:3
+getNumberofCities Romania 13895 min Zone:3
+getNumberofCities Nepal 83785 max Zone:2
+getNumberofCities Nepal 83785 max Zone:2
+getNumberofCities Tuvalu 27155 min Zone:5
+getNumberofCities Equatorial Guinea 59582 min Zone:5
+getNumberofCities Kyrgyzstan 20947 min Zone:1
+getNumberofCities Japan 94687 min Zone:5
+getNumberofCities Japan 94687 max Zone:5
+getNumberofCities Japan 94687 max Zone:5
+getNumberofCities Japan 94687 min Zone:5
+getNumberofCities Palau 81791 min Zone:1
+getNumberofCities Kyrgyzstan 34396 min Zone:5
+getNumberofCities Honduras 79935 min Zone:4
+getNumberofCities Tuvalu 81590 min Zone:4
+getNumberofCities Tuvalu 81590 max Zone:4
+getNumberofCities Kuwait 20810 max Zone:5
+getNumberofCities Kazakhstan 22421 min Zone:4
+getNumberofCities Kazakhstan 22421 min Zone:4
+getNumberofCities Kazakhstan 22421 max Zone:4
+getNumberofCities Swaziland 88983 min Zone:1
+getNumberofCities Croatia 54521 min Zone:4
+getNumberofCities Croatia 54521 min Zone:4
+getNumberofCities Guam 12741 min Zone:1
+getNumberofCities Suriname 87672 max Zone:2
+getNumberofCities Norway 24363 max Zone:1
+getNumberofCities Romania 49801 max Zone:4
+getNumberofCities Romania 49801 min Zone:4
+getNumberofCities Romania 49801 min Zone:4
+getNumberofCities Romania 49801 min Zone:4
+getNumberofCities Guinea 90952 max Zone:2
+getNumberofCities Oman 70827 max Zone:3
+getNumberofCities Tunisia 57801 min Zone:2
+getNumberofCities Chile 38468 max Zone:2
+getNumberofCities Chile 38468 min Zone:2
+getNumberofCities Netherlands 53773 max Zone:2
+getNumberofCities Tonga 15404 max Zone:5
+getNumberofCities Tonga 15404 min Zone:5
+getNumberofCities Tonga 15404 min Zone:5
+getNumberofCities Hungary 25981 max Zone:4
+getNumberofCities Peru 58890 max Zone:2
+getNumberofCities Peru 58890 min Zone:2
+getNumberofCities Israel 25629 max Zone:3
+getNumberofCities Equatorial Guinea 42670 min Zone:4
+getNumberofCities Netherlands 88688 min Zone:5
+getNumberofCities Canada 90020 min Zone:3
+getNumberofCities Canada 90020 max Zone:3
+getNumberofCities Canada 90020 max Zone:3
+getNumberofCities Canada 90020 max Zone:3
+getNumberofCities Comoros 39730 min Zone:2
+getNumberofCities Chile 93272 min Zone:2
+getNumberofCities Canada 27234 min Zone:1
+getNumberofCities Belgium 93798 min Zone:2
+getNumberofCities Belgium 93798 min Zone:2
+getNumberofCities Bahamas 72066 min Zone:4
+getNumberofCities Togo 74465 min Zone:5
+getNumberofCities Togo 74465 max Zone:5
+getNumberofCities Togo 74465 max Zone:5
+getNumberofCities United States 15534 min Zone:2
+getNumberofCities Nepal 15947 max Zone:1
+getNumberofCities Nepal 15947 max Zone:1
+getNumberofCities 69308 min Zone:3
+getNumberofCities Senegal 66335 max Zone:2
+getNumberofCities French Guiana 52177 max Zone:1
+getNumberofCities Serbia 19336 min Zone:2
+getNumberofCities Serbia 19336 min Zone:2
+getNumberofCities Serbia 19336 min Zone:2
+getNumberofCities Serbia 19336 max Zone:2
+getNumberofCities Oman 70697 max Zone:1
+getNumberofCities Oman 97622 max Zone:3
+getNumberofCities Hungary 33550 max Zone:3
+getNumberofCities Bahamas 74961 max Zone:4
+getNumberofCities Bahamas 74961 min Zone:4
+getNumberofCities Bahamas 66825 min Zone:2
+getNumberofCities Peru 81494 min Zone:1
+getNumberofCities Peru 81494 min Zone:1
+getNumberofCities Peru 81494 min Zone:1
+getNumberofCities Ukraine 85545 max Zone:5
+getNumberofCities Haiti 16768 min Zone:1
+getNumberofCities Haiti 16768 min Zone:1
+getNumberofCities Swaziland 43248 max Zone:1
+getNumberofCities Mexico 28005 min Zone:3
+getNumberofCities Bulgaria 38070 min Zone:4
+getNumberofCities China 19501 max Zone:2
+getNumberofCities China 19501 min Zone:2
+getNumberofCities China 19501 min Zone:2
+getNumberofCities China 19501 max Zone:2
+getNumberofCities United Kingdom 12116 max Zone:3
+getNumberofCities Indonesia 86739 max Zone:2
+getNumberofCities Ghana 27862 min Zone:4
+getNumberofCities Panama 95856 min Zone:2
+getNumberofCities Panama 95856 max Zone:2
+getNumberofCities Tajikistan 28413 max Zone:4
+getNumberofCities Peru 14436 max Zone:1
+getNumberofCities Peru 14436 max Zone:1
+getNumberofCities Peru 14436 max Zone:1
+getNumberofCities Hungary 23445 max Zone:1
+getNumberofCities United States 73738 max Zone:1
+getNumberofCities United States 73738 min Zone:1
+getNumberofCities Haiti 87680 max Zone:1
+getNumberofCities Comoros 33744 max Zone:1
+getNumberofCities Thailand 28171 min Zone:4
+getNumberofCities Georgia 14298 max Zone:1
+getNumberofCities Georgia 14298 min Zone:1
+getNumberofCities Georgia 14298 max Zone:1
+getNumberofCities Georgia 14298 max Zone:1
+getNumberofCities Cambodia 49041 max Zone:3
+getNumberofCities Greece 46637 max Zone:2
+getNumberofCities Senegal 28309 min Zone:1
+getNumberofCities Netherlands 94212 max Zone:3
+getNumberofCities Netherlands 94212 min Zone:3
+getNumberofCities Bolivia 58876 max Zone:5
+getNumberofCities Slovenia 71654 max Zone:5
+getNumberofCities Slovenia 71654 min Zone:5
+getNumberofCities Slovenia 71654 min Zone:5
+getNumberofCities Georgia 14552 min Zone:1
+getNumberofCities Slovakia 36068 min Zone:4
+getNumberofCities Slovakia 36068 max Zone:4
+getNumberofCities Chad 29400 min Zone:3
+getNumberofCities Uganda 11116 min Zone:5
+getNumberofCities French Guiana 46121 max Zone:4
+getNumberofCities Ireland 93817 max Zone:1
+getNumberofCities Ireland 93817 min Zone:1
+getNumberofCities Ireland 93817 min Zone:1
+getNumberofCities Ireland 93817 min Zone:1
+getNumberofCities Guam 87680 min Zone:2
+getNumberofCities Gambia 24738 min Zone:1
+getNumberofCities Tuvalu 26516 min Zone:2
+getNumberofCities Pakistan 99381 max Zone:3
+getNumberofCities Pakistan 99381 max Zone:3
+getNumberofCities Tonga 17862 min Zone:5
+getNumberofCities China 41519 min Zone:5
+getNumberofCities China 41519 min Zone:5
+getNumberofCities China 41519 min Zone:5
+getNumberofCities Haiti 65855 max Zone:5
+getNumberofCities Mexico 89833 max Zone:2
+getNumberofCities Mexico 89833 min Zone:2
+getNumberofCities Sweden 21133 max Zone:2
+getNumberofCities China 41460 min Zone:4
+getNumberofCities Netherlands 64609 max Zone:1
+getNumberofCities Canada 12070 min Zone:1
+getNumberofCities Canada 12070 max Zone:1
+getNumberofCities Canada 12070 max Zone:1
+getNumberofCities Canada 12070 max Zone:1
+getNumberofCities Guatemala 25481 max Zone:2
+getNumberofCities Ukraine 50948 max Zone:3
+getNumberofCities Kazakhstan 27629 max Zone:3
+getNumberofCities Burundi 59638 min Zone:2
+getNumberofCities Burundi 59638 min Zone:2
+getNumberofCities Senegal 64447 min Zone:1
+getNumberofCities Guyana 80523 min Zone:5
+getNumberofCities Guyana 80523 min Zone:5
+getNumberofCities Guyana 80523 min Zone:5
+getNumberofCities Turkey 54174 min Zone:3
+getNumberofCities Philippines 29090 max Zone:4
+getNumberofCities Philippines 29090 max Zone:4
+getNumberofCities Guatemala 69213 min Zone:4
+getNumberofCities Pakistan 87327 max Zone:4
+getNumberofCities Bolivia 94246 min Zone:2
+getNumberofCities Kenya 96390 max Zone:2
+getNumberofCities Kenya 96390 max Zone:2
+getNumberofCities Kenya 96390 min Zone:2
+getNumberofCities Kenya 96390 max Zone:2
+getNumberofCities Benin 44365 min Zone:5
+getNumberofCities Uganda 90635 max Zone:4
+getNumberofCities Kenya 58031 min Zone:4
+getNumberofCities Poland 27287 min Zone:2
+getNumberofCities Poland 27287 max Zone:2
+getNumberofCities Romania 99490 max Zone:2
+getNumberofCities Canada 93698 max Zone:5
+getNumberofCities Canada 93698 min Zone:5
+getNumberofCities Canada 93698 max Zone:5
+getNumberofCities Portugal 89269 max Zone:2
+getNumberofCities Kyrgyzstan 50301 min Zone:5
+getNumberofCities Kyrgyzstan 50301 max Zone:5
+getNumberofCities Tajikistan 30501 min Zone:3
+getNumberofCities Greenland 15400 max Zone:3
+getNumberofCities French Guiana 15157 min Zone:5
+getNumberofCities Bahamas 87092 max Zone:3
+getNumberofCities Bahamas 87092 max Zone:3
+getNumberofCities Bahamas 87092 min Zone:3
+getNumberofCities Bahamas 87092 max Zone:3
+getNumberofCities Seychelles 12406 max Zone:4
+getNumberofCities Slovenia 43204 max Zone:1
+getNumberofCities Japan 57583 max Zone:1
+getNumberofCities Thailand 49412 min Zone:1
+getNumberofCities Thailand 49412 min Zone:1
+getNumberofCities Romania 65523 min Zone:2
+getNumberofCities Tuvalu 43225 max Zone:4
+getNumberofCities Tuvalu 43225 min Zone:4
+getNumberofCities Tuvalu 43225 max Zone:4
+getNumberofCities Guam 67884 min Zone:2
+getNumberofCities Greenland 53657 max Zone:5
+getNumberofCities Greenland 53657 max Zone:5
+getNumberofCities Kyrgyzstan 22720 min Zone:2
+getNumberofCities Equatorial Guinea 64619 min Zone:1
+getNumberofCities Georgia 30787 min Zone:3
+getNumberofCities Ghana 92085 max Zone:5
+getNumberofCities Ghana 92085 min Zone:5
+getNumberofCities Ghana 92085 max Zone:5
+getNumberofCities Ghana 92085 min Zone:5
+getNumberofCities Israel 95003 max Zone:1
+getNumberofCities Chile 99798 min Zone:4
+getNumberofCities Bolivia 66486 min Zone:3
+getNumberofCities Peru 58154 min Zone:5
+getNumberofCities Peru 58154 min Zone:5
+getNumberofCities Chile 68657 min Zone:3
+getNumberofCities Greece 64962 min Zone:1
+getNumberofCities Greece 64962 min Zone:1
+getNumberofCities Greece 64962 min Zone:1
+getNumberofCities Benin 46140 max Zone:4
+getNumberofCities Mexico 43085 max Zone:2
+getNumberofCities Mexico 43085 min Zone:2
+getNumberofCities Tuvalu 94201 max Zone:5
+getNumberofCities Botswana 29131 min Zone:2
+getNumberofCities Uganda 97107 max Zone:5
+getNumberofCities Tunisia 61149 max Zone:5
+getNumberofCities Tunisia 61149 min Zone:5
+getNumberofCities Tunisia 61149 min Zone:5
+getNumberofCities Tunisia 61149 min Zone:5
+getNumberofCities Tunisia 92835 min Zone:5
+getNumberofCities Guinea 75157 min Zone:1
+getNumberofCities Poland 44140 max Zone:5
+getNumberofCities Botswana 48201 max Zone:5
+getNumberofCities Botswana 48201 min Zone:5
+getNumberofCities Panama 45702 min Zone:3
+getNumberofCities Benin 30020 max Zone:1
+getNumberofCities Benin 30020 min Zone:1
+getNumberofCities Benin 30020 max Zone:1
+getNumberofCities Tuvalu 76203 max Zone:3
+getNumberofCities Thailand 97272 max Zone:1
+getNumberofCities Thailand 97272 max Zone:1
+getNumberofCities Tunisia 92988 min Zone:4
+getNumberofCities United Kingdom 49360 min Zone:4
+getNumberofCities Indonesia 20930 max Zone:2
+getNumberofCities Indonesia 53866 min Zone:4
+getNumberofCities Indonesia 53866 min Zone:4
+getNumberofCities Indonesia 53866 max Zone:4
+getNumberofCities Indonesia 53866 min Zone:4
+getNumberofCities United States 71364 min Zone:5
+getNumberofCities Tajikistan 15839 max Zone:3
+getNumberofCities Botswana 91744 min Zone:5
+getNumberofCities Ireland 32021 min Zone:1
+getNumberofCities Ireland 32021 max Zone:1
+getNumberofCities Botswana 34043 min Zone:1
+getNumberofCities United States 65253 max Zone:2
+getNumberofCities United States 65253 max Zone:2
+getNumberofCities United States 65253 min Zone:2
+getNumberofCities Belgium 48563 max Zone:2
+getNumberofCities Bahamas 18643 max Zone:5
+getNumberofCities Bahamas 18643 max Zone:5
+getNumberofCities Cambodia 24719 max Zone:4
+getNumberofCities Belarus 51006 max Zone:4
+getNumberofCities China 21744 max Zone:5
+getNumberofCities Ghana 24334 min Zone:5
+getNumberofCities Ghana 24334 max Zone:5
+getNumberofCities Ghana 24334 min Zone:5
+getNumberofCities Ghana 24334 max Zone:5
+getNumberofCities French Guiana 63161 min Zone:5
+getNumberofCities Hungary 67043 max Zone:5
+getNumberofCities Haiti 63347 max Zone:2
+getNumberofCities Burundi 17254 min Zone:2
+getNumberofCities Burundi 17254 max Zone:2
+getNumberofCities Netherlands 11837 min Zone:4
+getNumberofCities Pakistan 53826 min Zone:1
+getNumberofCities Pakistan 53826 min Zone:1
+getNumberofCities Pakistan 53826 min Zone:1
+getNumberofCities Tokelau 79728 max Zone:5
+getNumberofCities Indonesia 24450 min Zone:4
+getNumberofCities Indonesia 24450 min Zone:4
+getNumberofCities Haiti 45928 min Zone:1
+getNumberofCities 16864 min Zone:5
+getNumberofCities Uganda 21324 min Zone:2
+getNumberofCities Senegal 21642 min Zone:3
+getNumberofCities Senegal 21642 min Zone:3
+getNumberofCities Senegal 21642 max Zone:3
+getNumberofCities Senegal 21642 max Zone:3
+getNumberofCities Philippines 81773 min Zone:1
+getNumberofCities Georgia 34882 min Zone:2
+getNumberofCities Poland 28832 max Zone:1
+getNumberofCities Serbia 94190 min Zone:3
+getNumberofCities Serbia 94190 max Zone:3
+getNumberofCities Bhutan 53877 min Zone:1
+getNumberofCities Slovakia 41505 max Zone:5
+getNumberofCities Slovakia 41505 max Zone:5
+getNumberofCities Slovakia 41505 min Zone:5
+getNumberofCities Portugal 46964 max Zone:2
+getNumberofCities Belarus 63016 max Zone:2
+getNumberofCities Belarus 63016 min Zone:2
+getNumberofCities Ireland 16155 max Zone:1
+getNumberofCities Cambodia 58578 min Zone:5
+getNumberofCities Cambodia 43740 min Zone:5
+getNumberofCities Guatemala 79893 max Zone:1
+getNumberofCities Guatemala 79893 max Zone:1
+getNumberofCities Guatemala 79893 min Zone:1
+getNumberofCities Guatemala 79893 max Zone:1
+getNumberofCities Georgia 66472 min Zone:2
+getNumberofCities Kenya 12877 min Zone:3
+getNumberofCities Japan 73898 max Zone:1
+getNumberofCities Kazakhstan 99690 max Zone:5
+getNumberofCities Kazakhstan 99690 max Zone:5
+getNumberofCities Pakistan 86793 max Zone:2
+getNumberofCities Israel 87437 max Zone:1
+getNumberofCities Israel 87437 max Zone:1
+getNumberofCities Israel 87437 min Zone:1
+getNumberofCities Ireland 96583 max Zone:2
+getNumberofCities Kenya 83802 max Zone:1
+getNumberofCities Kenya 83802 min Zone:1
+getNumberofCities Tonga 18146 min Zone:3
+getNumberofCities Burundi 39790 max Zone:2
+getNumberofCities Tajikistan 85783 max Zone:5
+getNumberofCities Brazil 55292 min Zone:5
+getNumberofCities Brazil 55292 min Zone:5
+getNumberofCities Brazil 55292 max Zone:5
+getNumberofCities Brazil 55292 min Zone:5
+getNumberofCities Chad 19925 max Zone:5
+getNumberofCities Brazil 55757 max Zone:1
+getNumberofCities Ghana 63953 max Zone:2
+getNumberofCities Togo 54161 min Zone:5
+getNumberofCities Togo 54161 min Zone:5
+getNumberofCities Brazil 52892 max Zone:1
+getNumberofCities Oman 54864 max Zone:1
+getNumberofCities Oman 54864 min Zone:1
+getNumberofCities Oman 54864 min Zone:1
+getNumberofCities Chile 92464 max Zone:2
+getNumberofCities Peru 28699 max Zone:2
+getNumberofCities Peru 28699 min Zone:2
+getNumberofCities Sweden 96408 max Zone:3
+getNumberofCities Portugal 36990 min Zone:3
+getNumberofCities Ireland 20129 min Zone:1
+getNumberofCities Honduras 52866 min Zone:3
+getNumberofCities Honduras 52866 min Zone:3
+getNumberofCities Honduras 52866 min Zone:3
+getNumberofCities Honduras 52866 max Zone:3
+getNumberofCities Canada 20333 max Zone:4
+getNumberofCities Norway 13041 max Zone:3
+getNumberofCities Palau 61489 min Zone:3
+getNumberofCities Guyana 58201 max Zone:1
+getNumberofCities Guyana 58201 max Zone:1
+getNumberofCities Georgia 51667 min Zone:1
+getNumberofCities Nepal 10495 max Zone:1
+getNumberofCities Nepal 10495 max Zone:1
+getNumberofCities Nepal 10495 min Zone:1
+getNumberofCities Turkey 77082 max Zone:3
+getNumberofCities Turkey 89318 max Zone:1
+getNumberofCities Turkey 89318 max Zone:1
+getNumberofCities 23043 max Zone:5
+getNumberofCities Benin 15567 max Zone:1
+getNumberofCities Slovakia 75362 max Zone:3
+getNumberofCities Slovakia 21592 max Zone:4
+getNumberofCities Slovakia 21592 min Zone:4
+getNumberofCities Slovakia 21592 min Zone:4
+getNumberofCities Slovakia 21592 max Zone:4
+getNumberofCities Senegal 55251 min Zone:1
+getNumberofCities Bhutan 82321 min Zone:1
+getNumberofCities Sweden 72601 min Zone:2
+getNumberofCities Senegal 65897 max Zone:2
+getNumberofCities Senegal 65897 min Zone:2
+getNumberofCities Switzerland 75431 max Zone:1
+getNumberofCities Turkey 29150 max Zone:5
+getNumberofCities Turkey 29150 max Zone:5
+getNumberofCities Turkey 29150 max Zone:5
+getNumberofCities Pakistan 89605 min Zone:3
+getNumberofCities Kenya 86155 min Zone:1
+getNumberofCities Kenya 86155 max Zone:1
+getNumberofCities Cambodia 73677 max Zone:2
+getNumberofCities Suriname 22838 min Zone:3
+getNumberofCities Norway 67619 max Zone:4
+getNumberofCities Kazakhstan 22823 max Zone:3
+getNumberofCities Kazakhstan 22823 max Zone:3
+getNumberofCities Kazakhstan 22823 max Zone:3
+getNumberofCities Kazakhstan 22823 min Zone:3
+getNumberofCities Guadeloupe 86492 max Zone:3
+getNumberofCities Romania 67856 min Zone:5
+getNumberofCities Senegal 56212 min Zone:3
+getNumberofCities Bhutan 26713 min Zone:2
+getNumberofCities Bhutan 26713 max Zone:2
+getNumberofCities Belarus 11345 min Zone:5
+getNumberofCities Seychelles 87028 min Zone:1
+getNumberofCities Seychelles 87028 min Zone:1
+getNumberofCities Seychelles 87028 min Zone:1
+getNumberofCities Comoros 68794 min Zone:1
+getNumberofCities Guinea 43024 max Zone:2
+getNumberofCities Guinea 43024 min Zone:2
+getNumberofCities Chile 63855 max Zone:4
+getNumberofCities Bahamas 56380 min Zone:3
+getNumberofCities Tokelau 10550 min Zone:1
+getNumberofCities Chad 16730 min Zone:4
+getNumberofCities Chad 16730 max Zone:4
+getNumberofCities Chad 16730 max Zone:4
+getNumberofCities Chad 16730 max Zone:4
+getNumberofCities Indonesia 38714 max Zone:2
+getNumberofCities Tonga 58480 min Zone:5
+getNumberofCities Guam 28695 max Zone:5
+getNumberofCities Botswana 21765 max Zone:3
+getNumberofCities Botswana 21765 max Zone:3
+getNumberofCities Kazakhstan 21735 min Zone:5
+getNumberofCities Nepal 39496 max Zone:4
+getNumberofCities Nepal 39496 max Zone:4
+getNumberofCities Nepal 39496 max Zone:4
+getNumberofCities Swaziland 48105 max Zone:5
+getNumberofCities Paraguay 88632 max Zone:2
+getNumberofCities Paraguay 88632 max Zone:2
+getNumberofCities Mexico 17130 min Zone:2
+getNumberofCities Cameroon 74900 min Zone:2
+getNumberofCities Ukraine 57007 min Zone:2
+getNumberofCities Burundi 59448 max Zone:1
+getNumberofCities Burundi 59448 max Zone:1
+getNumberofCities Burundi 59448 max Zone:1
+getNumberofCities Burundi 59448 max Zone:1
+getNumberofCities Ukraine 60564 min Zone:3
+getNumberofCities Tokelau 23104 max Zone:2
+getNumberofCities Tajikistan 77335 min Zone:1
+getNumberofCities Switzerland 16431 max Zone:4
+getNumberofCities Switzerland 16431 max Zone:4
+getNumberofCities Bhutan 17937 max Zone:1
+getNumberofCities Palau 71466 min Zone:2
+getNumberofCities Palau 71466 max Zone:2
+getNumberofCities Palau 71466 min Zone:2
+getNumberofCities Paraguay 67426 min Zone:1
+getNumberofCities Bahamas 61504 min Zone:3
+getNumberofCities Bahamas 61504 min Zone:3
+getNumberofCities Togo 71283 max Zone:2
+getNumberofCities Seychelles 52029 min Zone:1
+getNumberofCities Nepal 26820 max Zone:2
+getNumberofCities Honduras 24510 max Zone:2
+getNumberofCities Honduras 24510 max Zone:2
+getNumberofCities Honduras 24510 min Zone:2
+getNumberofCities Honduras 24510 max Zone:2
+getNumberofCities China 44661 max Zone:2
+getNumberofCities Kazakhstan 10336 min Zone:5
+getNumberofCities Swaziland 43766 min Zone:2
+getNumberofCities Portugal 12387 max Zone:2
+getNumberofCities Portugal 12387 min Zone:2
+getNumberofCities Seychelles 67079 min Zone:3
+getNumberofCities Ireland 11391 max Zone:5
+getNumberofCities Ireland 11391 min Zone:5
+getNumberofCities Ireland 11391 max Zone:5
+getNumberofCities Serbia 10541 min Zone:1
+getNumberofCities Slovenia 88661 max Zone:5
+getNumberofCities Slovenia 88661 min Zone:5
+getNumberofCities 72010 min Zone:2
+getNumberofCities Bahamas 82418 max Zone:1
+getNumberofCities Serbia 72126 max Zone:5
+getNumberofCities Serbia 70171 min Zone:1
+getNumberofCities Serbia 70171 min Zone:1
+getNumberofCities Serbia 70171 min Zone:1
+getNumberofCities Serbia 70171 max Zone:1
+getNumberofCities Guyana 84816 min Zone:4
+getNumberofCities Bolivia 79380 min Zone:1
+getNumberofCities Serbia 23690 min Zone:5
+getNumberofCities Uganda 58246 max Zone:5
+getNumberofCities Uganda 58246 min Zone:5
+getNumberofCities Gambia 21994 min Zone:3
+getNumberofCities Guatemala 50916 min Zone:5
+getNumberofCities Guatemala 50916 max Zone:5
+getNumberofCities Guatemala 50916 max Zone:5
+getNumberofCities Oman 49176 max Zone:5
+getNumberofCities Cambodia 47523 max Zone:3
+getNumberofCities Cambodia 47523 min Zone:3
+getNumberofCities Portugal 47942 max Zone:1
+getNumberofCities Tonga 48031 max Zone:4
+getNumberofCities French Guiana 86843 max Zone:1
+getNumberofCities Ghana 82629 min Zone:2
+getNumberofCities Ghana 82629 min Zone:2
+getNumberofCities Ghana 82629 max Zone:2
+getNumberofCities Ghana 82629 max Zone:2
+getNumberofCities Poland 77084 min Zone:5
+getNumberofCities Poland 95366 max Zone:4
+getNumberofCities Slovenia 34681 max Zone:5
+getNumberofCities Serbia 51896 max Zone:4
+getNumberofCities Serbia 51896 min Zone:4
+getNumberofCities Slovakia 47469 max Zone:2
+getNumberofCities Ghana 48082 min Zone:4
+getNumberofCities Ghana 48082 min Zone:4
+getNumberofCities Ghana 48082 max Zone:4
+getNumberofCities United States 35308 min Zone:5
+getNumberofCities Serbia 43496 max Zone:2
+getNumberofCities Serbia 43496 min Zone:2
+getNumberofCities Israel 91120 min Zone:4
+getNumberofCities Georgia 47038 min Zone:1
+getNumberofCities Burundi 34866 min Zone:5
+getNumberofCities Peru 17369 min Zone:2
+getNumberofCities Peru 17369 max Zone:2
+getNumberofCities Peru 17369 min Zone:2
+getNumberofCities Peru 17369 max Zone:2
+getNumberofCities Honduras 33666 min Zone:5
+getNumberofCities Ghana 15109 max Zone:3
+getNumberofCities Mexico 84372 min Zone:1
+getNumberofCities Guam 80712 max Zone:2
+getNumberofCities Guam 80712 max Zone:2
+getNumberofCities Oman 95072 min Zone:4
+getNumberofCities Kuwait 63154 max Zone:1
+getNumberofCities Kuwait 63154 min Zone:1
+getNumberofCities Kuwait 63154 max Zone:1
+getNumberofCities Croatia 87021 min Zone:2
+getNumberofCities Tonga 27591 max Zone:2
+getNumberofCities Tonga 27591 max Zone:2
+getNumberofCities Togo 58923 min Zone:3
+getNumberofCities Chad 73038 max Zone:2
+getNumberofCities Mexico 36192 min Zone:2
+getNumberofCities Comoros 21631 max Zone:2
+getNumberofCities Comoros 21631 min Zone:2
+getNumberofCities Comoros 21631 min Zone:2
+getNumberofCities Comoros 21631 max Zone:2
+getNumberofCities Bahamas 77919 max Zone:4
+getNumberofCities Suriname 39563 min Zone:5
+getNumberofCities Thailand 51934 min Zone:1
+getNumberofCities Senegal 91494 min Zone:2
+getNumberofCities Senegal 91494 min Zone:2
+getNumberofCities Mexico 26489 min Zone:4
+getNumberofCities China 14615 max Zone:4
+getNumberofCities China 14615 min Zone:4
+getNumberofCities China 14615 min Zone:4
+getNumberofCities Guam 50300 min Zone:3
+getNumberofCities Brazil 37528 min Zone:5
+getNumberofCities Brazil 37528 min Zone:5
+getNumberofCities Tonga 22300 min Zone:3
+getNumberofCities Paraguay 63508 min Zone:5
+getNumberofCities 17765 min Zone:5
+getNumberofCities Sweden 40570 min Zone:3
+getNumberofCities Sweden 40570 max Zone:3
+getNumberofCities Sweden 40570 min Zone:3
+getNumberofCities Sweden 40570 min Zone:3
+getNumberofCities Philippines 86087 min Zone:4
+getNumberofCities Togo 55100 min Zone:4
+getNumberofCities Suriname 28681 min Zone:3
+getNumberofCities Ireland 44834 min Zone:4
+getNumberofCities Ireland 44834 min Zone:4
+getNumberofCities Slovenia 98334 min Zone:2
+getNumberofCities Equatorial Guinea 24778 max Zone:3
+getNumberofCities Equatorial Guinea 24778 max Zone:3
+getNumberofCities Equatorial Guinea 24778 min Zone:3
+getNumberofCities Belarus 92121 min Zone:4
+getNumberofCities Tajikistan 89580 max Zone:3
+getNumberofCities Tajikistan 89580 max Zone:3
+getNumberofCities Gambia 31611 min Zone:1
+getNumberofCities Belarus 86555 min Zone:1
+getNumberofCities Kenya 67638 min Zone:3
+getNumberofCities Nepal 75326 min Zone:5
+getNumberofCities Nepal 75326 min Zone:5
+getNumberofCities Nepal 75326 max Zone:5
+getNumberofCities Nepal 75326 min Zone:5
+getNumberofCities Burundi 94392 max Zone:4
+getNumberofCities Cambodia 76730 max Zone:1
+getNumberofCities United States 77229 max Zone:5
+getNumberofCities Tonga 89651 min Zone:3
+getNumberofCities Tonga 89651 min Zone:3
+getNumberofCities Equatorial Guinea 10963 max Zone:4
+getNumberofCities Slovenia 96355 max Zone:1
+getNumberofCities Slovenia 96355 max Zone:1
+getNumberofCities Slovenia 96355 max Zone:1
+getNumberofCities Senegal 86378 min Zone:2
+getNumberofCities Suriname 64813 max Zone:4
+getNumberofCities Suriname 64813 max Zone:4
+getNumberofCities Brazil 98469 max Zone:1
+getNumberofCities Belarus 78503 max Zone:1
+getNumberofCities Belgium 75918 max Zone:3
+getNumberofCities Guyana 96108 min Zone:5
+getNumberofCities Guyana 96108 min Zone:5
+getNumberofCities Guyana 96108 min Zone:5
+getNumberofCities Guyana 96108 max Zone:5
+getNumberofCities Togo 45015 min Zone:5
+getNumberofCities Burundi 10517 min Zone:3
+getNumberofCities Guadeloupe 12934 min Zone:5
+getNumberofCities Kuwait 43748 max Zone:1
+getNumberofCities Kuwait 43748 min Zone:1
+getNumberofCities Chile 78828 min Zone:2
+getNumberofCities Slovakia 50690 max Zone:4
+getNumberofCities Slovakia 50690 max Zone:4
+getNumberofCities Slovakia 50690 max Zone:4
+getNumberofCities Switzerland 16657 max Zone:2
+getNumberofCities Gambia 66020 max Zone:3
+getNumberofCities Gambia 66020 min Zone:3
+getNumberofCities Haiti 24892 max Zone:5
+getNumberofCities Cambodia 42967 min Zone:1
+getNumberofCities Tokelau 58070 min Zone:5
+getNumberofCities Suriname 90089 min Zone:3
+getNumberofCities Suriname 90089 min Zone:3
+getNumberofCities Suriname 90089 max Zone:3
+getNumberofCities Suriname 90089 max Zone:3
+getNumberofCities Senegal 56395 max Zone:2
+getNumberofCities Equatorial Guinea 70608 min Zone:3
+getNumberofCities Greenland 47928 min Zone:4
+getNumberofCities Senegal 15017 max Zone:1
+getNumberofCities Senegal 15017 min Zone:1
+getNumberofCities Mexico 98718 max Zone:1
+getNumberofCities Panama 91868 min Zone:4
+getNumberofCities Panama 91868 max Zone:4
+getNumberofCities Panama 91868 min Zone:4
+getNumberofCities Switzerland 52735 min Zone:1
+getNumberofCities Poland 79444 max Zone:5
+getNumberofCities Poland 79444 min Zone:5
+getNumberofCities Senegal 51758 min Zone:4
+getNumberofCities Switzerland 58616 max Zone:1
+getNumberofCities Ghana 31837 max Zone:2
+getNumberofCities Guadeloupe 40909 max Zone:3
+getNumberofCities Guadeloupe 40909 max Zone:3
+getNumberofCities Guadeloupe 40909 max Zone:3
+getNumberofCities Guadeloupe 40909 min Zone:3
+getNumberofCities Thailand 30980 max Zone:5
+getNumberofCities French Guiana 51406 max Zone:2
+getNumberofCities Belgium 29297 min Zone:2
+getNumberofCities Greenland 91455 max Zone:5
+getNumberofCities Greenland 91455 max Zone:5
+getNumberofCities 35192 min Zone:3
+getNumberofCities Bhutan 89810 min Zone:4
+getNumberofCities Bhutan 89810 max Zone:4
+getNumberofCities Bhutan 89810 min Zone:4
+getNumberofCities Romania 53395 min Zone:2
+getNumberofCities Turkey 79411 min Zone:3
+getNumberofCities Turkey 79411 min Zone:3
+getNumberofCities Bhutan 87071 max Zone:4
+getNumberofCities Panama 66229 max Zone:1
+getNumberofCities Honduras 27045 max Zone:4
+getNumberofCities Belgium 67862 max Zone:1
+getNumberofCities Belgium 67862 min Zone:1
+getNumberofCities Belgium 67862 min Zone:1
+getNumberofCities Belgium 67862 min Zone:1
+getNumberofCities Bahamas 55319 max Zone:1
+getNumberofCities Romania 88122 min Zone:4
+getNumberofCities Thailand 90539 min Zone:4
+getNumberofCities Peru 78800 max Zone:4
+getNumberofCities Peru 78800 max Zone:4
+getNumberofCities Ghana 92745 min Zone:5
+getNumberofCities Panama 35278 max Zone:5
+getNumberofCities Panama 35278 min Zone:5
+getNumberofCities Panama 35278 max Zone:5
+getNumberofCities Guinea 54926 max Zone:4
+getNumberofCities Turkey 94184 min Zone:3
+getNumberofCities Turkey 94184 max Zone:3
+getNumberofCities Ukraine 44131 min Zone:3
+getNumberofCities Guadeloupe 10076 max Zone:2
+getNumberofCities Gambia 70603 max Zone:2
+getNumberofCities Philippines 35547 min Zone:3
+getNumberofCities Philippines 35547 min Zone:3
+getNumberofCities Philippines 35547 min Zone:3
+getNumberofCities Philippines 35547 max Zone:3
+getNumberofCities Peru 32440 max Zone:3
+getNumberofCities Switzerland 68069 max Zone:3
+getNumberofCities Turkey 95563 max Zone:3
+getNumberofCities Cameroon 18564 min Zone:2
+getNumberofCities Cameroon 18564 max Zone:2
+getNumberofCities Equatorial Guinea 51262 max Zone:5
+getNumberofCities Cambodia 22438 max Zone:5
+getNumberofCities Cambodia 22438 max Zone:5
+getNumberofCities Cambodia 22438 max Zone:5
+getNumberofCities Kazakhstan 37527 min Zone:1
+getNumberofCities Seychelles 22191 max Zone:2
+getNumberofCities Seychelles 22191 min Zone:2
+getNumberofCities Hungary 30155 min Zone:2
+getNumberofCities Uganda 97692 max Zone:3
+getNumberofCities Honduras 25378 max Zone:3
+getNumberofCities Oman 91646 max Zone:1
+getNumberofCities Oman 91646 max Zone:1
+getNumberofCities Oman 91646 max Zone:1
+getNumberofCities Oman 91646 max Zone:1
+getNumberofCities Honduras 25700 max Zone:5
+getNumberofCities Cameroon 48570 max Zone:5
+getNumberofCities Belarus 68667 max Zone:3
+getNumberofCities United States 94613 min Zone:5
+getNumberofCities United States 94613 max Zone:5
+getNumberofCities Tuvalu 85594 min Zone:4
+getNumberofCities Croatia 97698 max Zone:1
+getNumberofCities Croatia 97698 min Zone:1
+getNumberofCities Croatia 97698 min Zone:1
+getNumberofCities Slovakia 34181 min Zone:3
+getNumberofCities Belarus 87001 min Zone:2
+getNumberofCities Belarus 87001 max Zone:2
+getNumberofCities Honduras 83994 min Zone:5
+getNumberofCities Bulgaria 87626 min Zone:1
+getNumberofCities Belarus 97581 min Zone:1
+getNumberofCities Guyana 26219 min Zone:1
+getNumberofCities Guyana 26219 min Zone:1
+getNumberofCities Guyana 26219 min Zone:1
+getNumberofCities Guyana 26219 min Zone:1
+getNumberofCities Georgia 81993 max Zone:1
+getNumberofCities Bolivia 20797 min Zone:2
+getNumberofCities Palau 66143 min Zone:3
+getNumberofCities Equatorial Guinea 11947 min Zone:5
+getNumberofCities Equatorial Guinea 11947 max Zone:5
+getNumberofCities Tuvalu 69906 max Zone:5
+getNumberofCities Tokelau 86282 min Zone:2
+getNumberofCities Tokelau 86282 min Zone:2
+getNumberofCities Tokelau 86282 min Zone:2
+getNumberofCities Ireland 15357 min Zone:3
+getNumberofCities Japan 35776 max Zone:5
+getNumberofCities Japan 35776 min Zone:5
+getNumberofCities Kenya 10116 min Zone:2
+getNumberofCities Pakistan 21858 min Zone:5
+getNumberofCities United Kingdom 17590 max Zone:2
+getNumberofCities Philippines 26860 max Zone:3
+getNumberofCities Philippines 26860 min Zone:3
+getNumberofCities Philippines 26860 max Zone:3
+getNumberofCities Philippines 26860 max Zone:3
+getNumberofCities Cameroon 49172 max Zone:3
+getNumberofCities Croatia 29650 max Zone:3
+getNumberofCities Norway 97512 max Zone:5
+getNumberofCities Kuwait 81013 min Zone:5
+getNumberofCities Kuwait 81013 min Zone:5
+getNumberofCities Chad 95635 min Zone:2
+getNumberofCities Tunisia 75720 max Zone:5
+getNumberofCities Tunisia 75720 max Zone:5
+getNumberofCities Tunisia 75720 min Zone:5
+getNumberofCities Guam 16010 min Zone:1
+getNumberofCities Kuwait 31368 max Zone:3
+getNumberofCities Kuwait 31368 max Zone:3
+getNumberofCities Bolivia 26325 min Zone:4
+getNumberofCities United Kingdom 62410 max Zone:2
+getNumberofCities Ghana 35231 max Zone:2
+getNumberofCities Kuwait 39518 min Zone:1
+getNumberofCities Kuwait 39518 max Zone:1
+getNumberofCities Kuwait 39518 min Zone:1
+getNumberofCities Kuwait 39518 max Zone:1
+getNumberofCities Guinea 39766 max Zone:4
+getNumberofCities Tokelau 73897 max Zone:5
+getNumberofCities Swaziland 84339 min Zone:3
+getNumberofCities Belarus 88841 max Zone:5
+getNumberofCities Belarus 88841 max Zone:5
+getNumberofCities Georgia 90050 max Zone:3
+getNumberofCities Thailand 54892 min Zone:5
+getNumberofCities Thailand 54892 min Zone:5
+getNumberofCities Thailand 54892 min Zone:5
+getNumberofCities United Kingdom 33091 min Zone:2
+getNumberofCities Guyana 23776 min Zone:3
+getNumberofCities Guyana 23776 max Zone:3
+getNumberofCities United Kingdom 34073 min Zone:4
+getNumberofCities Cambodia 38113 max Zone:1
+getNumberofCities 39109 max Zone:3
+getNumberofCities Netherlands 21438 max Zone:4
+getNumberofCities Netherlands 21438 min Zone:4
+getNumberofCities Netherlands 21438 max Zone:4
+getNumberofCities Netherlands 21438 min Zone:4
+getNumberofCities Slovakia 51619 max Zone:2
+getNumberofCities Belgium 64374 min Zone:4
+getNumberofCities Hungary 53020 min Zone:3
+getNumberofCities Hungary 31266 min Zone:1
+getNumberofCities Hungary 31266 min Zone:1
+getNumberofCities Paraguay 70751 min Zone:1
+getNumberofCities Kazakhstan 66910 min Zone:2
+getNumberofCities Kazakhstan 66910 max Zone:2
+getNumberofCities Kazakhstan 66910 min Zone:2
+getNumberofCities Swaziland 25917 max Zone:5
+getNumberofCities Netherlands 78808 min Zone:5
+getNumberofCities Netherlands 78808 min Zone:5
+getNumberofCities Chile 61068 min Zone:1
+getNumberofCities China 21814 max Zone:3
+getNumberofCities Thailand 40859 max Zone:1
+getNumberofCities Bhutan 49341 max Zone:4
+getNumberofCities Bhutan 49341 max Zone:4
+getNumberofCities Bhutan 49341 max Zone:4
+getNumberofCities Bhutan 49341 min Zone:4
+getNumberofCities Tokelau 36857 max Zone:2
+getNumberofCities Belarus 97215 min Zone:4
+getNumberofCities Comoros 77075 max Zone:2
+getNumberofCities Tajikistan 86312 min Zone:5
+getNumberofCities Tajikistan 86312 max Zone:5
+getNumberofCountries 17 24006 min Zone:4
+getNumberofCountries 9 100973 max Zone:3
+getNumberofCountries 9 100973 min Zone:3
+getNumberofCountries 9 100973 min Zone:3
+getNumberofCountries 8 84126 min Zone:5
+getNumberofCountries 26 73308 min Zone:5
+getNumberofCountries 26 73308 max Zone:5
+getNumberofCountries 16 30719 max Zone:3
+getNumberofCountries 4 20342 max Zone:2
+getNumberofCountries 19 15081 min Zone:4
+getNumberofCountries 19 66786 min Zone:2
+getNumberofCountries 19 66786 max Zone:2
+getNumberofCountries 19 66786 min Zone:2
+getNumberofCountries 19 66786 max Zone:2
+getNumberofCountries 29 81193 max Zone:2
+getNumberofCountries 5 51758 max Zone:1
+getNumberofCountries 3 69034 min Zone:2
+getNumberofCountries 21 108445 min Zone:4
+getNumberofCountries 21 108445 min Zone:4
+getNumberofCountries 4 99204 max Zone:3
+getNumberofCountries 28 66134 max Zone:2
+getNumberofCountries 28 66134 max Zone:2
+getNumberofCountries 28 66134 min Zone:2
+getNumberofCountries 9 40154 min Zone:3
+getNumberofCountries 27 88158 min Zone:5
+getNumberofCountries 27 88158 min Zone:5
+getNumberofCountries 26 64084 min Zone:5
+getNumberofCountries 19 46012 min Zone:4
+getNumberofCountries 20 95361 max Zone:3
+getNumberofCountries 6 54030 max Zone:3
+getNumberofCountries 6 54030 max Zone:3
+getNumberofCountries 6 54030 min Zone:3
+getNumberofCountries 6 54030 max Zone:3
+getNumberofCountries 29 102724 max Zone:5
+getNumberofCountries 6 90805 min Zone:3
+getNumberofCountries 13 18699 max Zone:1
+getNumberofCountries 17 74290 max Zone:3
+getNumberofCountries 17 74290 min Zone:3
+getNumberofCountries 24 88193 min Zone:2
+getNumberofCountries 25 11120 max Zone:3
+getNumberofCountries 25 11120 max Zone:3
+getNumberofCountries 25 11120 min Zone:3
+getNumberofCountries 19 12973 max Zone:4
+getNumberofCountries 20 68881 min Zone:1
+getNumberofCountries 20 68881 min Zone:1
+getNumberofCountries 30 39640 min Zone:4
+getNumberofCountries 25 70508 max Zone:4
+getNumberofCountries 19 26043 max Zone:2
+getNumberofCountries 11 28122 min Zone:5
+getNumberofCountries 11 28122 min Zone:5
+getNumberofCountries 11 28122 max Zone:5
+getNumberofCountries 11 28122 max Zone:5
+getNumberofCountries 20 69109 min Zone:1
+getNumberofCountries 17 14449 max Zone:1
+getNumberofCountries 5 86194 min Zone:3
+getNumberofCountries 3 29929 max Zone:3
+getNumberofCountries 3 29929 min Zone:3
+getNumberofCountries 20 14976 max Zone:2
+getNumberofCountries 6 100259 max Zone:3
+getNumberofCountries 6 100259 min Zone:3
+getNumberofCountries 6 100259 min Zone:3
+getNumberofCountries 15 65925 max Zone:3
+getNumberofCountries 4 46769 min Zone:5
+getNumberofCountries 4 46769 max Zone:5
+getNumberofCountries 7 82652 max Zone:1
+getNumberofCountries 9 25786 max Zone:2
+getNumberofCountries 7 92846 min Zone:4
+getNumberofCountries 6 101404 min Zone:4
+getNumberofCountries 6 101404 max Zone:4
+getNumberofCountries 6 101404 max Zone:4
+getNumberofCountries 6 101404 max Zone:4
+getNumberofCountries 20 17670 max Zone:4
+getNumberofCountries 24 97783 min Zone:1
+getNumberofCountries 3 15643 min Zone:2
+getNumberofCountries 23 104278 min Zone:1
+getNumberofCountries 23 104278 min Zone:1
+getNumberofCountries 8 22767 max Zone:1
+getNumberofCountries 12 45625 max Zone:2
+getNumberofCountries 12 45625 min Zone:2
+getNumberofCountries 12 45625 max Zone:2
+getNumberofCountries 16 61563 min Zone:2
+getNumberofCountries 27 19248 min Zone:3
+getNumberofCountries 27 19248 min Zone:3
+getNumberofCountries 18 84800 max Zone:3
+getNumberofCountries 10 61397 max Zone:2
+getNumberofCountries 18 67628 min Zone:4
+getNumberofCountries 28 65224 min Zone:1
+getNumberofCountries 28 65224 min Zone:1
+getNumberofCountries 28 65224 max Zone:1
+getNumberofCountries 28 65224 max Zone:1
+getNumberofCountries 20 64849 min Zone:5
+getNumberofCountries 7 29867 max Zone:4
+getNumberofCountries 9 86474 max Zone:2
+getNumberofCountries 2 31150 min Zone:2
+getNumberofCountries 2 31150 max Zone:2
+getNumberofCountries 15 12716 max Zone:2
+getNumberofCountries 12 40668 max Zone:4
+getNumberofCountries 12 40668 max Zone:4
+getNumberofCountries 12 40668 min Zone:4
+getNumberofCountries 2 23357 max Zone:1
+getNumberofCountries 2 15818 min Zone:2
+getNumberofCountries 2 15818 max Zone:2
+getNumberofCountries 29 91116 max Zone:5
+getNumberofCountries 15 102977 min Zone:5
+getNumberofCountries 24 35656 min Zone:1
+getNumberofCountries 27 64515 min Zone:4
+getNumberofCountries 27 64515 min Zone:4
+getNumberofCountries 27 64515 max Zone:4
+getNumberofCountries 27 64515 min Zone:4
+getNumberofCountries 15 69333 min Zone:1
+getNumberofCountries 3 46175 max Zone:5
+getNumberofCountries 4 98994 min Zone:2
+getNumberofCountries 11 49121 max Zone:5
+getNumberofCountries 11 49121 min Zone:5
+getNumberofCountries 2 88663 max Zone:5
+getNumberofCountries 26 108862 min Zone:5
+getNumberofCountries 26 108862 max Zone:5
+getNumberofCountries 26 108862 min Zone:5
+getNumberofCountries 6 88443 min Zone:5
+getNumberofCountries 3 100858 min Zone:2
+getNumberofCountries 3 100858 max Zone:2
+getNumberofCountries 27 26956 max Zone:5
+getNumberofCountries 5 69537 max Zone:2
+getNumberofCountries 2 69285 min Zone:4
+getNumberofCountries 4 68626 min Zone:2
+getNumberofCountries 4 68626 max Zone:2
+getNumberofCountries 4 68626 max Zone:2
+getNumberofCountries 4 68626 max Zone:2
+getNumberofCountries 29 105042 min Zone:5
+getNumberofCountries 29 25687 max Zone:5
+getNumberofCountries 11 74244 max Zone:4
+getNumberofCountries 8 63971 max Zone:2
+getNumberofCountries 8 63971 max Zone:2
+getNumberofCountries 26 78606 min Zone:4
+getNumberofCountries 17 106327 min Zone:3
+getNumberofCountries 17 106327 max Zone:3
+getNumberofCountries 17 106327 min Zone:3
+getNumberofCountries 6 65772 min Zone:4
+getNumberofCountries 6 62821 max Zone:1
+getNumberofCountries 6 62821 min Zone:1
+getNumberofCountries 23 21222 max Zone:3
+getNumberofCountries 12 106418 min Zone:1
+getNumberofCountries 20 44989 min Zone:2
+getNumberofCountries 4 97648 max Zone:5
+getNumberofCountries 4 97648 max Zone:5
+getNumberofCountries 4 97648 max Zone:5
+getNumberofCountries 4 97648 max Zone:5
+getNumberofCountries 27 93794 min Zone:1
+getNumberofCountries 8 28458 min Zone:5
+getNumberofCountries 6 60213 max Zone:1
+getNumberofCountries 21 95173 max Zone:4
+getNumberofCountries 21 95173 max Zone:4
+getNumberofCountries 22 59848 min Zone:5
+getNumberofCountries 19 37001 min Zone:3
+getNumberofCountries 19 37001 min Zone:3
+getNumberofCountries 19 37001 max Zone:3
+getNumberofCountries 17 62075 max Zone:3
+getNumberofCountries 8 79795 max Zone:4
+getNumberofCountries 8 79795 min Zone:4
+getNumberofCountries 11 68186 min Zone:3
+getNumberofCountries 7 31028 max Zone:2
+getNumberofCountries 25 52236 max Zone:3
+getNumberofCountries 24 28542 min Zone:1
+getNumberofCountries 24 28542 max Zone:1
+getNumberofCountries 24 28542 max Zone:1
+getNumberofCountries 24 28542 min Zone:1
+getNumberofCountries 29 47670 max Zone:2
+getNumberofCountries 23 100389 max Zone:3
+getNumberofCountries 5 47468 min Zone:5
+getNumberofCountries 10 50531 min Zone:2
+getNumberofCountries 10 50531 max Zone:2
+getNumberofCountries 6 20465 max Zone:5
+getNumberofCountries 1 56863 min Zone:4
+getNumberofCountries 1 56863 min Zone:4
+getNumberofCountries 1 56863 max Zone:4
+getNumberofCountries 22 30195 max Zone:2
+getNumberofCountries 19 52766 max Zone:5
+getNumberofCountries 19 52766 max Zone:5
+getNumberofCountries 5 33207 min Zone:2
+getNumberofCountries 13 90275 max Zone:1
+getNumberofCountries 2 62041 min Zone:1
+getNumberofCountries 13 63285 min Zone:5
+getNumberofCountries 13 63285 max Zone:5
+getNumberofCountries 13 63285 max Zone:5
+getNumberofCountries 13 63285 max Zone:5
+getNumberofCountries 21 101578 max Zone:4
+getNumberofCountries 6 53065 min Zone:5
+getNumberofCountries 26 71655 min Zone:4
+getNumberofCountries 6 10966 max Zone:1
+getNumberofCountries 6 10966 max Zone:1
+getNumberofCountries 2 61854 min Zone:4
+getNumberofCountries 14 11891 min Zone:2
+getNumberofCountries 14 11891 min Zone:2
+getNumberofCountries 14 11891 max Zone:2
+getNumberofCountries 18 26531 max Zone:4
+getNumberofCountries 10 66691 min Zone:5
+getNumberofCountries 10 66691 min Zone:5
+getNumberofCountries 15 68054 min Zone:2
+getNumberofCountries 16 45923 max Zone:2
+getNumberofCountries 10 38752 min Zone:2
+getNumberofCountries 21 47862 min Zone:1
+getNumberofCountries 21 47862 max Zone:1
+getNumberofCountries 21 47862 max Zone:1
+getNumberofCountries 21 47862 max Zone:1
+getNumberofCountries 6 35781 min Zone:2
+getNumberofCountries 18 55668 min Zone:1
+getNumberofCountries 4 83624 max Zone:3
+getNumberofCountries 4 42024 min Zone:3
+getNumberofCountries 4 42024 min Zone:3
+getNumberofCountries 26 15820 max Zone:5
+getNumberofCountries 27 95246 max Zone:3
+getNumberofCountries 27 95246 max Zone:3
+getNumberofCountries 27 95246 min Zone:3
+getNumberofCountries 24 54319 min Zone:5
+getNumberofCountries 17 47253 max Zone:3
+getNumberofCountries 17 47253 max Zone:3
+getNumberofCountries 3 86709 max Zone:1
+getNumberofCountries 30 53018 min Zone:1
+getNumberofCountries 8 94622 max Zone:2
+getNumberofCountries 30 49314 max Zone:1
+getNumberofCountries 30 49314 min Zone:1
+getNumberofCountries 30 49314 min Zone:1
+getNumberofCountries 30 49314 min Zone:1
+getNumberofCountries 15 62097 max Zone:5
+getNumberofCountries 24 12797 max Zone:2
+getNumberofCountries 11 20833 min Zone:4
+getNumberofCountries 30 66759 min Zone:5
+getNumberofCountries 30 66759 max Zone:5
+getNumberofCountries 12 37595 min Zone:4
+getNumberofCountries 8 17514 min Zone:1
+getNumberofCountries 8 17514 max Zone:1
+getNumberofCountries 8 17514 max Zone:1
+getNumberofCountries 25 79861 max Zone:2
+getNumberofCountries 5 56688 max Zone:3
+getNumberofCountries 5 56688 min Zone:3
+getNumberofCountries 7 89617 max Zone:2
+getNumberofCountries 30 75607 max Zone:1
+getNumberofCountries 17 23161 min Zone:5
+getNumberofCountries 11 94821 min Zone:2
+getNumberofCountries 11 94821 min Zone:2
+getNumberofCountries 11 94821 min Zone:2
+getNumberofCountries 11 94821 min Zone:2
+getNumberofCountries 17 105075 min Zone:3
+getNumberofCountries 13 102361 max Zone:2
+getNumberofCountries 1 100600 max Zone:5
+getNumberofCountries 15 37650 min Zone:3
+getNumberofCountries 15 37650 max Zone:3
+getNumberofCountries 20 13474 min Zone:4
+getNumberofCountries 28 103379 min Zone:5
+getNumberofCountries 28 103379 min Zone:5
+getNumberofCountries 28 103379 min Zone:5
+getNumberofCountries 19 84984 min Zone:2
+getNumberofCountries 25 65738 max Zone:4
+getNumberofCountries 25 65738 max Zone:4
+getNumberofCountries 13 20608 max Zone:3
+getNumberofCountries 8 27120 min Zone:1
+getNumberofCountries 19 106987 max Zone:1
+getNumberofCountries 25 30541 min Zone:2
+getNumberofCountries 25 30541 max Zone:2
+getNumberofCountries 25 30541 min Zone:2
+getNumberofCountries 25 30541 min Zone:2
+getNumberofCountries 18 58439 min Zone:3
+getNumberofCountries 4 37690 max Zone:5
+getNumberofCountries 25 84792 max Zone:4
+getNumberofCountries 15 67185 max Zone:5
+getNumberofCountries 15 67185 max Zone:5
+getNumberofCountries 27 43151 max Zone:5
+getNumberofCountries 23 39467 max Zone:2
+getNumberofCountries 23 39467 max Zone:2
+getNumberofCountries 23 39467 max Zone:2
+getNumberofCountries 19 100396 max Zone:2
+getNumberofCountries 19 52004 min Zone:5
+getNumberofCountries 19 52004 max Zone:5
+getNumberofCountries 10 109705 max Zone:5
+getNumberofCountries 22 88777 max Zone:1
+getNumberofCountries 30 28395 min Zone:5
+getNumberofCountries 24 46552 max Zone:2
+getNumberofCountries 24 46552 max Zone:2
+getNumberofCountries 24 46552 max Zone:2
+getNumberofCountries 24 46552 max Zone:2
+getNumberofCountries 24 82650 min Zone:3
+getNumberofCountries 28 26646 min Zone:3
+getNumberofCountries 2 16629 max Zone:5
+getNumberofCountries 26 31937 max Zone:1
+getNumberofCountries 26 31937 max Zone:1
+getNumberofCountries 26 44798 min Zone:5
+getNumberofCountries 29 31692 max Zone:2
+getNumberofCountries 29 31692 max Zone:2
+getNumberofCountries 29 31692 min Zone:2
+getNumberofCountries 19 56735 max Zone:1
+getNumberofCountries 17 84608 min Zone:3
+getNumberofCountries 17 84608 max Zone:3
+getNumberofCountries 23 70658 max Zone:1
+getNumberofCountries 17 69231 max Zone:4
+getNumberofCountries 10 102167 max Zone:3
+getNumberofCountries 17 97258 max Zone:4
+getNumberofCountries 17 97258 min Zone:4
+getNumberofCountries 17 97258 max Zone:4
+getNumberofCountries 17 97258 max Zone:4
+getNumberofCountries 12 93189 min Zone:1
+getNumberofCountries 5 67749 min Zone:1
+getNumberofCountries 13 85083 max Zone:5
+getNumberofCountries 2 28523 min Zone:1
+getNumberofCountries 2 28523 max Zone:1
+getNumberofCountries 28 50419 min Zone:3
+getNumberofCountries 29 26824 min Zone:4
+getNumberofCountries 29 26824 max Zone:4
+getNumberofCountries 29 26824 max Zone:4
+getNumberofCountries 7 93023 min Zone:3
+getNumberofCountries 6 94957 max Zone:5
+getNumberofCountries 6 94957 min Zone:5
+getNumberofCountries 1 32102 min Zone:2
+getNumberofCountries 15 87267 min Zone:5
+getNumberofCountries 3 69697 max Zone:5
+getNumberofCountries 13 69950 min Zone:4
+getNumberofCountries 13 69950 min Zone:4
+getNumberofCountries 13 69950 max Zone:4
+getNumberofCountries 13 69950 max Zone:4
+getNumberofCountries 12 74690 min Zone:2
+getNumberofCountries 11 25507 max Zone:1
+getNumberofCountries 17 62484 min Zone:5
+getNumberofCountries 3 78358 min Zone:1
+getNumberofCountries 3 78358 max Zone:1
+getNumberofCountries 5 53460 min Zone:2
+getNumberofCountries 25 69548 min Zone:2
+getNumberofCountries 25 69548 min Zone:2
+getNumberofCountries 25 69548 min Zone:2
+getNumberofCountries 7 90669 min Zone:1
+getNumberofCountries 19 62941 max Zone:1
+getNumberofCountries 19 62941 max Zone:1
+getNumberofCountries 21 13776 max Zone:1
+getNumberofCountries 21 45076 max Zone:1
+getNumberofCountries 28 99765 min Zone:1
+getNumberofCountries 21 25459 max Zone:3
+getNumberofCountries 21 25459 min Zone:3
+getNumberofCountries 21 25459 min Zone:3
+getNumberofCountries 21 25459 min Zone:3
+getNumberofCountries 2 66318 min Zone:5
+getNumberofCountries 12 18581 min Zone:4
+getNumberofCountries 6 72883 max Zone:1
+getNumberofCountries 29 23666 max Zone:1
+getNumberofCountries 29 23666 min Zone:1
+getNumberofCountries 20 76679 max Zone:3
+getNumberofCountries 22 10403 max Zone:1
+getNumberofCountries 22 10403 max Zone:1
+getNumberofCountries 22 10403 max Zone:1
+getNumberofCountries 3 21277 min Zone:4
+getNumberofCountries 24 59671 max Zone:2
+getNumberofCountries 24 59671 min Zone:2
+getNumberofCountries 12 42776 max Zone:2
+getNumberofCountries 2 62181 min Zone:1
+getNumberofCountries 24 16164 max Zone:1
+getNumberofCountries 1 66759 min Zone:3
+getNumberofCountries 1 66759 max Zone:3
+getNumberofCountries 1 66759 max Zone:3
+getNumberofCountries 1 66759 min Zone:3
+getNumberofCountries 17 66427 min Zone:3
+getNumberofCountries 8 32392 min Zone:5
+getNumberofCountries 28 48257 max Zone:5
+getNumberofCountries 13 105173 min Zone:1
+getNumberofCountries 13 105173 min Zone:1
+getNumberofCountries 25 26757 min Zone:3
+getNumberofCountries 8 67478 max Zone:2
+getNumberofCountries 8 67478 max Zone:2
+getNumberofCountries 8 67478 max Zone:2
+getNumberofCountries 9 77736 max Zone:3
+getNumberofCountries 21 84776 min Zone:2
+getNumberofCountries 21 84776 min Zone:2
+getNumberofCountries 10 91273 max Zone:3
+getNumberofCountries 12 63918 max Zone:2
+getNumberofCountries 15 55535 min Zone:2
+getNumberofCountries 14 76065 max Zone:1
+getNumberofCountries 14 76065 min Zone:1
+getNumberofCountries 14 76065 max Zone:1
+getNumberofCountries 14 76065 min Zone:1
+getNumberofCountries 1 102159 max Zone:2
+getNumberofCountries 30 29397 min Zone:1
+getNumberofCountries 28 18051 max Zone:5
+getNumberofCountries 29 92035 min Zone:2
+getNumberofCountries 29 92035 min Zone:2
+getNumberofCountries 4 27161 max Zone:5
+getNumberofCountries 20 49905 min Zone:1
+getNumberofCountries 20 49905 min Zone:1
+getNumberofCountries 20 49905 min Zone:1
+getNumberofCountries 18 87280 max Zone:2
+getNumberofCountries 5 95636 max Zone:5
+getNumberofCountries 5 95636 max Zone:5
+getNumberofCountries 29 75675 max Zone:2
+getNumberofCountries 19 91101 max Zone:4
+getNumberofCountries 3 84147 max Zone:2
+getNumberofCountries 10 102632 max Zone:1
+getNumberofCountries 10 102632 min Zone:1
+getNumberofCountries 10 102632 max Zone:1
+getNumberofCountries 10 102632 max Zone:1
+getNumberofCountries 5 54718 max Zone:3
+getNumberofCountries 21 67840 min Zone:1
+getNumberofCountries 17 97638 min Zone:4
+getNumberofCountries 4 40485 min Zone:4
+getNumberofCountries 4 40485 min Zone:4
+getNumberofCountries 30 16345 min Zone:2
+getNumberofCountries 4 68896 max Zone:5
+getNumberofCountries 4 68896 max Zone:5
+getNumberofCountries 4 68896 min Zone:5
+getNumberofCountries 27 109615 max Zone:2
+getNumberofCountries 18 48041 max Zone:2
+getNumberofCountries 18 48041 max Zone:2
+getNumberofCountries 17 62899 max Zone:4
+getNumberofCountries 27 85500 max Zone:5
+getNumberofCountries 15 29293 max Zone:3
+getNumberofCountries 16 107121 min Zone:5
+getNumberofCountries 16 107121 max Zone:5
+getNumberofCountries 16 107121 max Zone:5
+getNumberofCountries 16 107121 min Zone:5
+getNumberofCountries 26 51585 min Zone:1
+getNumberofCountries 19 56095 max Zone:5
+getNumberofCountries 15 104712 min Zone:3
+getNumberofCountries 21 49884 min Zone:5
+getNumberofCountries 21 49884 min Zone:5
+getNumberofCountries 19 81631 min Zone:3
+getNumberofCountries 10 31096 min Zone:3
+getNumberofCountries 10 31096 min Zone:3
+getNumberofCountries 10 31096 max Zone:3
+getNumberofCountries 13 96764 min Zone:2
+getNumberofCountries 8 26644 max Zone:5
+getNumberofCountries 8 26644 max Zone:5
+getNumberofCountries 8 71861 min Zone:1
+getNumberofCountries 19 100557 max Zone:5
+getNumberofCountries 8 30026 min Zone:5
+getNumberofCountries 6 90933 min Zone:3
+getNumberofCountries 6 90933 max Zone:3
+getNumberofCountries 6 90933 max Zone:3
+getNumberofCountries 6 90933 max Zone:3
+getNumberofCountries 22 31441 max Zone:5
+getNumberofCountries 15 42135 min Zone:4
+getNumberofCountries 19 52835 min Zone:4
+getNumberofCountries 23 32782 max Zone:4
+getNumberofCountries 23 32782 max Zone:4
+getNumberofCountries 19 41444 min Zone:5
+getNumberofCountries 27 100145 min Zone:1
+getNumberofCountries 27 100145 max Zone:1
+getNumberofCountries 27 100145 min Zone:1
+getNumberofCountries 22 93018 max Zone:1
+getNumberofCountries 11 28845 max Zone:4
+getNumberofCountries 11 28845 max Zone:4
+getNumberofCountries 7 35907 min Zone:3
+getNumberofCountries 1 55122 max Zone:2
+getNumberofCountries 25 70829 max Zone:3
+getNumberofCountries 6 49920 max Zone:5
+getNumberofCountries 6 49920 min Zone:5
+getNumberofCountries 6 49920 min Zone:5
+getNumberofCountries 6 49920 min Zone:5
+getNumberofCountries 23 49571 min Zone:2
+getNumberofCountries 5 106018 max Zone:4
+getNumberofCountries 12 107032 min Zone:2
+getNumberofCountries 16 81214 max Zone:3
+getNumberofCountries 16 81214 max Zone:3
+getNumberofCountries 9 43449 min Zone:5
+getNumberofCountries 6 101104 min Zone:4
+getNumberofCountries 6 101104 min Zone:4
+getNumberofCountries 6 101104 max Zone:4
+getNumberofCountries 29 58590 max Zone:5
+getNumberofCountries 23 87693 min Zone:5
+getNumberofCountries 23 87693 max Zone:5
+getNumberofCountries 26 34677 min Zone:5
+getNumberofCountries 22 74249 max Zone:1
+getNumberofCountries 29 25821 min Zone:1
+getNumberofCountries 29 10757 min Zone:4
+getNumberofCountries 29 10757 min Zone:4
+getNumberofCountries 29 10757 max Zone:4
+getNumberofCountries 29 10757 min Zone:4
+getNumberofCountries 4 94465 min Zone:1
+getNumberofCountries 28 17324 min Zone:3
+getNumberofCountries 18 34613 max Zone:2
+getNumberofCountries 23 66874 min Zone:2
+getNumberofCountries 23 66874 min Zone:2
+getNumberofCountries 25 67747 max Zone:5
+getNumberofCountries 30 17667 min Zone:4
+getNumberofCountries 30 17667 max Zone:4
+getNumberofCountries 30 17667 min Zone:4
+getNumberofCountries 6 11452 min Zone:4
+getNumberofCountries 16 71391 max Zone:5
+getNumberofCountries 16 71391 min Zone:5
+getNumberofCountries 28 12212 max Zone:3
+getNumberofCountries 20 97268 min Zone:4
+getNumberofCountries 25 25706 min Zone:4
+getNumberofCountries 14 105518 max Zone:5
+getNumberofCountries 14 105518 min Zone:5
+getNumberofCountries 14 105518 max Zone:5
+getNumberofCountries 14 105518 max Zone:5
+getNumberofCountries 3 96387 max Zone:3
+getNumberofCountries 15 56956 min Zone:1
+getNumberofCountries 25 72452 min Zone:2
+getNumberofCountries 1 63629 max Zone:4
+getNumberofCountries 1 63629 min Zone:4
+getNumberofCountries 5 89906 min Zone:1
+getNumberofCountries 24 47621 max Zone:2
+getNumberofCountries 24 47621 max Zone:2
+getNumberofCountries 24 47621 max Zone:2
+getNumberofCountries 23 51855 min Zone:1
+getNumberofCountries 20 52659 min Zone:3
+getNumberofCountries 20 52659 min Zone:3
+getNumberofCountries 13 26803 min Zone:5
+getNumberofCountries 7 56694 min Zone:1
+getNumberofCountries 3 48699 max Zone:5
+getNumberofCountries 6 80337 max Zone:5
+getNumberofCountries 6 80337 min Zone:5
+getNumberofCountries 6 80337 min Zone:5
+getNumberofCountries 6 80337 max Zone:5
+getNumberofCountries 4 74664 max Zone:3
+getNumberofCountries 25 49424 min Zone:2
+getNumberofCountries 12 53169 min Zone:1
+getNumberofCountries 16 63636 max Zone:4
+getNumberofCountries 16 63636 max Zone:4
+getNumberofCountries 16 56733 min Zone:2
+getNumberofCountries 6 68769 max Zone:5
+getNumberofCountries 6 68769 max Zone:5
+getNumberofCountries 6 68769 max Zone:5
+getNumberofCountries 22 81507 max Zone:5
+getNumberofCountries 8 37391 min Zone:4
+getNumberofCountries 8 37391 max Zone:4
+getNumberofCountries 1 46924 min Zone:5
+getNumberofCountries 6 92408 max Zone:3
+getNumberofCountries 7 31255 max Zone:1
+getNumberofCountries 8 42462 max Zone:4
+getNumberofCountries 8 42462 min Zone:4
+getNumberofCountries 8 42462 max Zone:4
+getNumberofCountries 8 42462 min Zone:4
+getNumberofCountries 25 53844 min Zone:4
+getNumberofCountries 20 21569 min Zone:5
+getNumberofCountries 22 16023 min Zone:5
+getNumberofCountries 8 25869 max Zone:3
+getNumberofCountries 8 25869 min Zone:3
+getNumberofCountries 25 104733 max Zone:4
+getNumberofCountries 24 64914 min Zone:3
+getNumberofCountries 24 64914 max Zone:3
+getNumberofCountries 24 64914 max Zone:3
+getNumberofCountries 4 25600 max Zone:3
+getNumberofCountries 4 11136 min Zone:1
+getNumberofCountries 4 11136 max Zone:1
+getNumberofCountries 3 106996 max Zone:5
+getNumberofCountries 3 19755 min Zone:5
+getNumberofCountries 27 70669 min Zone:3
+getNumberofCountries 14 71156 min Zone:1
+getNumberofCountries 14 71156 min Zone:1
+getNumberofCountries 14 71156 min Zone:1
+getNumberofCountries 14 71156 min Zone:1
+getNumberofCountries 23 38502 max Zone:1
+getNumberofCountries 6 48197 min Zone:2
+getNumberofCountries 16 54088 min Zone:4
+getNumberofCountries 7 32395 min Zone:2
+getNumberofCountries 7 32395 max Zone:2
+getNumberofCountries 15 16068 min Zone:4
+getNumberofCountries 16 57737 max Zone:3
+getNumberofCountries 16 57737 max Zone:3
+getNumberofCountries 16 57737 min Zone:3
+getNumberofCountries 21 89268 max Zone:2
+getNumberofCountries 23 12014 min Zone:3
+getNumberofCountries 23 12014 max Zone:3
+getNumberofCountries 11 27963 max Zone:5
+getNumberofCountries 18 79560 max Zone:5
+getNumberofCountries 24 62786 min Zone:5
+getNumberofCountries 10 46931 max Zone:4
+getNumberofCountries 10 46931 max Zone:4
+getNumberofCountries 10 46931 min Zone:4
+getNumberofCountries 10 46931 min Zone:4
+getNumberofCountries 22 51798 min Zone:3
+getNumberofCountries 1 107570 min Zone:5
+getNumberofCountries 19 22358 min Zone:3
+getNumberofCountries 5 78438 min Zone:1
+getNumberofCountries 5 78438 min Zone:1
+getNumberofCountries 20 56922 max Zone:4
+getNumberofCountries 30 57671 min Zone:5
+getNumberofCountries 30 57671 max Zone:5
+getNumberofCountries 30 57671 min Zone:5
+getNumberofCountries 30 20989 max Zone:3
+getNumberofCountries 23 106189 min Zone:4
+getNumberofCountries 23 106189 min Zone:4
+getNumberofCountries 14 83268 max Zone:2
+getNumberofCountries 6 86323 min Zone:5
+getNumberofCountries 4 22230 min Zone:1
+getNumberofCountries 26 18860 min Zone:2
+getNumberofCountries 26 18860 max Zone:2
+getNumberofCountries 26 18860 max Zone:2
+getNumberofCountries 26 18860 max Zone:2
+getNumberofCountries 2 104074 max Zone:2
+getNumberofCountries 7 28447 max Zone:5
+getNumberofCountries 15 50498 max Zone:1
+getNumberofCountries 14 13295 max Zone:3
+getNumberofCountries 14 13295 max Zone:3
+getNumberofCountries 22 100787 max Zone:1
+getNumberofCountries 15 24394 min Zone:2
+getNumberofCountries 15 24394 max Zone:2
+getNumberofCountries 15 24394 min Zone:2
+getNumberofCountries 5 22322 min Zone:1
+getNumberofCountries 23 20719 min Zone:3
+getNumberofCountries 23 20719 max Zone:3
+getNumberofCountries 29 32829 max Zone:4
+getNumberofCountries 1 15518 min Zone:1
+getNumberofCountries 3 72595 min Zone:3
+getNumberofCountries 12 19252 max Zone:3
+getNumberofCountries 12 19252 max Zone:3
+getNumberofCountries 12 19252 min Zone:3
+getNumberofCountries 12 19252 max Zone:3
+getNumberofCountries 9 10035 min Zone:4
+getNumberofCountries 1 105958 max Zone:4
+getNumberofCountries 21 95040 max Zone:4
+getNumberofCountries 22 84257 max Zone:4
+getNumberofCountries 22 84257 max Zone:4
+getNumberofCountries 13 104336 min Zone:2
+getNumberofCountries 5 52356 max Zone:4
+getNumberofCountries 5 52356 min Zone:4
+getNumberofCountries 5 52356 min Zone:4
+getNumberofCountries 28 55628 max Zone:4
+getNumberofCountries 1 79414 min Zone:3
+getNumberofCountries 1 79414 max Zone:3
+getNumberofCountries 27 60251 min Zone:5
+getNumberofCountries 25 101001 min Zone:3
+getNumberofCountries 30 96371 max Zone:5
+getNumberofCountries 24 32439 max Zone:1
+getNumberofCountries 24 32439 min Zone:1
+getNumberofCountries 24 32439 min Zone:1
+getNumberofCountries 24 32439 max Zone:1
+getNumberofCountries 16 84520 max Zone:4
+getNumberofCountries 20 26149 max Zone:1
+getNumberofCountries 27 80708 min Zone:1
+getNumberofCountries 10 82867 min Zone:2
+getNumberofCountries 10 82867 min Zone:2
+getNumberofCountries 15 14448 max Zone:2
+getNumberofCountries 20 62182 max Zone:2
+getNumberofCountries 20 62182 max Zone:2
+getNumberofCountries 20 62182 max Zone:2
+getNumberofCountries 10 89333 max Zone:1
+getNumberofCountries 9 14247 min Zone:1
+getNumberofCountries 9 14247 min Zone:1
+getNumberofCountries 21 34389 max Zone:5
+getNumberofCountries 1 11781 max Zone:3
+getNumberofCountries 8 10284 min Zone:3
+getNumberofCountries 24 32777 min Zone:2
+getNumberofCountries 24 32777 max Zone:2
+getNumberofCountries 24 32777 max Zone:2
+getNumberofCountries 24 32777 max Zone:2
+getNumberofCountries 10 44125 max Zone:4
+getNumberofCountries 17 84516 max Zone:4
+getNumberofCountries 15 18541 max Zone:3
+getNumberofCountries 1 82345 max Zone:5
+getNumberofCountries 1 82345 min Zone:5
+getNumberofCountries 22 59922 max Zone:3
+getNumberofCountries 9 49660 min Zone:5
+getNumberofCountries 9 49660 min Zone:5
+getNumberofCountries 9 49660 max Zone:5
+getNumberofCountries 8 93933 min Zone:5
+getNumberofCountries 17 92986 min Zone:3
+getNumberofCountries 17 92986 max Zone:3
+getNumberofCountries 1 98395 min Zone:4
+getNumberofCountries 24 105785 min Zone:2
+getNumberofCountries 25 68442 min Zone:5
+getNumberofCountries 19 87895 min Zone:4
+getNumberofCountries 19 87895 max Zone:4
+getNumberofCountries 19 87895 min Zone:4
+getNumberofCountries 19 87895 min Zone:4
+getNumberofCountries 15 63649 min Zone:3
+getNumberofCountries 24 98544 min Zone:2
+getNumberofCountries 13 80780 max Zone:4
+getNumberofCountries 1 16841 max Zone:4
+getNumberofCountries 1 16841 min Zone:4
+getNumberofCountries 15 46953 max Zone:3
+getNumberofCountries 17 21777 min Zone:1
+getNumberofCountries 17 21777 min Zone:1
+getNumberofCountries 17 21777 max Zone:1
+getNumberofCountries 9 99028 min Zone:4
+getNumberofCountries 29 108781 max Zone:5
+getNumberofCountries 29 108781 max Zone:5
+getNumberofCountries 1 62546 min Zone:5
+getNumberofCountries 28 69022 max Zone:3
+getNumberofCountries 21 88840 min Zone:5
+getNumberofCountries 11 64315 min Zone:3
+getNumberofCountries 11 64315 min Zone:3
+getNumberofCountries 11 64315 max Zone:3
+getNumberofCountries 11 64315 max Zone:3
+getNumberofCountries 25 89747 min Zone:2
+getNumberofCountries 23 87045 max Zone:1
+getNumberofCountries 17 80305 min Zone:4
+getNumberofCountries 18 67946 max Zone:2
+getNumberofCountries 18 67946 max Zone:2
+getNumberofCountries 13 21051 max Zone:3
+getNumberofCountries 16 48082 min Zone:2
+getNumberofCountries 16 48082 max Zone:2
+getNumberofCountries 16 48082 max Zone:2
+getNumberofCountries 24 29753 min Zone:3
+getNumberofCountries 4 109208 min Zone:5
+getNumberofCountries 4 109208 max Zone:5
+getNumberofCountries 16 81582 min Zone:5
+getNumberofCountries 7 70341 max Zone:3
+getNumberofCountries 1 94044 min Zone:3
+getNumberofCountries 11 108526 min Zone:3
+getNumberofCountries 11 108526 max Zone:3
+getNumberofCountries 11 108526 min Zone:3
+getNumberofCountries 11 108526 min Zone:3
+getNumberofCountries 29 11008 max Zone:2
+getNumberofCountries 17 58571 max Zone:4
+getNumberofCountries 13 70674 max Zone:2
+getNumberofCountries 4 96232 min Zone:2
+getNumberofCountries 4 96232 max Zone:2
+getNumberofCountries 29 49976 min Zone:2
+getNumberofCountries 23 87408 min Zone:1
+getNumberofCountries 23 87408 min Zone:1
+getNumberofCountries 23 87408 min Zone:1
+getNumberofCountries 7 54110 max Zone:5
+getNumberofCountries 19 93979 min Zone:5
+getNumberofCountries 19 93979 max Zone:5
+getNumberofCountries 12 51307 max Zone:5
+getNumberofCountries 4 49656 max Zone:1
+getNumberofCountries 9 10910 min Zone:5
+getNumberofCountries 30 45719 max Zone:5
+getNumberofCountries 30 45719 min Zone:5
+getNumberofCountries 30 45719 max Zone:5
+getNumberofCountries 30 45719 min Zone:5
+getNumberofCountries 27 57179 max Zone:2
+getNumberofCountries 2 98038 min Zone:2
+getNumberofCountries 3 51287 min Zone:4
+getNumberofCountries 17 103861 max Zone:1
+getNumberofCountries 17 103861 min Zone:1
+getNumberofCountries 18 54516 max Zone:3
+getNumberofCountries 7 108478 max Zone:4
+getNumberofCountries 7 108478 max Zone:4
+getNumberofCountries 7 108478 max Zone:4
+getNumberofCountries 15 32837 max Zone:1
+getNumberofCountries 22 100083 min Zone:4
+getNumberofCountries 22 100083 min Zone:4
+getNumberofCountries 22 65482 max Zone:1
+getNumberofCountries 22 79293 min Zone:4
+getNumberofCountries 18 50180 max Zone:4
+getNumberofCountries 2 72930 max Zone:5
+getNumberofCountries 2 72930 min Zone:5
+getNumberofCountries 2 72930 max Zone:5
+getNumberofCountries 2 72930 max Zone:5
+getNumberofCountries 19 70969 min Zone:4
+getNumberofCountries 15 79249 max Zone:2
+getNumberofCountries 24 81062 min Zone:5
+getNumberofCountries 24 83145 min Zone:2
+getNumberofCountries 24 83145 max Zone:2
+getNumberofCountries 14 22049 max Zone:4
+getNumberofCountries 23 89658 max Zone:5
+getNumberofCountries 23 89658 min Zone:5
+getNumberofCountries 23 89658 min Zone:5
+getNumberofCountries 16 97018 min Zone:1
+getNumberofCountries 16 78474 min Zone:1
+getNumberofCountries 16 78474 max Zone:1
+getNumberofCountries 14 95492 max Zone:5
+getNumberofCountries 15 14519 min Zone:5
+getNumberofCountries 15 108157 max Zone:5
+getNumberofCountries 12 58124 min Zone:3
+getNumberofCountries 12 58124 max Zone:3
+getNumberofCountries 12 58124 min Zone:3
+getNumberofCountries 12 58124 max Zone:3
+getNumberofCountries 15 57095 min Zone:1
+getNumberofCountries 19 15252 min Zone:1
+getNumberofCountries 9 39464 min Zone:4
+getNumberofCountries 11 38329 min Zone:4
+getNumberofCountries 11 38329 max Zone:4
+getNumberofCountries 11 100555 min Zone:2
+getNumberofCountries 30 97993 min Zone:4
+getNumberofCountries 30 97993 min Zone:4
+getNumberofCountries 30 97993 max Zone:4
+getNumberofCountries 15 27133 max Zone:4
+getNumberofCountries 22 47694 min Zone:2
+getNumberofCountries 22 47694 min Zone:2
+getNumberofCountries 11 68526 min Zone:5
+getNumberofCountries 1 106886 max Zone:5
+getNumberofCountries 6 18359 min Zone:4
+getNumberofCountries 6 83321 min Zone:5
+getNumberofCountries 6 83321 min Zone:5
+getNumberofCountries 6 83321 max Zone:5
+getNumberofCountries 6 83321 max Zone:5
+getNumberofCountries 9 20041 max Zone:4
+getNumberofCountries 12 60465 min Zone:3
+getNumberofCountries 21 70550 min Zone:5
+getNumberofCountries 18 89253 max Zone:2
+getNumberofCountries 18 89253 max Zone:2
+getNumberofCountries 20 20688 min Zone:5
+getNumberofCountries 26 21114 min Zone:5
+getNumberofCountries 26 21114 max Zone:5
+getNumberofCountries 26 21114 min Zone:5
+getNumberofCountries 15 54220 max Zone:2
+getNumberofCountries 26 85882 min Zone:2
+getNumberofCountries 26 85882 min Zone:2
+getNumberofCountries 28 106697 min Zone:5
+getNumberofCountries 21 97197 min Zone:4
+getNumberofCountries 22 18255 max Zone:2
+getNumberofCountries 16 81832 max Zone:2
+getNumberofCountries 16 81832 min Zone:2
+getNumberofCountries 16 81832 max Zone:2
+getNumberofCountries 16 81832 max Zone:2
+getNumberofCountriesMM 2 71922 124524 Zone:2
+getNumberofCountriesMM 26 69995 121701 Zone:1
+getNumberofCountriesMM 46 56107 154469 Zone:2
+getNumberofCountriesMM 17 67610 118016 Zone:2
+getNumberofCountriesMM 17 67610 118016 Zone:2
+getNumberofCountriesMM 47 70675 120653 Zone:2
+getNumberofCountriesMM 30 68620 135628 Zone:1
+getNumberofCountriesMM 30 68620 135628 Zone:1
+getNumberofCountriesMM 30 68620 135628 Zone:1
+getNumberofCountriesMM 15 22339 55768 Zone:5
+getNumberofCountriesMM 5 14663 35188 Zone:4
+getNumberofCountriesMM 5 14663 35188 Zone:4
+getNumberofCountriesMM 26 34847 70572 Zone:1
+getNumberofCountriesMM 27 95643 150002 Zone:2
+getNumberofCountriesMM 28 32277 103480 Zone:2
+getNumberofCountriesMM 49 31299 105419 Zone:5
+getNumberofCountriesMM 49 31299 105419 Zone:5
+getNumberofCountriesMM 49 31299 105419 Zone:5
+getNumberofCountriesMM 49 31299 105419 Zone:5
+getNumberofCountriesMM 39 82493 150711 Zone:2
+getNumberofCountriesMM 42 104933 172146 Zone:2
+getNumberofCountriesMM 33 88439 92526 Zone:4
+getNumberofCountriesMM 46 87407 110883 Zone:5
+getNumberofCountriesMM 46 87407 110883 Zone:5
+getNumberofCountriesMM 24 59794 72853 Zone:3
+getNumberofCountriesMM 48 87642 109160 Zone:3
+getNumberofCountriesMM 48 87642 109160 Zone:3
+getNumberofCountriesMM 48 87642 109160 Zone:3
+getNumberofCountriesMM 1 102817 145128 Zone:5
+getNumberofCountriesMM 28 45545 143414 Zone:3
+getNumberofCountriesMM 28 45545 143414 Zone:3
+getNumberofCountriesMM 49 41573 139699 Zone:4
+getNumberofCountriesMM 24 10632 93230 Zone:2
+getNumberofCountriesMM 39 82984 104590 Zone:3
+getNumberofCountriesMM 5 46574 94590 Zone:1
+getNumberofCountriesMM 5 46574 94590 Zone:1
+getNumberofCountriesMM 5 46574 94590 Zone:1
+getNumberofCountriesMM 5 46574 94590 Zone:1
+getNumberofCountriesMM 24 33277 42300 Zone:3
+getNumberofCountriesMM 50 67229 95936 Zone:3
+getNumberofCountriesMM 7 42787 126060 Zone:3
+getNumberofCountriesMM 13 47839 88665 Zone:2
+getNumberofCountriesMM 13 47839 88665 Zone:2
+getNumberofCountriesMM 27 41985 58043 Zone:3
+getNumberofCountriesMM 2 89256 125496 Zone:4
+getNumberofCountriesMM 2 89256 125496 Zone:4
+getNumberofCountriesMM 2 89256 125496 Zone:4
+getNumberofCountriesMM 31 76777 141295 Zone:3
+getNumberofCountriesMM 48 79736 161246 Zone:1
+getNumberofCountriesMM 48 79736 161246 Zone:1
+getNumberofCountriesMM 50 61814 74810 Zone:2
+getNumberofCountriesMM 9 76056 89907 Zone:1
+getNumberofCountriesMM 46 24815 110014 Zone:2
+getNumberofCountriesMM 28 46777 95787 Zone:2
+getNumberofCountriesMM 28 46777 95787 Zone:2
+getNumberofCountriesMM 28 46777 95787 Zone:2
+getNumberofCountriesMM 28 46777 95787 Zone:2
+getNumberofCountriesMM 41 61092 76070 Zone:2
+getNumberofCountriesMM 30 33178 103561 Zone:2
+getNumberofCountriesMM 33 40558 82088 Zone:1
+getNumberofCountriesMM 46 84577 97498 Zone:3
+getNumberofCountriesMM 46 84577 97498 Zone:3
+getNumberofCountriesMM 15 100624 105608 Zone:4
+getNumberofCountriesMM 12 67326 122199 Zone:4
+getNumberofCountriesMM 12 67326 122199 Zone:4
+getNumberofCountriesMM 12 67326 122199 Zone:4
+getNumberofCountriesMM 13 66650 90646 Zone:4
+getNumberofCountriesMM 16 69613 74598 Zone:1
+getNumberofCountriesMM 16 69613 74598 Zone:1
+getNumberofCountriesMM 44 88354 173708 Zone:4
+getNumberofCountriesMM 47 102866 163640 Zone:3
+getNumberofCountriesMM 28 23115 43763 Zone:1
+getNumberofCountriesMM 10 36924 110314 Zone:1
+getNumberofCountriesMM 10 36924 110314 Zone:1
+getNumberofCountriesMM 10 36924 110314 Zone:1
+getNumberofCountriesMM 10 36924 110314 Zone:1
+getNumberofCountriesMM 17 27103 56188 Zone:1
+getNumberofCountriesMM 19 32228 123046 Zone:3
+getNumberofCountriesMM 16 49814 54954 Zone:4
+getNumberofCountriesMM 9 42509 44578 Zone:1
+getNumberofCountriesMM 9 42509 44578 Zone:1
+getNumberofCountriesMM 8 104399 135525 Zone:5
+getNumberofCountriesMM 46 12355 61565 Zone:2
+getNumberofCountriesMM 46 12355 61565 Zone:2
+getNumberofCountriesMM 46 12355 61565 Zone:2
+getNumberofCountriesMM 5 38708 112807 Zone:5
+getNumberofCountriesMM 49 105790 185319 Zone:5
+getNumberofCountriesMM 49 105790 185319 Zone:5
+getNumberofCountriesMM 18 19128 35473 Zone:5
+getNumberofCountriesMM 8 105374 204760 Zone:3
+getNumberofCountriesMM 2 36729 131892 Zone:5
+getNumberofCountriesMM 41 86829 146292 Zone:5
+getNumberofCountriesMM 41 86829 146292 Zone:5
+getNumberofCountriesMM 41 86829 146292 Zone:5
+getNumberofCountriesMM 41 86829 146292 Zone:5
+getNumberofCountriesMM 5 37728 92747 Zone:1
+getNumberofCountriesMM 8 95458 144144 Zone:2
+getNumberofCountriesMM 6 27645 95964 Zone:3
+getNumberofCountriesMM 47 62906 67815 Zone:4
+getNumberofCountriesMM 47 62906 67815 Zone:4
+getNumberofCountriesMM 30 16493 39196 Zone:5
+getNumberofCountriesMM 31 54591 88931 Zone:3
+getNumberofCountriesMM 31 54591 88931 Zone:3
+getNumberofCountriesMM 31 54591 88931 Zone:3
+getNumberofCountriesMM 49 33782 104778 Zone:3
+getNumberofCountriesMM 38 50019 117337 Zone:3
+getNumberofCountriesMM 38 50019 117337 Zone:3
+getNumberofCountriesMM 42 89927 170738 Zone:4
+getNumberofCountriesMM 28 81955 83306 Zone:1
+getNumberofCountriesMM 3 75226 128618 Zone:5
+getNumberofCountriesMM 10 108453 126243 Zone:1
+getNumberofCountriesMM 10 108453 126243 Zone:1
+getNumberofCountriesMM 10 108453 126243 Zone:1
+getNumberofCountriesMM 10 108453 126243 Zone:1
+getNumberofCountriesMM 20 103540 121751 Zone:5
+getNumberofCountriesMM 48 98780 169056 Zone:4
+getNumberofCountriesMM 27 96257 166758 Zone:1
+getNumberofCountriesMM 22 70753 108868 Zone:4
+getNumberofCountriesMM 22 70753 108868 Zone:4
+getNumberofCountriesMM 20 34746 114293 Zone:5
+getNumberofCountriesMM 26 99801 159809 Zone:3
+getNumberofCountriesMM 26 99801 159809 Zone:3
+getNumberofCountriesMM 26 99801 159809 Zone:3
+getNumberofCountriesMM 21 54784 68682 Zone:4
+getNumberofCountriesMM 10 71155 120084 Zone:2
+getNumberofCountriesMM 10 71155 120084 Zone:2
+getNumberofCountriesMM 3 52896 124120 Zone:2
+getNumberofCountriesMM 35 44712 51975 Zone:1
+getNumberofCountriesMM 37 64750 72767 Zone:3
+getNumberofCountriesMM 9 58555 115728 Zone:1
+getNumberofCountriesMM 9 58555 115728 Zone:1
+getNumberofCountriesMM 9 58555 115728 Zone:1
+getNumberofCountriesMM 9 58555 115728 Zone:1
+getNumberofCountriesMM 35 87564 185675 Zone:3
+getNumberofCountriesMM 39 56505 109743 Zone:4
+getNumberofCountriesMM 39 10850 79123 Zone:1
+getNumberofCountriesMM 13 93752 119378 Zone:2
+getNumberofCountriesMM 13 93752 119378 Zone:2
+getNumberofCountriesMM 29 30661 100057 Zone:5
+getNumberofCountriesMM 6 33657 81906 Zone:2
+getNumberofCountriesMM 6 33657 81906 Zone:2
+getNumberofCountriesMM 6 33657 81906 Zone:2
+getNumberofCountriesMM 34 28978 109390 Zone:1
+getNumberofCountriesMM 36 44167 49045 Zone:2
+getNumberofCountriesMM 36 44167 49045 Zone:2
+getNumberofCountriesMM 29 17905 25997 Zone:3
+getNumberofCountriesMM 47 97462 138827 Zone:5
+getNumberofCountriesMM 41 84660 130589 Zone:3
+getNumberofCountriesMM 25 76487 128691 Zone:1
+getNumberofCountriesMM 25 76487 128691 Zone:1
+getNumberofCountriesMM 25 76487 128691 Zone:1
+getNumberofCountriesMM 25 76487 128691 Zone:1
+getNumberofCountriesMM 47 91639 110929 Zone:2
+getNumberofCountriesMM 9 92480 130709 Zone:5
+getNumberofCountriesMM 8 35647 119081 Zone:5
+getNumberofCountriesMM 48 109782 120520 Zone:1
+getNumberofCountriesMM 48 109782 120520 Zone:1
+getNumberofCountriesMM 17 93981 183697 Zone:5
+getNumberofCountriesMM 45 56038 64909 Zone:5
+getNumberofCountriesMM 45 56038 64909 Zone:5
+getNumberofCountriesMM 45 56038 64909 Zone:5
+getNumberofCountriesMM 41 47082 145504 Zone:2
+getNumberofCountriesMM 27 85844 175280 Zone:1
+getNumberofCountriesMM 27 85844 175280 Zone:1
+getNumberofCountriesMM 5 19658 51512 Zone:1
+getNumberofCountriesMM 12 43636 66988 Zone:3
+getNumberofCountriesMM 11 43851 78762 Zone:2
+getNumberofCountriesMM 28 90047 171109 Zone:1
+getNumberofCountriesMM 28 90047 171109 Zone:1
+getNumberofCountriesMM 28 90047 171109 Zone:1
+getNumberofCountriesMM 28 90047 171109 Zone:1
+getNumberofCountriesMM 9 90404 179313 Zone:3
+getNumberofCountriesMM 28 53562 148397 Zone:5
+getNumberofCountriesMM 7 70104 91188 Zone:4
+getNumberofCountriesMM 13 76021 91010 Zone:5
+getNumberofCountriesMM 13 76021 91010 Zone:5
+getNumberofCountriesMM 35 45362 131878 Zone:4
+getNumberofCountriesMM 26 17735 109644 Zone:1
+getNumberofCountriesMM 26 17735 109644 Zone:1
+getNumberofCountriesMM 26 17735 109644 Zone:1
+getNumberofCountriesMM 38 55337 134664 Zone:5
+getNumberofCountriesMM 10 101972 109474 Zone:4
+getNumberofCountriesMM 10 101972 109474 Zone:4
+getNumberofCountriesMM 33 95227 135460 Zone:2
+getNumberofCountriesMM 38 69065 110628 Zone:1
+getNumberofCountriesMM 14 76819 83634 Zone:2
+getNumberofCountriesMM 16 71868 87392 Zone:5
+getNumberofCountriesMM 16 71868 87392 Zone:5
+getNumberofCountriesMM 16 71868 87392 Zone:5
+getNumberofCountriesMM 16 71868 87392 Zone:5
+getNumberofCountriesMM 46 68836 166324 Zone:2
+getNumberofCountriesMM 37 12430 13103 Zone:2
+getNumberofCountriesMM 1 45133 107899 Zone:2
+getNumberofCountriesMM 6 63850 127543 Zone:4
+getNumberofCountriesMM 6 63850 127543 Zone:4
+getNumberofCountriesMM 25 43668 90273 Zone:4
+getNumberofCountriesMM 12 42565 78536 Zone:4
+getNumberofCountriesMM 12 42565 78536 Zone:4
+getNumberofCountriesMM 12 42565 78536 Zone:4
+getNumberofCountriesMM 43 11725 89360 Zone:1
+getNumberofCountriesMM 11 66462 91682 Zone:4
+getNumberofCountriesMM 11 66462 91682 Zone:4
+getNumberofCountriesMM 2 81715 142297 Zone:5
+getNumberofCountriesMM 32 82813 145804 Zone:4
+getNumberofCountriesMM 17 14219 36155 Zone:3
+getNumberofCountriesMM 22 94037 96924 Zone:1
+getNumberofCountriesMM 22 94037 96924 Zone:1
+getNumberofCountriesMM 22 94037 96924 Zone:1
+getNumberofCountriesMM 22 94037 96924 Zone:1
+getNumberofCountriesMM 31 53061 61603 Zone:5
+getNumberofCountriesMM 4 19171 102803 Zone:5
+getNumberofCountriesMM 10 87644 137928 Zone:4
+getNumberofCountriesMM 32 80142 145280 Zone:1
+getNumberofCountriesMM 32 80142 145280 Zone:1
+getNumberofCountriesMM 38 10483 27181 Zone:2
+getNumberofCountriesMM 18 80007 91547 Zone:2
+getNumberofCountriesMM 18 80007 91547 Zone:2
+getNumberofCountriesMM 18 80007 91547 Zone:2
+getNumberofCountriesMM 30 93495 188001 Zone:2
+getNumberofCountriesMM 49 44008 69449 Zone:1
+getNumberofCountriesMM 49 44008 69449 Zone:1
+getNumberofCountriesMM 38 19073 96544 Zone:1
+getNumberofCountriesMM 9 39319 129341 Zone:5
+getNumberofCountriesMM 41 73075 169009 Zone:1
+getNumberofCountriesMM 6 99585 110354 Zone:4
+getNumberofCountriesMM 6 99585 110354 Zone:4
+getNumberofCountriesMM 6 99585 110354 Zone:4
+getNumberofCountriesMM 6 99585 110354 Zone:4
+getNumberofCountriesMM 48 55480 151304 Zone:4
+getNumberofCountriesMM 39 106817 193172 Zone:4
+getNumberofCountriesMM 44 37093 82499 Zone:3
+getNumberofCountriesMM 22 16952 47895 Zone:3
+getNumberofCountriesMM 22 16952 47895 Zone:3
+getNumberofCountriesMM 43 76668 135247 Zone:5
+getNumberofCountriesMM 32 20756 64380 Zone:4
+getNumberofCountriesMM 32 20756 64380 Zone:4
+getNumberofCountriesMM 32 20756 64380 Zone:4
+getNumberofCountriesMM 22 103334 200803 Zone:3
+getNumberofCountriesMM 50 12939 89713 Zone:3
+getNumberofCountriesMM 50 12939 89713 Zone:3
+getNumberofCountriesMM 20 22166 36354 Zone:2
+getNumberofCountriesMM 49 17790 97071 Zone:4
+getNumberofCountriesMM 46 50634 112251 Zone:5
+getNumberofCountriesMM 36 67800 107996 Zone:5
+getNumberofCountriesMM 36 67800 107996 Zone:5
+getNumberofCountriesMM 36 67800 107996 Zone:5
+getNumberofCountriesMM 36 67800 107996 Zone:5
+getNumberofCountriesMM 5 107883 127371 Zone:4
+getNumberofCountriesMM 48 70319 160202 Zone:2
+getNumberofCountriesMM 48 99433 169495 Zone:4
+getNumberofCountriesMM 36 57695 89491 Zone:4
+getNumberofCountriesMM 36 57695 89491 Zone:4
+getNumberofCountriesMM 13 46209 94355 Zone:2
+getNumberofCountriesMM 21 21875 78405 Zone:1
+getNumberofCountriesMM 21 21875 78405 Zone:1
+getNumberofCountriesMM 21 21875 78405 Zone:1
+getNumberofCountriesMM 1 106937 169856 Zone:4
+getNumberofCountriesMM 1 21502 37811 Zone:2
+getNumberofCountriesMM 1 21502 37811 Zone:2
+getNumberofCountriesMM 27 14336 62792 Zone:1
+getNumberofCountriesMM 46 71099 76221 Zone:1
+getNumberofCountriesMM 14 28976 126531 Zone:4
+getNumberofCountriesMM 24 31922 109554 Zone:4
+getNumberofCountriesMM 24 31922 109554 Zone:4
+getNumberofCountriesMM 24 31922 109554 Zone:4
+getNumberofCountriesMM 24 31922 109554 Zone:4
+getNumberofCountriesMM 46 92590 104756 Zone:2
+getNumberofCountriesMM 50 11252 97964 Zone:5
+getNumberofCountriesMM 17 31270 48875 Zone:2
+getNumberofCountriesMM 15 58267 68624 Zone:4
+getNumberofCountriesMM 15 58267 68624 Zone:4
+getNumberofCountriesMM 19 52913 75106 Zone:4
+getNumberofCountriesMM 40 64813 128015 Zone:5
+getNumberofCountriesMM 40 64813 128015 Zone:5
+getNumberofCountriesMM 40 64813 128015 Zone:5
+getNumberofCountriesMM 26 72912 101281 Zone:3
+getNumberofCountriesMM 1 50936 94950 Zone:1
+getNumberofCountriesMM 1 50936 94950 Zone:1
+getNumberofCountriesMM 1 17711 33148 Zone:4
+getNumberofCountriesMM 25 61941 76223 Zone:3
+getNumberofCountriesMM 32 108645 129970 Zone:2
+getNumberofCountriesMM 26 64230 66606 Zone:3
+getNumberofCountriesMM 26 64230 66606 Zone:3
+getNumberofCountriesMM 26 64230 66606 Zone:3
+getNumberofCountriesMM 26 64230 66606 Zone:3
+getNumberofCountriesMM 33 68880 137358 Zone:4
+getNumberofCountriesMM 40 95097 95351 Zone:3
+getNumberofCountriesMM 10 85243 157991 Zone:4
+getNumberofCountriesMM 3 83684 164133 Zone:4
+getNumberofCountriesMM 3 83684 164133 Zone:4
+getNumberofCountriesMM 44 105530 158915 Zone:3
+getNumberofCountriesMM 16 58697 77011 Zone:2
+getNumberofCountriesMM 16 58697 77011 Zone:2
+getNumberofCountriesMM 16 58697 77011 Zone:2
+getNumberofCountriesMM 45 24170 72366 Zone:2
+getNumberofCountriesMM 14 85553 168837 Zone:5
+getNumberofCountriesMM 14 85553 168837 Zone:5
+getNumberofCountriesMM 48 24883 32453 Zone:3
+getNumberofCountriesMM 36 27762 101805 Zone:3
+getNumberofCountriesMM 13 24007 118128 Zone:3
+getNumberofCountriesMM 37 101867 165544 Zone:1
+getNumberofCountriesMM 37 101867 165544 Zone:1
+getNumberofCountriesMM 37 101867 165544 Zone:1
+getNumberofCountriesMM 37 101867 165544 Zone:1
+getNumberofCountriesMM 24 13858 44513 Zone:5
+getNumberofCountriesMM 45 58980 81344 Zone:5
+getNumberofCountriesMM 50 61929 159672 Zone:2
+getNumberofCountriesMM 11 78769 114667 Zone:5
+getNumberofCountriesMM 11 78769 114667 Zone:5
+getNumberofCountriesMM 20 47501 135936 Zone:5
+getNumberofCountriesMM 41 64685 151497 Zone:2
+getNumberofCountriesMM 41 64685 151497 Zone:2
+getNumberofCountriesMM 41 64685 151497 Zone:2
+getNumberofCountriesMM 36 60743 75121 Zone:1
+getNumberofCountriesMM 22 92417 161896 Zone:5
+getNumberofCountriesMM 22 92417 161896 Zone:5
+getNumberofCountriesMM 41 63867 79086 Zone:2
+getNumberofCountriesMM 17 30268 116162 Zone:1
+getNumberofCountriesMM 1 51383 118311 Zone:5
+getNumberofCountriesMM 34 66457 135930 Zone:2
+getNumberofCountriesMM 34 66457 135930 Zone:2
+getNumberofCountriesMM 34 66457 135930 Zone:2
+getNumberofCountriesMM 34 66457 135930 Zone:2
+getNumberofCountriesMM 31 82258 133174 Zone:3
+getNumberofCountriesMM 31 85598 137412 Zone:3
+getNumberofCountriesMM 5 10287 43684 Zone:5
+getNumberofCountriesMM 4 82713 122684 Zone:1
+getNumberofCountriesMM 4 82713 122684 Zone:1
+getNumberofCountriesMM 14 74362 118436 Zone:5
+getNumberofCountriesMM 25 26435 38604 Zone:5
+getNumberofCountriesMM 25 26435 38604 Zone:5
+getNumberofCountriesMM 25 26435 38604 Zone:5
+getNumberofCountriesMM 19 90535 121139 Zone:2
+getNumberofCountriesMM 14 70911 93418 Zone:5
+getNumberofCountriesMM 14 70911 93418 Zone:5
+getNumberofCountriesMM 40 51735 72832 Zone:3
+getNumberofCountriesMM 15 34457 77909 Zone:2
+getNumberofCountriesMM 28 20820 34240 Zone:4
+getNumberofCountriesMM 28 27272 82780 Zone:5
+getNumberofCountriesMM 28 27272 82780 Zone:5
+getNumberofCountriesMM 28 27272 82780 Zone:5
+getNumberofCountriesMM 28 27272 82780 Zone:5
+getNumberofCountriesMM 44 100881 126359 Zone:4
+getNumberofCountriesMM 37 57614 101017 Zone:5
+getNumberofCountriesMM 49 98381 130965 Zone:4
+getNumberofCountriesMM 35 36788 104912 Zone:2
+getNumberofCountriesMM 35 36788 104912 Zone:2
+getNumberofCountriesMM 3 54830 134612 Zone:4
+getNumberofCountriesMM 45 66417 71988 Zone:5
+getNumberofCountriesMM 45 66417 71988 Zone:5
+getNumberofCountriesMM 45 66417 71988 Zone:5
+getNumberofCountriesMM 49 53416 76381 Zone:2
+getNumberofCountriesMM 30 92706 154529 Zone:4
+getNumberofCountriesMM 30 92706 154529 Zone:4
+getNumberofCountriesMM 32 90646 148834 Zone:1
+getNumberofCountriesMM 39 44400 111104 Zone:4
+getNumberofCountriesMM 9 78717 116675 Zone:3
+getNumberofCountriesMM 29 82703 152200 Zone:5
+getNumberofCountriesMM 29 82703 152200 Zone:5
+getNumberofCountriesMM 29 82703 152200 Zone:5
+getNumberofCountriesMM 29 82703 152200 Zone:5
+getNumberofCountriesMM 40 69133 164107 Zone:1
+getNumberofCountriesMM 6 86554 177080 Zone:5
+getNumberofCountriesMM 23 19969 36627 Zone:1
+getNumberofCountriesMM 45 87802 158753 Zone:5
+getNumberofCountriesMM 45 87802 158753 Zone:5
+getNumberofCountriesMM 10 109627 176988 Zone:4
+getNumberofCountriesMM 23 67422 109273 Zone:4
+getNumberofCountriesMM 23 67422 109273 Zone:4
+getNumberofCountriesMM 23 67422 109273 Zone:4
+getNumberofCountriesMM 9 80523 169015 Zone:3
+getNumberofCountriesMM 7 58146 117991 Zone:3
+getNumberofCountriesMM 7 58146 117991 Zone:3
+getNumberofCountriesMM 12 12679 27582 Zone:1
+getNumberofCountriesMM 43 36618 98684 Zone:4
+getNumberofCountriesMM 47 61553 117914 Zone:4
+getNumberofCountriesMM 28 88101 158326 Zone:2
+getNumberofCountriesMM 28 88101 158326 Zone:2
+getNumberofCountriesMM 28 88101 158326 Zone:2
+getNumberofCountriesMM 28 88101 158326 Zone:2
+getNumberofCountriesMM 6 47094 98877 Zone:4
+getNumberofCountriesMM 15 35852 128573 Zone:2
+getNumberofCountriesMM 42 33227 76391 Zone:3
+getNumberofCountriesMM 14 11106 43335 Zone:3
+getNumberofCountriesMM 14 11106 43335 Zone:3
+getNumberofCountriesMM 4 105040 130084 Zone:2
+getNumberofCountriesMM 14 73523 133334 Zone:4
+getNumberofCountriesMM 14 73523 133334 Zone:4
+getNumberofCountriesMM 14 73523 133334 Zone:4
+getNumberofCountriesMM 15 17870 35146 Zone:5
+getNumberofCountriesMM 43 27606 77942 Zone:3
+getNumberofCountriesMM 43 27606 77942 Zone:3
+getNumberofCountriesMM 24 30650 51390 Zone:3
+getNumberofCountriesMM 11 98445 115202 Zone:3
+getNumberofCountriesMM 15 82322 118574 Zone:4
+getNumberofCountriesMM 25 13858 87903 Zone:3
+getNumberofCountriesMM 25 13858 87903 Zone:3
+getNumberofCountriesMM 25 13858 87903 Zone:3
+getNumberofCountriesMM 25 13858 87903 Zone:3
+getNumberofCountriesMM 17 91580 153493 Zone:3
+getNumberofCountriesMM 50 24810 32222 Zone:2
+getNumberofCountriesMM 21 104427 141660 Zone:1
+getNumberofCountriesMM 18 48515 91868 Zone:1
+getNumberofCountriesMM 18 48515 91868 Zone:1
+getNumberofCountriesMM 26 16860 22582 Zone:4
+getNumberofCountriesMM 8 93654 188226 Zone:5
+getNumberofCountriesMM 8 93654 188226 Zone:5
+getNumberofCountriesMM 8 93654 188226 Zone:5
+getNumberofCountriesMM 23 97970 149345 Zone:2
+getNumberofCountriesMM 2 13911 78055 Zone:4
+getNumberofCountriesMM 2 13911 78055 Zone:4
+getNumberofCountriesMM 8 32447 59785 Zone:1
+getNumberofCountriesMM 17 72322 111243 Zone:1
+getNumberofCountriesMM 34 99037 131751 Zone:3
+getNumberofCountriesMM 14 67134 148829 Zone:5
+getNumberofCountriesMM 14 67134 148829 Zone:5
+getNumberofCountriesMM 14 67134 148829 Zone:5
+getNumberofCountriesMM 14 67134 148829 Zone:5
+getNumberofCountriesMM 11 57774 150365 Zone:2
+getNumberofCountriesMM 15 40379 123380 Zone:3
+getNumberofCountriesMM 43 33025 33529 Zone:5
+getNumberofCountriesMM 43 26773 84823 Zone:1
+getNumberofCountriesMM 43 26773 84823 Zone:1
+getNumberofCountriesMM 42 103790 195993 Zone:3
+getNumberofCountriesMM 44 31088 45207 Zone:5
+getNumberofCountriesMM 44 31088 45207 Zone:5
+getNumberofCountriesMM 44 31088 45207 Zone:5
+getNumberofCountriesMM 39 30390 106691 Zone:2
+getNumberofCountriesMM 10 67003 148530 Zone:4
+getNumberofCountriesMM 10 67003 148530 Zone:4
+getNumberofCountriesMM 39 95877 97418 Zone:5
+getNumberofCountriesMM 42 98607 121360 Zone:5
+getNumberofCountriesMM 12 23218 54735 Zone:3
+getNumberofCountriesMM 3 21167 111688 Zone:2
+getNumberofCountriesMM 3 21167 111688 Zone:2
+getNumberofCountriesMM 3 21167 111688 Zone:2
+getNumberofCountriesMM 3 21167 111688 Zone:2
+getNumberofCountriesMM 12 81947 115323 Zone:3
+getNumberofCountriesMM 11 52648 88346 Zone:2
+getNumberofCountriesMM 32 32556 55177 Zone:3
+getNumberofCountriesMM 12 40911 104371 Zone:3
+getNumberofCountriesMM 12 40911 104371 Zone:3
+getNumberofCountriesMM 41 98454 147608 Zone:3
+getNumberofCountriesMM 5 43655 60590 Zone:2
+getNumberofCountriesMM 5 43655 60590 Zone:2
+getNumberofCountriesMM 5 43655 60590 Zone:2
+getNumberofCountriesMM 2 102169 113946 Zone:4
+getNumberofCountriesMM 41 78778 128624 Zone:4
+getNumberofCountriesMM 41 78778 128624 Zone:4
+getNumberofCountriesMM 37 21628 65386 Zone:4
+getNumberofCountriesMM 46 43709 51946 Zone:1
+getNumberofCountriesMM 21 32369 60783 Zone:1
+getNumberofCountriesMM 9 25518 92377 Zone:2
+getNumberofCountriesMM 9 25518 92377 Zone:2
+getNumberofCountriesMM 9 25518 92377 Zone:2
+getNumberofCountriesMM 9 25518 92377 Zone:2
+getNumberofCountriesMM 31 73204 131452 Zone:2
+getNumberofCountriesMM 1 20983 43271 Zone:2
+getNumberofCountriesMM 23 23978 76818 Zone:4
+getNumberofCountriesMM 1 64682 97705 Zone:3
+getNumberofCountriesMM 1 64682 97705 Zone:3
+getNumberofCountriesMM 44 84356 127163 Zone:1
+getNumberofCountriesMM 23 21828 117089 Zone:3
+getNumberofCountriesMM 23 21828 117089 Zone:3
+getNumberofCountriesMM 23 21828 117089 Zone:3
+getNumberofCountriesMM 24 49915 107502 Zone:2
+getNumberofCountriesMM 16 52172 100795 Zone:1
+getNumberofCountriesMM 16 52172 100795 Zone:1
+getNumberofCountriesMM 7 88691 125936 Zone:2
+getNumberofCountriesMM 23 67442 93202 Zone:4
+getNumberofCountriesMM 31 18874 64655 Zone:1
+getNumberofCountriesMM 23 103122 177674 Zone:3
+getNumberofCountriesMM 23 103122 177674 Zone:3
+getNumberofCountriesMM 23 103122 177674 Zone:3
+getNumberofCountriesMM 23 103122 177674 Zone:3
+getNumberofCountriesMM 48 95495 172039 Zone:1
+getNumberofCountriesMM 35 57489 95702 Zone:5
+getNumberofCountriesMM 26 21213 83359 Zone:3
+getNumberofCountriesMM 19 41276 100497 Zone:2
+getNumberofCountriesMM 19 41276 100497 Zone:2
+getNumberofCountriesMM 50 74151 94059 Zone:1
+getNumberofCountriesMM 6 29453 34311 Zone:2
+getNumberofCountriesMM 6 29453 34311 Zone:2
+getNumberofCountriesMM 6 29453 34311 Zone:2
+getNumberofCountriesMM 32 72795 146921 Zone:1
+getNumberofCountriesMM 20 98567 138315 Zone:3
+getNumberofCountriesMM 20 98567 138315 Zone:3
+getNumberofCountriesMM 31 16953 33094 Zone:2
+getNumberofCountriesMM 11 18615 57537 Zone:2
+getNumberofCountriesMM 6 28331 123609 Zone:4
+getNumberofCountriesMM 42 61907 68884 Zone:1
+getNumberofCountriesMM 42 61907 68884 Zone:1
+getNumberofCountriesMM 42 61907 68884 Zone:1
+getNumberofCountriesMM 42 61907 68884 Zone:1
+getNumberofCountriesMM 10 11556 88036 Zone:3
+getNumberofCountriesMM 2 80316 117182 Zone:1
+getNumberofCountriesMM 10 74627 90009 Zone:5
+getNumberofCountriesMM 1 13053 21093 Zone:5
+getNumberofCountriesMM 1 13053 21093 Zone:5
+getNumberofCountriesMM 28 30223 129041 Zone:5
+getNumberofCountriesMM 12 97707 116154 Zone:2
+getNumberofCountriesMM 12 97707 116154 Zone:2
+getNumberofCountriesMM 12 97707 116154 Zone:2
+getNumberofCountriesMM 28 37242 92277 Zone:1
+getNumberofCountriesMM 26 34980 79866 Zone:3
+getNumberofCountriesMM 26 34980 79866 Zone:3
+getNumberofCountriesMM 48 37855 55766 Zone:1
+getNumberofCountriesMM 23 52690 77231 Zone:4
+getNumberofCountriesMM 5 99941 156598 Zone:5
+getNumberofCountriesMM 50 54215 124046 Zone:2
+getNumberofCountriesMM 50 54215 124046 Zone:2
+getNumberofCountriesMM 50 54215 124046 Zone:2
+getNumberofCountriesMM 50 54215 124046 Zone:2
+getNumberofCountriesMM 41 38875 106206 Zone:3
+getNumberofCountriesMM 11 98016 190265 Zone:1
+getNumberofCountriesMM 28 77692 135977 Zone:4
+getNumberofCountriesMM 28 18020 114652 Zone:1
+getNumberofCountriesMM 28 18020 114652 Zone:1
+getNumberofCountriesMM 9 104875 159991 Zone:2
+getNumberofCountriesMM 48 33732 91827 Zone:3
+getNumberofCountriesMM 48 33732 91827 Zone:3
+getNumberofCountriesMM 48 33732 91827 Zone:3
+getNumberofCountriesMM 50 17109 99640 Zone:4
+getNumberofCountriesMM 12 52314 83904 Zone:5
+getNumberofCountriesMM 12 52314 83904 Zone:5
+getNumberofCountriesMM 22 28563 76552 Zone:3
+getNumberofCountriesMM 50 80332 118423 Zone:5
+getNumberofCountriesMM 45 45287 70415 Zone:2
+getNumberofCountriesMM 26 35367 76980 Zone:2
+getNumberofCountriesMM 26 35367 76980 Zone:2
+getNumberofCountriesMM 26 35367 76980 Zone:2
+getNumberofCountriesMM 26 35367 76980 Zone:2
+getNumberofCountriesMM 45 85883 120862 Zone:1
+getNumberofCountriesMM 18 79174 85409 Zone:3
+getNumberofCountriesMM 13 28039 105047 Zone:2
+getNumberofCountriesMM 32 17130 33394 Zone:3
+getNumberofCountriesMM 32 17130 33394 Zone:3
+getNumberofCountriesMM 50 30122 61156 Zone:2
+getNumberofCountriesMM 10 103393 200011 Zone:2
+getNumberofCountriesMM 10 103393 200011 Zone:2
+getNumberofCountriesMM 10 103393 200011 Zone:2
+getNumberofCountriesMM 25 14765 64957 Zone:4
+getNumberofCountriesMM 14 20801 88887 Zone:4
+getNumberofCountriesMM 14 20801 88887 Zone:4
+getNumberofCountriesMM 32 54277 134725 Zone:5
+getNumberofCountriesMM 33 37227 131664 Zone:5
+getNumberofCountriesMM 18 13040 74284 Zone:2
+getNumberofCountriesMM 34 81962 153884 Zone:3
+getNumberofCountriesMM 34 81962 153884 Zone:3
+getNumberofCountriesMM 34 81962 153884 Zone:3
+getNumberofCountriesMM 34 81962 153884 Zone:3
+getNumberofCountriesMM 37 91124 147979 Zone:5
+getNumberofCountriesMM 25 94099 140524 Zone:2
+getNumberofCountriesMM 28 39012 135981 Zone:5
+getNumberofCountriesMM 29 56549 129310 Zone:5
+getNumberofCountriesMM 29 56549 129310 Zone:5
+getNumberofCountriesMM 38 92572 183586 Zone:4
+getNumberofCountriesMM 46 93320 123835 Zone:5
+getNumberofCountriesMM 46 93320 123835 Zone:5
+getNumberofCountriesMM 46 93320 123835 Zone:5
+getNumberofCountriesMM 40 46786 112269 Zone:3
+getNumberofCountriesMM 23 92911 105111 Zone:4
+getNumberofCountriesMM 23 92911 105111 Zone:4
+getNumberofCountriesMM 8 66885 116726 Zone:3
+getNumberofCountriesMM 18 107575 153972 Zone:3
+getNumberofCountriesMM 12 93855 138294 Zone:3
+getNumberofCountriesMM 18 75656 167682 Zone:2
+getNumberofCountriesMM 18 75656 167682 Zone:2
+getNumberofCountriesMM 18 75656 167682 Zone:2
+getNumberofCountriesMM 18 75656 167682 Zone:2
+getNumberofCountriesMM 8 24469 122704 Zone:1
+getNumberofCountriesMM 49 90064 172886 Zone:1
+getNumberofCountriesMM 39 81939 118708 Zone:4
+getNumberofCountriesMM 25 89037 133882 Zone:1
+getNumberofCountriesMM 25 89037 133882 Zone:1
+getNumberofCountriesMM 24 52625 147163 Zone:5
+getNumberofCountriesMM 38 69857 140635 Zone:2
+getNumberofCountriesMM 38 69857 140635 Zone:2
+getNumberofCountriesMM 38 69857 140635 Zone:2
+getNumberofCountriesMM 15 77779 170993 Zone:2
+getNumberofCountriesMM 16 26141 56697 Zone:2
+getNumberofCountriesMM 16 26141 56697 Zone:2
+getNumberofCountriesMM 35 109922 175204 Zone:4
+getNumberofCountriesMM 16 100761 171933 Zone:2
+getNumberofCountriesMM 39 40342 52024 Zone:1
+getNumberofCountriesMM 44 91319 156092 Zone:3
+getNumberofCountriesMM 44 91319 156092 Zone:3
+getNumberofCountriesMM 44 91319 156092 Zone:3
+getNumberofCountriesMM 44 91319 156092 Zone:3
+getNumberofCountriesMM 24 86029 98325 Zone:2
+getNumberofCountriesMM 17 75845 118168 Zone:2
+getNumberofCountriesMM 9 20946 93972 Zone:1
+getNumberofCountriesMM 35 33113 56573 Zone:5
+getNumberofCountriesMM 35 33113 56573 Zone:5
+getNumberofCountriesMM 41 95993 150104 Zone:1
+getNumberofCountriesMM 31 81908 163365 Zone:2
+getNumberofCountriesMM 31 81908 163365 Zone:2
+getNumberofCountriesMM 31 81908 163365 Zone:2
+getNumberofCountriesMM 16 51743 94833 Zone:2
+getNumberofCountriesMM 6 66146 105143 Zone:5
+getNumberofCountriesMM 6 66146 105143 Zone:5
+getNumberofCountriesMM 13 40012 130905 Zone:2
+getNumberofCountriesMM 26 37174 129954 Zone:4
+getNumberofCountriesMM 8 65490 91577 Zone:1
+getNumberofCountriesMM 19 88080 163749 Zone:5
+getNumberofCountriesMM 19 88080 163749 Zone:5
+getNumberofCountriesMM 19 88080 163749 Zone:5
+getNumberofCountriesMM 19 88080 163749 Zone:5
+getNumberofCountriesMM 8 14348 73026 Zone:1
+getNumberofCountriesMM 20 73592 160904 Zone:2
+getNumberofCountriesMM 44 52930 112151 Zone:5
+getNumberofCountriesMM 21 99489 186370 Zone:3
+getNumberofCountriesMM 21 99489 186370 Zone:3
+getNumberofCountriesMM 14 53185 104320 Zone:5
+getNumberofCountriesMM 49 67113 153971 Zone:4
+getNumberofCountriesMM 49 67113 153971 Zone:4
+getNumberofCountriesMM 49 67113 153971 Zone:4
+getNumberofCountriesMM 50 58885 99734 Zone:3
+getNumberofCountriesMM 24 68917 72969 Zone:3
+getNumberofCountriesMM 24 68917 72969 Zone:3
+getNumberofCountriesMM 22 36433 73020 Zone:1
+getNumberofCountriesMM 35 66295 98269 Zone:2
+getNumberofCountriesMM 9 67091 141954 Zone:4
+getNumberofCountriesMM 39 60074 61398 Zone:1
+getNumberofCountriesMM 39 60074 61398 Zone:1
+getNumberofCountriesMM 39 60074 61398 Zone:1
+getNumberofCountriesMM 39 60074 61398 Zone:1
+getNumberofCountriesMM 17 66882 67906 Zone:2
+getNumberofCountriesMM 9 68209 127266 Zone:3
+getNumberofCountriesMM 35 47521 143749 Zone:5
+getNumberofCountriesMM 50 39869 96641 Zone:4
+getNumberofCountriesMM 50 39869 96641 Zone:4
+getNumberofCountriesMM 32 22459 45597 Zone:4
+getNumberofCountriesMM 22 15590 51005 Zone:1
+getNumberofCountriesMM 22 15590 51005 Zone:1
+getNumberofCountriesMM 22 15590 51005 Zone:1
+getNumberofCountriesMM 14 41702 45770 Zone:2
+getNumberofCountriesMM 17 58766 144168 Zone:2
+getNumberofCountriesMM 17 58766 144168 Zone:2
+getNumberofCountriesMM 6 83523 173945 Zone:1
+getNumberofCountriesMM 7 87780 167176 Zone:3
+getNumberofCountriesMM 23 68889 76061 Zone:3
+getNumberofCountriesMM 3 63964 148390 Zone:4
+getNumberofCountriesMM 3 63964 148390 Zone:4
+getNumberofCountriesMM 3 63964 148390 Zone:4
+getNumberofCountriesMM 3 63964 148390 Zone:4
+getNumberofCountriesMM 33 46302 91997 Zone:2
+getNumberofCountriesMM 41 103128 193725 Zone:4
+getNumberofCountriesMM 9 19472 91624 Zone:3
+getNumberofCountriesMM 26 44132 104884 Zone:2
+getNumberofCountriesMM 26 44132 104884 Zone:2
+getNumberofCountriesMM 5 82486 88601 Zone:3
+getNumberofCountriesMM 26 43443 124507 Zone:4
+getNumberofCountriesMM 26 43443 124507 Zone:4
+getNumberofCountriesMM 26 43443 124507 Zone:4
+getNumberofCountriesMM 4 94913 122774 Zone:3
+getNumberofCountriesMM 8 109925 131055 Zone:3
+getNumberofCountriesMM 8 109925 131055 Zone:3
+getNumberofCountriesMM 17 46927 96309 Zone:2
+getNumberofCountriesMM 50 32931 54426 Zone:2
+getNumberofCountriesMM 24 49572 80660 Zone:2
+getNumberofCountriesMM 32 63390 152912 Zone:2
+getNumberofCountriesMM 32 63390 152912 Zone:2
+getNumberofCountriesMM 32 63390 152912 Zone:2
+getNumberofCountriesMM 32 63390 152912 Zone:2
+getNumberofCountriesMM 18 69904 119037 Zone:2
+getNumberofCountriesMM 37 51093 69941 Zone:5
+getNumberofCountriesMM 21 88366 179210 Zone:3
+getNumberofCountriesMM 1 75277 110899 Zone:2
+getNumberofCountriesMM 1 75277 110899 Zone:2
+getNumberofCountriesMM 30 23008 102716 Zone:1
+getNumberofCountriesMM 50 72088 102311 Zone:3
+getNumberofCountriesMM 50 72088 102311 Zone:3
+getNumberofCountriesMM 50 72088 102311 Zone:3
+getNumberofCountriesMM 6 48278 106116 Zone:1
+getNumberofCountriesMM 11 92241 98676 Zone:5
+getNumberofCountriesMM 11 92241 98676 Zone:5
+getNumberofCountriesMM 11 58918 127741 Zone:1
+getNumberofCountriesMM 8 37372 92268 Zone:4
+getNumberofCountriesMM 8 61362 134349 Zone:3
+getNumberofCountriesMM 33 85704 127085 Zone:4
+getNumberofCountriesMM 33 85704 127085 Zone:4
+getNumberofCountriesMM 33 85704 127085 Zone:4
+getNumberofCountriesMM 33 85704 127085 Zone:4
+getNumberofCountriesMM 27 54087 108586 Zone:3
+getNumberofCountriesMM 17 59470 147167 Zone:1
+getNumberofCountriesMM 13 50842 105041 Zone:3
+getNumberofCountriesMM 28 11857 23449 Zone:5
+getNumberofCountriesMM 28 11857 23449 Zone:5
+getNumberofCountriesMM 38 61835 110191 Zone:4
+getNumberofCountriesMM 49 40125 66331 Zone:2
+getNumberofCountriesMM 49 40125 66331 Zone:2
+getNumberofCountriesMM 49 40125 66331 Zone:2
+getNumberofCountriesMM 47 97891 107834 Zone:4
+getNumberofCountriesMM 29 59657 154642 Zone:4
+getNumberofCountriesMM 29 59657 154642 Zone:4
+getNumberofCountriesMM 17 46679 57687 Zone:4
+getNumberofCountriesMM 2 42487 106841 Zone:2
+getNumberofCountriesMM 41 45476 93300 Zone:3
+getNumberofCountriesMM 10 107569 111765 Zone:5
+getNumberofCountriesMM 10 107569 111765 Zone:5
+getNumberofCountriesMM 10 107569 111765 Zone:5
+getNumberofCountriesMM 10 107569 111765 Zone:5
+getNumberofCountriesMM 46 98290 125164 Zone:5
+getNumberofCountriesMM 36 107819 178070 Zone:4
+getNumberofCountriesMM 31 76532 83145 Zone:5
+getNumberofCountriesMM 33 100165 133531 Zone:4
+getNumberofCountriesMM 33 100165 133531 Zone:4
+getNumberofCountriesMM 40 59748 120315 Zone:2
+getNumberofCountriesMM 44 100104 104494 Zone:1
+getNumberofCountriesMM 44 100104 104494 Zone:1
+getNumberofCountriesMM 44 100104 104494 Zone:1
+getNumberofCountriesMM 19 82216 126019 Zone:4
+getNumberofCountriesMM 42 29190 111874 Zone:3
+getNumberofCountriesMM 42 29190 111874 Zone:3
+getNumberofCountriesMM 19 17201 24845 Zone:3
+getNumberofCountriesMM 8 107067 126841 Zone:4
+getNumberofCountriesMM 43 75449 120624 Zone:1
+getNumberofCountriesMM 1 35536 38625 Zone:2
+getNumberofCountriesMM 1 35536 38625 Zone:2
+getNumberofCountriesMM 1 35536 38625 Zone:2
+getNumberofCountriesMM 1 35536 38625 Zone:2
+getNumberofCountriesMM 12 102306 200590 Zone:5
+getNumberofCountriesMM 19 26612 50324 Zone:1
+getNumberofCountriesMM 38 63899 143224 Zone:4
+getNumberofCountriesMM 38 40323 71382 Zone:4
+getNumberofCountriesMM 38 40323 71382 Zone:4
+getNumberofCountriesMM 37 45404 117450 Zone:1
+getNumberofCountriesMM 31 41697 128218 Zone:2
+getNumberofCountriesMM 31 41697 128218 Zone:2
+getNumberofCountriesMM 31 41697 128218 Zone:2
+getNumberofCountriesMM 43 10278 50345 Zone:3
+getNumberofCountriesMM 20 69021 95643 Zone:1
+getNumberofCountriesMM 20 69021 95643 Zone:1
+getNumberofCountriesMM 39 63205 138217 Zone:5
+getNumberofCountriesMM 47 16112 16580 Zone:4
+getNumberofCountriesMM 50 79312 155371 Zone:2
+getNumberofCountriesMM 40 45661 102827 Zone:2
+getNumberofCountriesMM 40 45661 102827 Zone:2
+getNumberofCountriesMM 40 45661 102827 Zone:2
+getNumberofCountriesMM 40 45661 102827 Zone:2
+getNumberofCountriesMM 43 73989 149784 Zone:5
+getNumberofCountriesMM 10 47216 77712 Zone:3
+getNumberofCountriesMM 23 86991 142922 Zone:4
+getNumberofCountriesMM 41 13857 39905 Zone:3
+getNumberofCountriesMM 41 13857 39905 Zone:3
+getNumberofCountriesMM 44 109282 146211 Zone:3
+getNumberofCountriesMM 39 26000 115288 Zone:1
+getNumberofCountriesMM 39 26000 115288 Zone:1
+getNumberofCountriesMM 39 26000 115288 Zone:1
+getNumberofCountriesMM 43 49275 95826 Zone:3
+getNumberofCountriesMM 5 74568 91737 Zone:2
+getNumberofCountriesMM 5 74568 91737 Zone:2
+getNumberofCountriesMM 1 34850 104083 Zone:4
+getNumberofCountriesMM 9 67902 69718 Zone:3
+getNumberofCountriesMM 25 56841 96653 Zone:5
+getNumberofCountriesMM 16 17136 71980 Zone:5
+getNumberofCountriesMM 16 17136 71980 Zone:5
+getNumberofCountriesMM 16 17136 71980 Zone:5
+getNumberofCountriesMM 16 17136 71980 Zone:5
+getNumberofCountriesMM 32 68523 163219 Zone:4
+getNumberofCountriesMM 40 59399 105732 Zone:4
+getNumberofCountriesMM 38 67728 135271 Zone:1
+getNumberofCountriesMM 4 26295 32725 Zone:1
+getNumberofCountriesMM 4 26295 32725 Zone:1
+getNumberofCountriesMM 35 94789 129232 Zone:2
+getNumberofCountriesMM 47 70908 89920 Zone:4
+getNumberofCountriesMM 47 70908 89920 Zone:4
+getNumberofCountriesMM 47 70908 89920 Zone:4
+getNumberofCountriesMM 18 82502 166121 Zone:1
+getNumberofCountriesMM 26 36349 85074 Zone:5
+getNumberofCountriesMM 26 36349 85074 Zone:5
+getNumberofCountriesMM 41 99830 129236 Zone:5
+getNumberofCountriesMM 26 108363 151844 Zone:2
+getNumberofCountriesMM 20 88451 159264 Zone:1
+getNumberofCountriesMM 23 53247 109979 Zone:5
+getNumberofCountriesMM 23 53247 109979 Zone:5
+getNumberofCountriesMM 23 53247 109979 Zone:5
+getNumberofCountriesMM 23 53247 109979 Zone:5
+getNumberofCountriesMM 9 29156 73705 Zone:4
+getNumberofCountriesMM 31 28545 48490 Zone:1
+getNumberofCountriesMM 37 59132 141719 Zone:5
+getNumberofCountriesMM 46 24893 78637 Zone:3
+getNumberofCountriesMM 46 24893 78637 Zone:3
+getNumberofCountriesMM 45 109430 135643 Zone:2
+getNumberofCountriesMM 42 48717 74733 Zone:2
+getNumberofCountriesMM 42 48717 74733 Zone:2
+getNumberofCountriesMM 42 48717 74733 Zone:2
+getNumberofCountriesMM 35 55848 73143 Zone:1
+getNumberofCountriesMM 11 40468 87521 Zone:3
+getNumberofCountriesMM 11 40468 87521 Zone:3

@@ -13,13 +13,3 @@ public class ServerInfo implements Serializable{
         this.port = port; 
     }
 }
-
-
-
-/**
- * Comparison types used for population threshold queries.
- */
-public enum Comparison {
-    MIN,
-    MAX
-}

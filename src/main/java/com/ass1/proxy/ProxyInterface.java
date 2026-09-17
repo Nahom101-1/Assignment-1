@@ -4,9 +4,9 @@ import com.ass1.common.*;
 
 
 public interface ProxyInterface extends Remote{
-    ServerInfo getServer(int zone); 
+    ServerInfo getServer(int zone);
     // returns int so that the server can simulate the latency that was specified in the assignment text. 
-    int registerNewServer(ServerInfo serverInfo); 
+    int registerNewServer(ServerInfo serverInfo);
 
 }
 
