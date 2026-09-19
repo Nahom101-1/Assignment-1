@@ -7,6 +7,9 @@ import java.util.HashMap;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
+import com.ass1.common.Comparison;
+import com.ass1.common.QueryResult;
+
 public class Server implements ServerInterface{
     
   

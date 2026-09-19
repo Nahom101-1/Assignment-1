@@ -1,0 +1,4 @@
+getPopulationofCountry United States Zone:1
+getNumberofCities Norway 568422 min Zone:4
+getNumberofCountries 3 1616894 min Zone:5
+getNumberofCountriesMM 6 1677496 4406235 Zone:4
