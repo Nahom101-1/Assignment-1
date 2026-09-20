@@ -6,13 +6,20 @@ import java.util.HashMap;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.rmi.RemoteException;
 
 import com.ass1.common.Comparison;
 import com.ass1.common.QueryResult;
 
 public class Server implements ServerInterface{
-    
-  
+
+    //TODO: Assigned when the server registers with proxy
+
+    private int serverZone = -1;
+    //--------------
+    // Helper method
+    //--------------
+
     public List<String[]> readCsv(){
         // Helper method for reading .csv file and turning it to an array.  
         // Storing .csv file content on a ArrayList.
@@ -36,8 +43,64 @@ public class Server implements ServerInterface{
 
         return dataset;
     }
+
+
+    // ---------------
+    // Remote methods
+    // ---------------
     
-    public int getPopulationofCountry(String countryName) {
+    @Override
+    public QueryResult getPopulationOfCountry(String countryName, int clientZone) throws RemoteException { 
+
+        long start = System.currentTimeMillis();
+        int value = calculatePopulationofCountry(countryName);
+        long executionTime = System.currentTimeMillis() - start;
+        
+        return new QueryResult(value, executionTime, 0, serverZone); 
+    }
+
+    @Override
+    public QueryResult getNumberOfCities(String countryName, int threshold, Comparison comp, int clientZone) throws RemoteException { 
+
+        long start = System.currentTimeMillis();
+        int value = calculateNumberofCities(countryName, threshold, comp);
+        long executionTime = System.currentTimeMillis() - start;
+
+
+        
+        return new QueryResult(value, executionTime, 0, serverZone); 
+    }
+
+     @Override
+    public QueryResult getNumberOfCountries(int cityCount, int threshold, Comparison comp, int clientZone) throws RemoteException { 
+
+        long start = System.currentTimeMillis();
+        int value = calculateNumberofCountries(cityCount, threshold, comp);
+        long executionTime = System.currentTimeMillis() - start;
+
+        
+        return new QueryResult(value, executionTime, 0, serverZone); 
+    }
+
+     @Override
+    public QueryResult getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation, int clientZone) throws RemoteException { 
+
+        long start = System.currentTimeMillis();
+        int value = calculateNumberofCountriesMM(cityCount, minPopulation, maxPopulation);
+        long executionTime = System.currentTimeMillis() - start;
+
+        
+        return new QueryResult(value, executionTime, 0, serverZone); 
+    }
+    
+    
+
+
+    //----------------
+    // Internal logic
+    //----------------
+     
+    private int calculatePopulationofCountry(String countryName) {
         List<String[]> data = readCsv(); 
         int population = 0;
 
@@ -51,7 +114,7 @@ public class Server implements ServerInterface{
         return population;
     }
 
-    public int getNumberofCities(String countryName, int threshold, String comp) {
+    private int calculateNumberofCities(String countryName, int threshold, Comparison comp) {
         List<String[]> data = readCsv();
         int totalCities = 0;
         
@@ -63,13 +126,13 @@ public class Server implements ServerInterface{
             int population = Integer.parseInt(row[4]);
 
             if(countryName.equals(row[3])){
-                if(comp.equalsIgnoreCase("min")){
+                if(comp == Comparison.MIN){
                     if(population >= threshold){
                     totalCities += 1;
                     }
 
-                } else if(comp.equalsIgnoreCase("max")){
-                    if(population < threshold){
+                } else if(comp == Comparison.MAX){
+                    if(population <= threshold){
                         totalCities += 1;
                     }
                 }
@@ -78,7 +141,7 @@ public class Server implements ServerInterface{
 
         return totalCities;
     }
-    public int getNumberofCountries(int citycount, int threshold, String comp) {
+    private int calculateNumberofCountries(int citycount, int threshold, Comparison comp) {
         
         //Method is suppoused to return the amount of countries, that has more or equal to CityCount. 
         //The threshold for how large each city is based on comp and threshold.
@@ -104,11 +167,11 @@ public class Server implements ServerInterface{
             //Comparing rows with comp and threshold. 
             //If the requirements are met, countryName and 1 is added into the HashMap.
             //If the countryName already exist in the HashMap, merge allows us to merge countryNames and add 1 so we avoid duplicates.
-            if(comp.equalsIgnoreCase("min")){
+            if(comp == Comparison.MIN){
                 if(population >= threshold){
                     countryAndCitycount.merge(countryName, 1, Integer::sum);
                 }
-            } else if(comp.equalsIgnoreCase("max")){
+            } else if(comp == Comparison.MAX){
                 if(population <= threshold){
                     countryAndCitycount.merge(countryName, 1, Integer::sum);
                 }
@@ -124,7 +187,7 @@ public class Server implements ServerInterface{
 
         return numberOfCountries;
     }
-    public int getNumberofCountriesMM(int citycount, int minpopulation, int maxpopulation) {
+    private int calculateNumberofCountriesMM(int citycount, int minPopulation, int maxPopulation) {
         //This method uses the same logic as before, except population is based on minimum- and maxiumum population.
         //Qualified cities are now between min and max.
 
@@ -139,7 +202,7 @@ public class Server implements ServerInterface{
                 continue;
             }
 
-            if(population >= minpopulation && population <= maxpopulation){
+            if(population >= minPopulation && population <= maxPopulation){
                 countryAndCitycount.merge(countryName, 1, Integer::sum);
             } 
         }
@@ -153,34 +216,26 @@ public class Server implements ServerInterface{
         return numberOfCountries;
     }
 
+    //TODO: fifo-queue
+    @Override
     public int getCurrentWorkload() {
         return 0;
     }
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws RemoteException{
         // Simple local testing for methods. Based on examples on exercise_1 document.
         Server server = new Server();
-        //int test1 = server.getPopulationofCountry("Norway");
-        //int test2 = server.getPopulationofCountry("Sweden");
-        //int test3 = server.getNumberofCities("Norway", 100000, "min");
-        //int test4 = server.getNumberofCountries(2, 5000000, "min");
-        int test5 = server.getNumberofCountriesMM(30, 100000, 800000);
 
-        //System.out.println("getPopulationofCountry test");
-        //System.out.println("Expected response:\n Norway: 3162856 \n Sweden: 9362428"); 
-        //System.out.println("\n Actual response: \n Norway: " + test1 + "\n Sweden: " + test2);
-        
-        //System.out.println("getNumberofCities test.");
-        //System.out.println("Expected response: 4");
-        //System.out.println("Actual response: " + test3);
+        QueryResult result1 = server.getPopulationOfCountry("Norway", 1);
+        QueryResult result2 = server.getNumberOfCities("Norway", 100000, Comparison.MIN, 1);
+        QueryResult result3 = server.getNumberOfCountries(2, 5000000, Comparison.MIN, 1);
+        QueryResult result4 = server.getNumberOfCountriesMM(30, 100000, 800000, 1);
 
-        //System.out.println("getNumberofCountries test");
-        //System.out.println("Expected response: 7");
-        //System.out.println("Actual response:" + test4);
-        
-        System.out.println("getNumberofCountriesMM test");
-        System.out.println("Expected response: 30");
-        System.out.println("Actual response: " + test5);
+        System.out.println("Actual response: " + result1.value());
+        System.out.println("Actual response: " + result2.value());
+        System.out.println("Actual response: " + result3.value());
+        System.out.println("Actual response: " + result4.value());
+
     }
 }
