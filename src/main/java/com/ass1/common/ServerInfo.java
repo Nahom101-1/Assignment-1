@@ -2,14 +2,17 @@ package com.ass1.common;
 
 import java.io.Serializable;
 
-/* Dataclass that is used for passing address and port of specific host */
+
 
 public class ServerInfo implements Serializable{
-    public String address;     
-    public int port; 
+    // Unique per server, since the assignment requires each server stub to be bound under its own name.
+    public String name;
+    public String address;
+    public int port;
 
-    public ServerInfo(String address, int port) {
-        this.address = address; 
+    public ServerInfo(String name, String address, int port) {
+        this.name = name;
+        this.address = address;
         this.port = port; 
     }
 }
