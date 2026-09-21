@@ -34,20 +34,20 @@ public class Server implements ServerInterface{
     Runnable work = new Runnable(){ 
         @Override
         public void run(){
-            while(true){ //loop for the thread. Since LinkedBlockingQueues works FIFO, task that is taken will be added to the queue.
+            while(true){ //loop for the thread. Takes tasks out of queue first in, first out and returns a QueryResult.
                 try{
                     Task task = taskQueue.take();
-                    switch(task.getMethod()){
+                    switch(task.getMethod()){ // Select which task/query the worker should execute. 
                         case "getPopulationOfCountry": {
                             String countryName = (String) task.getArguments()[0];
                             int clientZone = (int) task.getArguments()[1];
                             
-                            long start = System.currentTimeMillis();
+                            long start = System.currentTimeMillis(); //Calculating execution time based on before and after calculation.
                             int value = calculatePopulationofCountry(countryName);    
                             long executionTime =  System.currentTimeMillis() - start;
                             
-                            QueryResult result = new QueryResult(value, executionTime, 0, serverZone);   
-                            task.getFuture().complete(result);     
+                            QueryResult result = new QueryResult(value, executionTime, 0, serverZone);  
+                            task.getFuture().complete(result); //returns a result when task is complete. Using getFuture to synchronize result with RMI-call.     
                             break;
                         }
                         case "getNumberOfCities": {
@@ -145,11 +145,11 @@ public class Server implements ServerInterface{
     
     @Override
     public QueryResult getPopulationOfCountry(String countryName, int clientZone) throws RemoteException { 
-        Task task = new Task("getPopulationOfCountry", new Object[]{countryName, clientZone});
+        Task task = new Task("getPopulationOfCountry", new Object[]{countryName, clientZone}); //Creates a new task when called 
 
-        try{
-            taskQueue.put(task);
-            return task.getFuture().get();
+        try{ // Adds request to FIFO queue
+            taskQueue.put(task); 
+            return task.getFuture().get(); // Waits untill worker completes this task.
         } 
         catch(InterruptedException e){
             Thread.currentThread().interrupt();
