@@ -18,9 +18,6 @@ import com.ass1.common.QueryResult;
 
 public class Server implements ServerInterface{
 
-    //TODO: Assigned when the server registers with proxy
-
-
     //-------------
     // FIFO-queue
     //-------------
@@ -35,65 +32,77 @@ public class Server implements ServerInterface{
         @Override
         public void run(){
             while(true){ //loop for the thread. Takes tasks out of queue first in, first out and returns a QueryResult.
+
+                //Outer try/catch handles the worker thread being interrupted
+                //Inner try/catch handles error while executing a task, so waiting RMI-call doesn't wait forever.
+
                 try{
                     Task task = taskQueue.take();
-                    switch(task.getMethod()){ // Select which task/query the worker should execute. 
-                        case "getPopulationOfCountry": {
-                            String countryName = (String) task.getArguments()[0];
-                            int clientZone = (int) task.getArguments()[1];
-                            
-                            long start = System.currentTimeMillis(); //Calculating execution time based on before and after calculation.
-                            int value = calculatePopulationofCountry(countryName);    
-                            long executionTime =  System.currentTimeMillis() - start;
-                            
-                            QueryResult result = new QueryResult(value, executionTime, 0, serverZone);  
-                            task.getFuture().complete(result); //returns a result when task is complete. Using getFuture to synchronize result with RMI-call.     
-                            break;
+                    logQueueSize();
+                    long waitingTime = System.currentTimeMillis() - task.getEntryTime();
+
+                    try {
+                        switch(task.getMethod()){ // Select which task/query the worker should execute. 
+                            case "getPopulationOfCountry": {
+                                String countryName = (String) task.getArguments()[0];
+                                int clientZone = (int) task.getArguments()[1];
+                                
+                                long start = System.currentTimeMillis(); //Calculating execution time based on before and after running calculation.
+                                int value = calculatePopulationofCountry(countryName);    
+                                long executionTime =  System.currentTimeMillis() - start;
+                                
+                                QueryResult result = new QueryResult(value, executionTime, waitingTime, serverZone);  
+                                task.getFuture().complete(result); //Gives the task its result so that the RMI-call that is waiting on getFuture().get() can continue.     
+                                break;
+                            }
+                            case "getNumberOfCities": {
+                                String countryName = (String) task.getArguments()[0];
+                                int threshold = (int) task.getArguments()[1];
+                                Comparison comp = (Comparison) task.getArguments()[2];
+                                int clientZone = (int) task.getArguments()[3];
+
+                                long start = System.currentTimeMillis();
+                                int value = calculateNumberofCities(countryName, threshold, comp);
+                                long executionTime = System.currentTimeMillis() - start;
+
+                                QueryResult result = new QueryResult(value, executionTime, waitingTime, serverZone);
+                                task.getFuture().complete(result);
+                                break;
+                            }
+                            case "getNumberOfCountries": {
+                                int cityCount = (int) task.getArguments()[0];
+                                int threshold = (int) task.getArguments()[1];
+                                Comparison comp = (Comparison) task.getArguments()[2];
+                                int clientZone = (int) task.getArguments()[3];
+                                
+                                long start = System.currentTimeMillis();
+                                int value = calculateNumberofCountries(cityCount, threshold, comp);
+                                long executionTime = System.currentTimeMillis() - start;
+
+                                QueryResult result = new QueryResult(value, executionTime, waitingTime, serverZone);
+                                task.getFuture().complete(result);
+                                break;
+                            }
+                            case "getNumberOfCountriesMM": {
+                                int cityCount = (int) task.getArguments()[0];
+                                int minPopulation = (int) task.getArguments()[1];
+                                int maxPopulation = (int) task.getArguments()[2];
+                                int clientZone = (int) task.getArguments()[3];
+
+                                long start = System.currentTimeMillis();
+                                int value = calculateNumberofCountriesMM(cityCount, minPopulation, maxPopulation);
+                                long executionTime = System.currentTimeMillis() - start;
+
+                                QueryResult result = new QueryResult(value, executionTime, waitingTime, serverZone);
+                                task.getFuture().complete(result);
+                                break;
+                            }
                         }
-                        case "getNumberOfCities": {
-                            String countryName = (String) task.getArguments()[0];
-                            int threshold = (int) task.getArguments()[1];
-                            Comparison comp = (Comparison) task.getArguments()[2];
-                            int clientZone = (int) task.getArguments()[3];
-
-                            long start = System.currentTimeMillis();
-                            int value = calculateNumberofCities(countryName, threshold, comp);
-                            long executionTime = System.currentTimeMillis() - start;
-
-                            QueryResult result = new QueryResult(value, executionTime, 0, serverZone);
-                            task.getFuture().complete(result);
-                            break;
-                        }
-                        case "getNumberOfCountries": {
-                            int cityCount = (int) task.getArguments()[0];
-                            int threshold = (int) task.getArguments()[1];
-                            Comparison comp = (Comparison) task.getArguments()[2];
-                            int clientZone = (int) task.getArguments()[3];
-                            
-                            long start = System.currentTimeMillis();
-                            int value = calculateNumberofCountries(cityCount, threshold, comp);
-                            long executionTime = System.currentTimeMillis() - start;
-
-                            QueryResult result = new QueryResult(value, executionTime, 0, serverZone);
-                            task.getFuture().complete(result);
-                            break;
-                        }
-                        case "getNumberOfCountriesMM": {
-                            int cityCount = (int) task.getArguments()[0];
-                            int minPopulation = (int) task.getArguments()[1];
-                            int maxPopulation = (int) task.getArguments()[2];
-                            int clientZone = (int) task.getArguments()[3];
-
-                            long start = System.currentTimeMillis();
-                            int value = calculateNumberofCountriesMM(cityCount, minPopulation, maxPopulation);
-                            long executionTime = System.currentTimeMillis() - start;
-
-                            QueryResult result = new QueryResult(value, executionTime, 0, serverZone);
-                            task.getFuture().complete(result);
-                            break;
-                        }
+                        
+                    } catch(RuntimeException e){
+                        task.getFuture().completeExceptionally(e);
                     }
-                    
+                        
                 } catch(InterruptedException e){
                     Thread.currentThread().interrupt();
                     break;
@@ -139,6 +148,14 @@ public class Server implements ServerInterface{
     }
 
 
+    private void logQueueSize(){
+        long timestamp = System.currentTimeMillis();
+        int queueSize = taskQueue.size();
+
+        System.out.println(timestamp + "," + queueSize);
+    }
+
+
     // ---------------
     // Remote methods
     // ---------------
@@ -148,7 +165,9 @@ public class Server implements ServerInterface{
         Task task = new Task("getPopulationOfCountry", new Object[]{countryName, clientZone}); //Creates a new task when called 
 
         try{ // Adds request to FIFO queue
-            taskQueue.put(task); 
+            task.setEntryTime(System.currentTimeMillis()); // Saves the time when the task enters the queue, so waiting time can be calculated later
+            taskQueue.put(task);
+            logQueueSize(); 
             return task.getFuture().get(); // Waits untill worker completes this task.
         } 
         catch(InterruptedException e){
@@ -165,7 +184,9 @@ public class Server implements ServerInterface{
         Task task = new Task("getNumberOfCities", new Object[]{countryName, threshold, comp, clientZone});
 
         try{
+            task.setEntryTime(System.currentTimeMillis());
             taskQueue.put(task);
+            logQueueSize();
             return task.getFuture().get();
         } 
         catch(InterruptedException e){
@@ -182,7 +203,9 @@ public class Server implements ServerInterface{
         Task task = new Task("getNumberOfCountries", new Object[]{cityCount, threshold, comp, clientZone});
 
         try{
+            task.setEntryTime(System.currentTimeMillis());
             taskQueue.put(task);
+            logQueueSize();
             return task.getFuture().get();
         } 
         catch(InterruptedException e){
@@ -199,7 +222,9 @@ public class Server implements ServerInterface{
         Task task = new Task("getNumberOfCountriesMM", new Object[]{cityCount, minPopulation, maxPopulation, clientZone});
 
         try{
+            task.setEntryTime(System.currentTimeMillis());
             taskQueue.put(task);
+            logQueueSize();
             return task.getFuture().get();
         } 
         catch(InterruptedException e){
@@ -337,22 +362,54 @@ public class Server implements ServerInterface{
 
     @Override
     public int getCurrentWorkload() {
-        return 0;
+        return taskQueue.size();
     }
 
 
     public static void main(String[] args) throws RemoteException, InterruptedException{
-        // Simple local testing for methods. Based on examples on exercise_1 document.
+        // Testing workload method and waitingTime.
         
         Server server = new Server();
-        QueryResult r1 = server.getPopulationOfCountry("Norway", 0 );
-        QueryResult r2 = server.getNumberOfCities("Norway", 100000, Comparison.MIN, 1);
-        QueryResult r3 = server.getNumberOfCountries(2, 5000000, Comparison.MIN, 1);
-        QueryResult r4 = server.getNumberOfCountriesMM(30, 100000, 800000, 1);
+        Thread t1 = new Thread(() -> {
+            try {
+                QueryResult r = server.getPopulationOfCountry("Norway", 0);
+                System.out.println("T1: " + r);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        });
 
-        System.out.println(r1);
-        System.out.println(r2);
-        System.out.println(r3);
-        System.out.println(r4);
+        Thread t2 = new Thread(() -> {
+            try {
+                QueryResult r = server.getNumberOfCities(
+                    "Norway", 100000, Comparison.MIN, 1
+                );
+                System.out.println("T2: " + r);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread t3 = new Thread(() -> {
+            try {
+                QueryResult r = server.getNumberOfCountries(
+                    2, 5000000, Comparison.MIN, 1
+                );
+                System.out.println("T3: " + r);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        });
+
+        t1.start();
+        t2.start();
+        t3.start();
+
+        try {
+            Thread.sleep(50);
+            System.out.println("Current workload: " + server.getCurrentWorkload());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }
