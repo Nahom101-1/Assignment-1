@@ -13,13 +13,14 @@ class NumberOfCountries extends Query {
     /**
      * Creates a number-of-countries query.
      *
-     * @param cityCount the required number of cities
-     * @param threshold the population threshold
-     * @param comp      the comparison type
-     * @param zone      the zone the query comes from
+     * @param cityCount     the required number of cities
+     * @param threshold     the population threshold
+     * @param comp          the comparison type
+     * @param zone          the zone the query comes from
+     * @param originalQuery the unparsed input line
      */
-    NumberOfCountries(int cityCount, int threshold, Comparison comp, int zone) {
-        super(zone);
+    NumberOfCountries(int cityCount, int threshold, Comparison comp, int zone, String originalQuery) {
+        super(zone, originalQuery);
         this.cityCount = cityCount;
         this.comp = comp;
         this.threshold = threshold;

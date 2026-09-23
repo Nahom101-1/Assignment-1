@@ -9,11 +9,12 @@ class PopulationOfCountry extends Query {
     /**
      * Creates a population-of-country query.
      *
-     * @param countryName the name of the country
-     * @param zone        the zone the query originates from
+     * @param countryName   the name of the country
+     * @param zone          the zone the query originates from
+     * @param originalQuery the unparsed input line
      */
-    PopulationOfCountry(String countryName, int zone) {
-        super(zone);
+    PopulationOfCountry(String countryName, int zone, String originalQuery) {
+        super(zone, originalQuery);
         this.countryName = countryName;
     }
 }

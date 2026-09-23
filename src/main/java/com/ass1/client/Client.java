@@ -187,6 +187,7 @@ public class Client {
             String line;
 
             while ((line = reader.readLine()) != null) {
+
                 queries.add(parseQuery(line));
             }
         }
@@ -200,7 +201,6 @@ public class Client {
      * @throws IllegalArgumentException if the method name is not recognised
      */
     private Query parseQuery(String line) {
-
         String[] parts = line.split("\\s+"); // \\s+ = one or more whitespace characters
         // Get the zone from the last element and parse it as an integer.
         int zone = Integer.parseInt(parts[parts.length - 1].replace("Zone:", ""));
@@ -211,7 +211,7 @@ public class Client {
                         " ",
                         Arrays.copyOfRange(parts, 1, parts.length - 1)
                 );
-                return new PopulationOfCountry(countryName, zone);
+                return new PopulationOfCountry(countryName, zone, line);
             }
 
             case "getNumberofCities": {
@@ -222,7 +222,7 @@ public class Client {
                         " ",
                         Arrays.copyOfRange(parts, 1, parts.length - 3)
                 );
-                return new NumberOfCities(countryName, threshold, compType, zone);
+                return new NumberOfCities(countryName, threshold, compType, zone, line);
             }
 
             case "getNumberofCountries": {
@@ -230,14 +230,14 @@ public class Client {
                 Comparison compType =
                         Comparison.valueOf(parts[parts.length - 2].toUpperCase());
                 int threshold = Integer.parseInt(parts[parts.length - 3]);
-                return new NumberOfCountries(cityCount, threshold, compType, zone);
+                return new NumberOfCountries(cityCount, threshold, compType, zone, line);
             }
 
             case "getNumberofCountriesMM": {
                 int cityCount = Integer.parseInt(parts[1]);
                 int minPopulation = Integer.parseInt(parts[2]);
                 int maxPopulation = Integer.parseInt(parts[3]);
-                return new NumberOfCountriesMM(cityCount, minPopulation, maxPopulation, zone);
+                return new NumberOfCountriesMM(cityCount, minPopulation, maxPopulation, zone, line);
             }
 
             default: {

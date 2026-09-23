@@ -15,14 +15,16 @@ class NumberOfCountriesMM extends Query {
      * @param minPopulation the minimum city population
      * @param maxPopulation the maximum city population
      * @param zone          the zone the query originates from
+     * @param originalQuery the unparsed input line
      */
     NumberOfCountriesMM(
             int cityCount,
             int minPopulation,
             int maxPopulation,
-            int zone) {
+            int zone,
+            String originalQuery) {
 
-        super(zone);
+        super(zone, originalQuery);
         this.cityCount = cityCount;
         this.minPopulation = minPopulation;
         this.maxPopulation = maxPopulation;
