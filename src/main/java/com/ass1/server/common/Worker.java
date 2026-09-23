@@ -7,10 +7,12 @@ import java.util.concurrent.BlockingQueue;
 public class Worker implements Runnable {
     private final Cache<String, Long> cache;
     private final BlockingQueue<Task> queue;
+    private final Runnable queueLogger;
 
-    public Worker(Cache<String, Long> cache, BlockingQueue<Task> queue) {
+    public Worker(Cache<String, Long> cache, BlockingQueue<Task> queue, Runnable queueLogger) {
         this.cache = cache;
         this.queue = queue;
+        this.queueLogger = queueLogger;
     }
 
     @Override
@@ -19,6 +21,7 @@ public class Worker implements Runnable {
             Task task;
             try {
                 task = queue.take();
+                queueLogger.run(); /*  Record the queue size again after the worker removes the next request. */
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 break;
@@ -50,6 +53,6 @@ public class Worker implements Runnable {
 
         long executionInMs = System.currentTimeMillis() - executionStartTime;
 
-        return new QueryResult(value, executionInMs, waitingTimeInMs, task.getClientZone());
+        return new QueryResult(value, executionInMs, waitingTimeInMs, task.getServerZone());
     }
 }

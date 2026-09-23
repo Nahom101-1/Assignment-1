@@ -10,6 +10,10 @@ import com.ass1.server.common.Worker;
 import com.ass1.server.common.Processor;
 import com.ass1.util.Args;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import java.nio.file.Path;
 import java.rmi.NoSuchObjectException;
 import java.rmi.NotBoundException;
@@ -59,7 +63,7 @@ public class Server implements ServerInterface {
     public Server(Processor processor) {
         this.processor = processor;
         Cache<String, Long> cache = new Cache<>(CACHE_CAPACITY);
-        this.requestWorker = new Thread(new Worker(cache, queue), "requestWorker");
+        this.requestWorker = new Thread(new Worker(cache, queue, this::logQueueSize), "requestWorker");
         this.requestWorker.start();
     }
 
@@ -73,14 +77,14 @@ public class Server implements ServerInterface {
     @Override
     public QueryResult getNumberOfCities(String countryName, int threshold, Comparison comp, int clientZone) throws RemoteException {
         return stageRequest("getNumberOfCities:" + countryName + ":" + threshold + ":" + comp,
-                () -> processor.getNumberOfCities(countryName, threshold, comp.name()),
+                () -> processor.getNumberOfCities(countryName, threshold, comp),
                 clientZone);
     }
 
     @Override
     public QueryResult getNumberOfCountries(int cityCount, int threshold, Comparison comp, int clientZone) throws RemoteException {
         return stageRequest("getNumberOfCountries:" + cityCount + ":" + threshold + ":" + comp,
-                () -> processor.getNumberOfCountries(cityCount, threshold, comp.name()),
+                () -> processor.getNumberOfCountries(cityCount, threshold, comp),
                 clientZone);
     }
 
@@ -97,12 +101,28 @@ public class Server implements ServerInterface {
         return queue.size();
     }
 
+    private synchronized void logQueueSize(){
+        long timestamp = System.currentTimeMillis();
+        int queueSize = queue.size();
+
+        String fileName = "data/server_" + zone + "_queue.csv";
+
+        try(BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))){
+            writer.write(timestamp + "," + queueSize);
+            writer.newLine();
+
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
     /** Queues the request and blocks until the worker thread is done with it. */
     private QueryResult stageRequest(String cacheKey, LongSupplier computation, int clientZone) throws RemoteException {
         simulateNetworkLatency(clientZone);
 
-        Task task = new Task(cacheKey, computation, clientZone);
+        Task task = new Task(cacheKey, computation, clientZone, zone);
         queue.add(task);
+        logQueueSize();
         try {
             return task.result.get();
         } catch (InterruptedException e) {
