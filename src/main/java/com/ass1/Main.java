@@ -15,9 +15,8 @@ import com.ass1.util.Args;
  *   java -jar solution.jar client --proxy-host proxy --interval 50 --cache off
  * </pre>
  *
- * <p>Proxy and server keep running: RMI keeps non-daemon threads alive once something
- * is exported, so those processes stay up until they are killed. The client stops when
- * it has written its output file.
+ * <p>Proxy and server keep running until they are killed. The client stops once it
+ * has written its output file.
  */
 public class Main {
 

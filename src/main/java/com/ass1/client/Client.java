@@ -5,9 +5,11 @@ import com.ass1.common.QueryResult;
 import com.ass1.common.ServerInfo;
 import com.ass1.proxy.ProxyInterface;
 import com.ass1.server.ServerInterface;
+import com.ass1.util.Args;
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.rmi.NotBoundException;
@@ -20,10 +22,190 @@ import java.util.concurrent.TimeUnit;
  * Client for reading and executing statistics queries.
  */
 public class Client {
-
     private final List<Query> queries = new ArrayList<>();
+
     final List<ClientResult> results =
             Collections.synchronizedList(new ArrayList<>());
+
+    private static final int CACHE_SIZE = 45;
+
+    private final Map<String, CacheEntry> cache =
+            Collections.synchronizedMap(new LinkedHashMap<>());
+
+    private CacheMode cacheMode = CacheMode.OFF;
+
+    /** Server stubs already looked up, keyed by name, address and port. */
+    private final Map<String, ServerInterface> serverStubs = new ConcurrentHashMap<>();
+
+    /**
+     * Whether the servers run with their cache on. Only affects the output
+     * file name.
+     */
+    private boolean serverCacheEnabled = false;
+
+    /**
+     * Address of the proxy.
+     */
+    private String proxyHost = "localhost";
+    private int proxyPort = ProxyInterface.PORT;
+
+    /**
+     * Tells the client that the servers are caching. Decides whether the output
+     * goes to {@code naive_server.txt} or {@code server_cache.txt}.
+     *
+     * @param serverCacheEnabled true if the servers run with their cache on
+     */
+    public void setServerCacheEnabled(boolean serverCacheEnabled) {
+        this.serverCacheEnabled = serverCacheEnabled;
+    }
+
+    /**
+     * Sets the address of the proxy.
+     *
+     * @param proxyHost host the proxy registry runs on
+     * @param proxyPort port of that registry
+     */
+    public void setProxy(String proxyHost, int proxyPort) {
+        this.proxyHost = proxyHost;
+        this.proxyPort = proxyPort;
+    }
+
+    /** Set from the command line to write somewhere other than the default name. */
+    private String outputFile = null;
+
+    /** True to add to the output file instead of replacing it. */
+    private boolean appendOutput = false;
+
+    /**
+     * Sets an explicit output file, overriding the default name.
+     *
+     * @param outputFile file to write, or null to use the default name
+     */
+    public void setOutputFile(String outputFile) {
+        this.outputFile = outputFile;
+    }
+
+    /**
+     * Sets whether the output file is added to or replaced.
+     *
+     * @param appendOutput true to add to the file, false to replace it
+     */
+    public void setAppendOutput(boolean appendOutput) {
+        this.appendOutput = appendOutput;
+    }
+
+    /**
+     * Picks the output file for this run. The client cache takes priority over
+     * the server cache, and the policy is part of the name.
+     *
+     * @return the file name for this run
+     */
+    String outputFileName() {
+        if (outputFile != null) {
+            return outputFile;
+        }
+        if (cacheMode != CacheMode.OFF) {
+            return "client_cache_" + cacheMode.name().toLowerCase() + ".txt";
+        }
+        if (serverCacheEnabled) {
+            return "server_cache.txt";
+        }
+        return "naive_server.txt";
+    }
+
+
+    /**
+     * Sets the eviction policy and empties the cache.
+     *
+     * @param cacheMode OFF, FIFO or OLDEST
+     */
+    public void setCacheMode(CacheMode cacheMode) {
+        this.cacheMode = cacheMode;
+
+        synchronized (cache) {
+            cache.clear();
+        }
+    }
+
+    /**
+     * Looks a query up in the client cache.
+     *
+     * @param query the query to look for
+     * @return the cached result, or null if it is not cached or caching is off
+     */
+    private QueryResult getCachedResult(Query query) {
+        if (cacheMode == CacheMode.OFF) {
+            return null;
+        }
+
+        synchronized (cache) {
+            CacheEntry entry = cache.get(query.originalQuery);
+
+            if (entry == null) {
+                return null;
+            }
+
+            if (cacheMode == CacheMode.OLDEST) {
+                entry.markUsed();
+            }
+
+            return entry.result;
+        }
+    }
+
+    /**
+     * Stores a result. If the cache is full, one entry is removed first.
+     *
+     * @param query  the query that produced the result
+     * @param result what the server returned
+     */
+    private void addToCache(Query query, QueryResult result) {
+        if (cacheMode == CacheMode.OFF) {
+            return;
+        }
+
+        String key = query.originalQuery;
+
+        synchronized (cache) {
+
+            // Already cached
+            if (cache.containsKey(key)) {
+                return;
+            }
+
+            // Cache still has room
+            if (cache.size() < CACHE_SIZE) {
+                cache.put(key, new CacheEntry(result));
+                return;
+            }
+
+            // Cache is full: FIFO
+            if (cacheMode == CacheMode.FIFO) {
+                String firstKey = cache.keySet().iterator().next();
+                cache.remove(firstKey);
+            }
+
+            // Cache is full: OLDEST
+            if (cacheMode == CacheMode.OLDEST) {
+                String oldestKey = null;
+                long oldestTime = Long.MAX_VALUE;
+
+                for (Map.Entry<String, CacheEntry> entry : cache.entrySet()) {
+                    if (entry.getValue().lastUsed < oldestTime) {
+                        oldestTime = entry.getValue().lastUsed;
+                        oldestKey = entry.getKey();
+                    }
+                }
+
+                if (oldestKey != null) {
+                    cache.remove(oldestKey);
+                }
+            }
+
+            // There is room now
+            cache.put(key, new CacheEntry(result));
+        }
+    }
 
     /**
      * Returns the queries parsed so far.
@@ -43,10 +225,7 @@ public class Client {
      */
     private ProxyInterface connectToProxy() throws RemoteException, NotBoundException {
 
-        Registry registry = LocateRegistry.getRegistry(
-                "localhost",
-                ProxyInterface.PORT
-        );
+        Registry registry = LocateRegistry.getRegistry(proxyHost, proxyPort);
 
         return (ProxyInterface) registry.lookup(
                 ProxyInterface.BINDING_NAME
@@ -89,32 +268,38 @@ public class Client {
             ProxyInterface proxyStub
     ) throws RemoteException, NotBoundException {
 
-        // Ask the proxy which server should handle this query.
+        // Ask the proxy which server to use.
         ServerInfo serverInfo = proxyStub.getServer(query.zone);
 
         if (serverInfo == null) {
             throw new RemoteException("No server registered");
         }
 
-        // Connect to the selected server and return its RMI stub.
-        return connectToServer(serverInfo);
+        // Look the server up once and keep the stub.
+        ServerInterface known = serverStubs.get(serverInfo.toString());
+        if (known != null) {
+            return known;
+        }
+
+        ServerInterface stub = connectToServer(serverInfo);
+        serverStubs.putIfAbsent(serverInfo.toString(), stub);
+        return stub;
     }
 
     /**
      * Executes all parsed queries asynchronously with a fixed delay between
      * submitting each query.
      *
-     * <p>Queries are submitted to a thread pool so that a new query can be sent
-     * every {@code interval} milliseconds without waiting for the previous query
-     * to finish. Results are stored using the query's original index so that the
-     * final result list has the same order as the input file, even if requests
-     * finish in a different order.</p>
+     * <p>Queries go to a thread pool, so a new query can be sent every
+     * {@code interval} milliseconds without waiting for the previous one. Each
+     * result is stored at the index of its query, keeping the output in input
+     * file order.</p>
      *
-     * @param interval delay in milliseconds between submitting queries
+     * @param interval   delay in milliseconds between submitting queries
      * @throws RemoteException if communication with the proxy fails
      * @throws NotBoundException if the proxy is not registered in the RMI registry
      */
-    private void executeQueries(int interval) throws RemoteException, NotBoundException {
+    public void executeQueries(int interval) throws RemoteException, NotBoundException {
         results.clear();
 
         for (int i = 0; i < queries.size(); i++) {
@@ -122,27 +307,41 @@ public class Client {
         }
         ProxyInterface proxy = connectToProxy();
 
-        // Thread pool manger
+        // Thread pool that runs the queries.
         ExecutorService executor = Executors.newCachedThreadPool();
 
         for (int i = 0; i < queries.size(); i++) {
 
-            // Keep a fixed copy of the query index for this worker.
-            // The loop variable i changes, but variables captured by a lambda must be final.
+            // A lambda needs a variable that does not change.
             final int queryIndex = i;
             Query query = queries.get(i);
 
             executor.submit(() -> {
                 try {
-                    ServerInterface server = getServerForQuery(query, proxy);
+                    boolean cacheHit = false;
+
                     long startTime = System.currentTimeMillis();
-                    QueryResult result = executeQuery(query, server);
+
+                    QueryResult result = getCachedResult(query);
+
+                    if (result != null) {
+                        cacheHit = true;
+
+                        // No server ran this query. The zone is the one that
+                        // answered it the first time.
+                        result = new QueryResult(result.value(), 0, 0, result.serverZone());
+                    } else {
+                        ServerInterface server = getServerForQuery(query, proxy);
+
+                        result = executeQuery(query, server);
+
+                        addToCache(query, result);
+                    }
                     long turnaroundTime =
                             System.currentTimeMillis() - startTime;
-
-                    // Store the completed request at its original query position.
+                    // Store the result at the index of its query.
                     ClientResult clientResult =
-                            new ClientResult(query, result, turnaroundTime);
+                            new ClientResult(query, result, turnaroundTime, cacheHit);
                     results.set(queryIndex, clientResult);
                     System.out.println(formatResult(clientResult));
                 } catch (RemoteException | NotBoundException e) {
@@ -161,7 +360,7 @@ public class Client {
             }
         }
 
-        // Stop accepting new tasks while allowing submitted tasks to finish.
+        // Stop taking new tasks. Submitted ones still finish.
         executor.shutdown();
 
         try {
@@ -175,8 +374,17 @@ public class Client {
                 );
             }
 
-            // Written either way after a run that took minutes better than noting
-            writeResultsToFile("naive_server.txt");
+            String file = outputFileName();
+            writeResultsToFile(file);
+
+            long hits = results.stream()
+                    .filter(r -> r != null && r.cacheHit)
+                    .count();
+            long failed = results.stream().filter(r -> r == null).count();
+
+            System.out.println("Wrote " + results.size() + " results to " + file);
+            System.out.println("Client cache hits: " + hits + " of " + results.size()
+                    + ", failed queries: " + failed);
 
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -315,20 +523,19 @@ public class Client {
     }
 
     /**
-     * Line for a query that never returned, so the output still has one entry per
-     * input line.
+     * Line for a query that failed.
      */
     private String formatFailure(Query query) {
         return "FAILED " + query.originalQuery + " (request failed)";
     }
 
     /**
-     * Formats one completed query as the output file expects it:
+     * Formats one result for the output file:
      * {@code <result> <input query> (turnaround time: .. ms, execution time: .. ms,
      * waiting time: .. ms, processed by Server ..)}
      *
-     * @param clientResult the completed query
-     * @return the output line, without a trailing newline
+     * @param clientResult the finished query
+     * @return the line, without a line break
      */
     private String formatResult(ClientResult clientResult) {
         return clientResult.result.value()
@@ -341,15 +548,15 @@ public class Client {
     }
 
     /**
-     * Writes one line per query, a blank separator, then one summary line per
-     * query type.
+     * Writes one line per query, a blank line, then one summary line per query
+     * type.
      *
-     * @param fileName file to create or overwrite
+     * @param fileName file to write, overwritten if it exists
      * @throws IOException if the file cannot be written
      */
     void writeResultsToFile(String fileName) throws IOException {
         try (BufferedWriter writer =
-                     new BufferedWriter(new FileWriter(fileName))) {
+                     new BufferedWriter(new FileWriter(fileName, appendOutput))) {
 
             for (int i = 0; i < results.size(); i++) {
                 ClientResult clientResult = results.get(i);
@@ -366,7 +573,7 @@ public class Client {
 
             writer.newLine();
 
-            // Calculate statistics for each query type.
+            // Statistics per query type.
             Map<String, QueryStats> statistics = calculateStatistics();
 
             // Write statistics.
@@ -380,11 +587,11 @@ public class Client {
     }
 
     /**
-     * Method name a query belongs to, used to group the summary statistics.
-     * Spelled as in the input file, so the summary matches the queries above it.
+     * Method name of a query, used to group the summary statistics. Spelled the
+     * same way as in the input file.
      *
-     * @param query the query to classify
-     * @return the method name from the input file
+     * @param query the query to look at
+     * @return the method name
      * @throws IllegalArgumentException if the query type is not recognised
      */
     private String getQueryType(Query query) {
@@ -410,10 +617,10 @@ public class Client {
     }
 
     /**
-     * Groups the completed queries by method name and totals their timings.
-     * Failed queries are skipped so they cannot skew the averages.
+     * Groups the results by method name and adds up the times. Failed queries
+     * are skipped.
      *
-     * @return statistics per method, in the order each method first appeared
+     * @return statistics per method, in the order the methods first appear
      */
     private Map<String, QueryStats> calculateStatistics() {
         Map<String, QueryStats> stats = new LinkedHashMap<>();
@@ -445,5 +652,67 @@ public class Client {
                 + ", avg waiting time: " + stats.averageWaiting() + " ms"
                 + ", min turn-around time: " + stats.minTurnaround + " ms"
                 + ", max turn-around time: " + stats.maxTurnaround + " ms";
+    }
+
+    /**
+     * Runs one measurement. Reads the input file, waits for the servers to
+     * register, sends every query and writes the results.
+     *
+     * @param options command line options, listed in {@code Main}
+     * @throws Exception if the input cannot be read or the proxy cannot be reached
+     */
+    public static void startClient(Args options) throws Exception {
+
+        String proxyHost = options.get("proxy-host", "localhost");
+        int proxyPort = options.getInt("proxy-port", ProxyInterface.PORT);
+        String input = options.get("input", "data/exercise_1_input.txt");
+        int interval = options.getInt("interval", 50);
+
+        Client client = new Client();
+        client.setProxy(proxyHost, proxyPort);
+        client.setCacheMode(CacheMode.valueOf(
+                options.get("cache", "off").trim().toUpperCase()));
+        client.setServerCacheEnabled(
+                Boolean.parseBoolean(options.get("server-cache", "false")));
+        client.setOutputFile(options.get("output", null));
+        client.setAppendOutput(
+                Boolean.parseBoolean(options.get("append", "false")));
+
+        client.readQueries(input);
+        System.out.println("Parsed " + client.getQueries().size() + " queries from " + input);
+
+        client.awaitServers(proxyHost, proxyPort, options.getInt("wait-seconds", 60));
+
+        System.out.println("Sending a query every " + interval + " ms, cache mode "
+                + client.cacheMode + ", writing " + client.outputFileName());
+        client.executeQueries(interval);
+    }
+
+    /**
+     * Waits until the proxy has at least one registered server.
+     *
+     * @param host        proxy host
+     * @param port        proxy registry port
+     * @param waitSeconds how long to wait before giving up
+     * @throws RemoteException if no server registers within that time
+     */
+    private void awaitServers(String host, int port, int waitSeconds)
+            throws RemoteException, NotBoundException, InterruptedException {
+
+        long deadline = System.currentTimeMillis() + waitSeconds * 1000L;
+
+        while (System.currentTimeMillis() < deadline) {
+            try {
+                if (connectToProxy().hasRegisteredServers()) {
+                    return;
+                }
+            } catch (RemoteException e) {
+                // Proxy not up yet. Keep trying until the deadline.
+            }
+            Thread.sleep(500);
+        }
+
+        throw new RemoteException("No server registered with the proxy at "
+                + host + ":" + port + " within " + waitSeconds + " s");
     }
 }

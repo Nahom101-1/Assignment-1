@@ -1,8 +1,7 @@
 package com.ass1.client;
 
 /**
- * Totals for one query type. Used for the summary lines at the end of the
- * output file.
+ * Totals for one query type, used for the summary lines.
  */
 class QueryStats {
     long totalTurnaround = 0;

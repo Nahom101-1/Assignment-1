@@ -3,10 +3,8 @@ package com.ass1.client;
 import com.ass1.common.QueryResult;
 
 /**
- * One finished query and its result.
- *
- * <p>The client measures the turnaround time. The execution and waiting times
- * come from the server, inside {@link QueryResult}.
+ * One finished query and its result. The client measures the turnaround time,
+ * the other times come from the server inside {@link QueryResult}.
  */
 class ClientResult {
     final Query query;
