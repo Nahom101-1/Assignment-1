@@ -6,9 +6,10 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface ServerInterface extends Remote {
-    Result getPopulationOfCountry(String countryName, int clientZone) throws RemoteException;
-    Result getNumberOfCities(String countryName, int threshold, String comp, int clientZone) throws RemoteException;
-    Result getNumberOfCountries(int cityCount, int threshold, String comp, int clientZone) throws RemoteException;
-    Result getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation, int clientZone) throws RemoteException;
+
+    QueryResult getPopulationOfCountry(String countryName, int clientZone) throws RemoteException;
+    QueryResult getNumberOfCities(String countryName, int threshold, Comparison comp, int clientZone) throws RemoteException;
+    QueryResult getNumberOfCountries(int cityCount, int threshold, Comparison comp, int clientZone) throws RemoteException;
+    QueryResult getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation, int clientZone) throws RemoteException;
     int getCurrentWorkload() throws RemoteException;
 }
