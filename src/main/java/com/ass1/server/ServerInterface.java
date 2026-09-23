@@ -13,5 +13,5 @@ public interface ServerInterface extends Remote {
     QueryResult getNumberOfCities(String countryName, int threshold, Comparison comp, int clientZone) throws RemoteException;
     QueryResult getNumberOfCountries(int cityCount, int threshold, Comparison comp, int clientZone) throws RemoteException;
     QueryResult getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation, int clientZone) throws RemoteException;
-    int getCurrentWorkload() ;
+    int getCurrentWorkload() throws RemoteException;
 }
