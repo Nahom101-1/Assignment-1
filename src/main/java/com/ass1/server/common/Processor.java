@@ -1,215 +1,153 @@
 package com.ass1.server.common;
 
-import java.io.BufferedReader;
+import com.ass1.common.Comparison;
+
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.function.BiConsumer;
 import java.util.stream.Stream;
 
-import com.ass1.common.Comparison;
 /**
- * Answers the four dataset queries.
+ * Answers the four dataset queries with a deliberately <em>naive</em> implementation.
  *
- * Instead of scanning the CSV file on every call, the file is parsed exactly once
- * and turned into an index:
+ * <p>As the assignment requires, the server re-reads and re-parses the <b>complete</b> dataset
+ * on <b>every</b> request. Nothing is indexed, sorted or memoised here: each public method opens
+ * the CSV, streams it top to bottom, and throws the parsed data away again.
  *
- *   country -> { sorted array of city populations, total population }
+ * <p>This is intentionally the slow path. The speed-up is supposed to come from the result
+ * {@link Cache} sitting in front of this class (see {@link Worker}), so a repeated query skips
+ * the file scan entirely. If this class cached the dataset itself, the cached vs non-cached
+ * measurement asked for in the assignment would be meaningless.
  *
- * Because the populations are sorted, "how many cities are >= / <= X" becomes a
- * binary search instead of a linear scan, and the total population is already
- * computed. The index is immutable after construction, so it is safe to share
- * between the zone servers running in the same JVM.
+ * <p>Stateless, so it is safe to share between servers running in the same JVM.
  */
 public class Processor {
 
     private static final int COUNTRY_COLUMN = 3;
     private static final int POPULATION_COLUMN = 4;
 
-    /*
-    * Stores the path to the dataset CSV file.
-    * The path is provided when Processor is created.
-    */
     private final Path dataset;
 
-    /*
-    * Check that the dataset file actually exists and can be read.
-    * If not, stop immediately with a clear error message.
-    */
-    public Processor(Path dataset){
-        if(!Files.isReadable(dataset)){
-            throw new IllegalArgumentException("Dataset file not found: " +dataset.toAbsolutePath());
+    public Processor(Path dataset) {
+        if (!Files.isReadable(dataset)) {
+            throw new IllegalArgumentException("Dataset file not found: " + dataset.toAbsolutePath());
         }
-
-        /*
-        * Saves an absolute, normalized version of the path. 
-        * Example: data/exercise_1_dataset.csv becomes C:\Users\...\exercise_1_dataset.csv
-        */
         this.dataset = dataset.toAbsolutePath().normalize();
     }
 
-    public long getPopulationOfCountry(String countryName){
-        long totalPopulation = 0; 
+    /** Total population of every city belonging to the given country. */
+    public long getPopulationOfCountry(String countryName) {
+        String wanted = key(countryName);
+        long[] total = {0L};
 
-        try (BufferedReader reader = Files.newBufferedReader(dataset)){
-            reader.readLine(); /* skip header */
-
-            String line;
-
-            while((line = reader.readLine()) != null){
-                String[] columns =line.split(";", -1);
-
-                if(columns.length <= POPULATION_COLUMN){
-                    continue;
-                }
-
-                String country = columns[COUNTRY_COLUMN].trim();
-                String populationText = columns[POPULATION_COLUMN].trim();
-
-                if (country.equalsIgnoreCase(countryName) && !populationText.isEmpty()){
-                    totalPopulation += Long.parseLong(populationText);
-                }
+        scan((country, population) -> {
+            if (country.equals(wanted)) {
+                total[0] += population;
             }
-        } catch (IOException e){
-            throw new RuntimeException("Could not read dataset", e);
-        }
-
-        return totalPopulation;
-    }
-    
-    public int getNumberOfCities(String countryName, int threshold, Comparison comp){
-        int totalCities = 0;
-        try(BufferedReader reader = Files.newBufferedReader(dataset)){
-
-            reader.readLine();
-            String line;
-            while((line = reader.readLine()) != null){
-                String[] columns = line.split(";", -1);
-
-                if(columns.length <= POPULATION_COLUMN){
-                    continue;
-                }
-
-                String country = columns[COUNTRY_COLUMN].trim();
-                String populationText = columns[POPULATION_COLUMN].trim();
-
-                if(!country.equalsIgnoreCase(countryName) || populationText.isEmpty()){
-                    continue;
-                }
-                
-                int population = Integer.parseInt(populationText);
-                if(comp == Comparison.MIN && population >= threshold){
-                    totalCities++;
-                }
-
-                if(comp == Comparison.MAX && population <= threshold){
-                    totalCities++;
-                }
-            }
-                
-
-        } catch(IOException e){
-            throw new RuntimeException("Could not read dataset", e);
-        }
-
-        return totalCities;
-        
+        });
+        return total[0];
     }
 
-    public int getNumberOfCountries(int cityCount, int threshold, Comparison comp){
-        Map<String, Integer> countryCounts = new HashMap<>();
+    /** Cities in the given country whose population is >= (MIN) or <= (MAX) the threshold. */
+    public int getNumberOfCities(String countryName, int threshold, Comparison comp) {
+        String wanted = key(countryName);
+        boolean min = isMin(comp);
+        int[] cities = {0};
 
-        try(BufferedReader reader = Files.newBufferedReader(dataset)){
-            reader.readLine();
-            String line;
-
-            while((line = reader.readLine()) != null){
-                String[] columns = line.split(";", -1);
-
-                if(columns.length <= POPULATION_COLUMN){
-                    continue;
-                }
-
-                String country = columns[COUNTRY_COLUMN].trim();
-                String populationText = columns[POPULATION_COLUMN].trim();
-                
-                if(country.isEmpty() || populationText.isEmpty()){
-                    continue;
-                }
-
-                int population = Integer.parseInt(populationText);
-
-                boolean matches = (comp == Comparison.MIN && population >= threshold) || (comp == Comparison.MAX && population <= threshold);
-
-                if(matches){
-                    countryCounts.merge(country, 1, Integer::sum);
-                }
+        scan((country, population) -> {
+            if (country.equals(wanted) && matches(population, threshold, min)) {
+                cities[0]++;
             }
-
-        } catch(IOException e){
-            throw new RuntimeException("Could not read dataset", e);
-        }
-
-        int numberOfCountries = 0;
-
-        for(int count : countryCounts.values()) {
-            if(count >= cityCount){
-                numberOfCountries++;
-            }
-        }
-
-        return numberOfCountries;
+        });
+        return cities[0];
     }
 
-    public int getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation){
-        Map<String, Integer> countryCounts = new HashMap<>();
+    /** Countries having at least {@code cityCount} cities that satisfy the threshold. */
+    public int getNumberOfCountries(int cityCount, int threshold, Comparison comp) {
+        boolean min = isMin(comp);
+        Map<String, Integer> matchesPerCountry = new HashMap<>();
 
-        try(BufferedReader reader = Files.newBufferedReader(dataset)){
-            
-            reader.readLine();
-            String line;
-            
-            while((line = reader.readLine()) != null){
-
-                String[] columns = line.split(";", -1);
-
-                if(columns.length <= POPULATION_COLUMN){
-                    continue;
-                }
-
-                String country = columns[COUNTRY_COLUMN].trim();
-                String populationText = columns[POPULATION_COLUMN].trim();
-
-                if(country.isEmpty() || populationText.isEmpty()){
-                    continue;
-                }
-
-                int population = Integer.parseInt(populationText);
-
-                if(population >= minPopulation && population <= maxPopulation){
-                    countryCounts.merge(country, 1, Integer::sum);
-                }
+        scan((country, population) -> {
+            if (matches(population, threshold, min)) {
+                matchesPerCountry.merge(country, 1, Integer::sum);
             }
-
-        } catch(IOException e){ 
-            throw new RuntimeException("Could not read dataset", e);
-        }
-
-        int numberOfCountries = 0;
-        for(int count : countryCounts.values()){
-            if(count >= cityCount){
-                numberOfCountries++;
-            }
-        }
-
-        return numberOfCountries;
+        });
+        return countCountriesWithAtLeast(matchesPerCountry, cityCount);
     }
-    
+
+    /** Countries having at least {@code cityCount} cities inside the population range. */
+    public int getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation) {
+        Map<String, Integer> matchesPerCountry = new HashMap<>();
+
+        scan((country, population) -> {
+            if (population >= minPopulation && population <= maxPopulation) {
+                matchesPerCountry.merge(country, 1, Integer::sum);
+            }
+        });
+        return countCountriesWithAtLeast(matchesPerCountry, cityCount);
+    }
+
+    /**
+     * Reads the entire dataset from disk and hands every valid (country, population) pair to
+     * {@code row}. Called once per request on purpose: this is the naive full scan.
+     */
+    private void scan(BiConsumer<String, Integer> row) {
+        try (Stream<String> lines = Files.lines(dataset, StandardCharsets.UTF_8)) {
+            lines.skip(1).forEach(line -> parseLine(line, row)); // skip(1) drops the header
+        } catch (IOException e) {
+            throw new UncheckedIOException("Could not read dataset " + dataset, e);
+        }
+    }
+
+    /** Extracts country and population from one CSV line, ignoring unusable rows. */
+    private static void parseLine(String line, BiConsumer<String, Integer> row) {
+        if (line.isBlank()) {
+            return;
+        }
+        String[] columns = line.split(";", -1);
+        if (columns.length <= POPULATION_COLUMN) {
+            return; // broken line
+        }
+        String country = columns[COUNTRY_COLUMN].trim();
+        String populationText = columns[POPULATION_COLUMN].trim();
+        if (country.isEmpty() || populationText.isEmpty()) {
+            return;
+        }
+        int population;
+        try {
+            population = Integer.parseInt(populationText);
+        } catch (NumberFormatException ignored) {
+            return; // city without a usable population number
+        }
+        row.accept(key(country), population);
+    }
+
+    private static int countCountriesWithAtLeast(Map<String, Integer> matchesPerCountry, int cityCount) {
+        int countries = 0;
+        for (int matching : matchesPerCountry.values()) {
+            if (matching >= cityCount) {
+                countries++;
+            }
+        }
+        return countries;
+    }
+
+    /** "min" means population >= threshold, anything else means population <= threshold. */
+    private static boolean matches(int population, int threshold, boolean min) {
+        return min ? population >= threshold : population <= threshold;
+    }
+
+    private static boolean isMin(Comparison comp) {
+        return comp == Comparison.MIN;
+    }
+
+    private static String key(String countryName) {
+        return countryName == null ? "" : countryName.trim().toLowerCase(Locale.ROOT);
+    }
 }
