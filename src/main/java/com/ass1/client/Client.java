@@ -1,23 +1,31 @@
 package com.ass1.client;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 import com.ass1.common.Comparison;
 import com.ass1.common.QueryResult;
 import com.ass1.common.ServerInfo;
 import com.ass1.proxy.ProxyInterface;
 import com.ass1.server.ServerInterface;
 import com.ass1.util.Args;
-
-import java.io.*;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.util.concurrent.TimeUnit;
-
 /**
  * Client for reading and executing statistics queries.
  */
@@ -34,17 +42,15 @@ public class Client {
 
     private CacheMode cacheMode = CacheMode.OFF;
 
-    /** Server stubs already looked up, keyed by name, address and port. */
-    private final Map<String, ServerInterface> serverStubs = new ConcurrentHashMap<>();
-
     /**
-     * Whether the servers run with their cache on. Only affects the output
-     * file name.
+     * Set from the command line, because the client has no way of asking the
+     * servers whether they cache. Only affects the output file name.
      */
     private boolean serverCacheEnabled = false;
 
     /**
-     * Address of the proxy.
+     * Address of the proxy. Set from the command line, since under Docker the
+     * proxy is reached by its service name.
      */
     private String proxyHost = "localhost";
     private int proxyPort = ProxyInterface.PORT;
@@ -70,58 +76,29 @@ public class Client {
         this.proxyPort = proxyPort;
     }
 
-    /** Set from the command line to write somewhere other than the default name. */
-    private String outputFile = null;
-
-    /** True to add to the output file instead of replacing it. */
-    private boolean appendOutput = false;
-
     /**
-     * Sets an explicit output file, overriding the default name.
+     * Picks the output file for this run. If the client cache is on the run
+     * counts as a client cache run, whatever the servers do.
      *
-     * @param outputFile file to write, or null to use the default name
-     */
-    public void setOutputFile(String outputFile) {
-        this.outputFile = outputFile;
-    }
-
-    /**
-     * Sets whether the output file is added to or replaced.
-     *
-     * @param appendOutput true to add to the file, false to replace it
-     */
-    public void setAppendOutput(boolean appendOutput) {
-        this.appendOutput = appendOutput;
-    }
-
-    /**
-     * Picks the output file for this run. The client cache takes priority over
-     * the server cache, and the policy is part of the name.
-     *
-     * @return the file name for this run
+     * @return one of the three file names from the assignment
      */
     String outputFileName() {
-        if (outputFile != null) {
-            return outputFile;
-        }
         if (cacheMode != CacheMode.OFF) {
-            return "client_cache_" + cacheMode.name().toLowerCase() + ".txt";
+            return "client_cache.txt";
         }
-        if (serverCacheEnabled) {
-            return "server_cache.txt";
-        }
-        return "naive_server.txt";
+        return serverCacheEnabled ? "server_cache.txt" : "naive_server.txt";
     }
 
 
     /**
-     * Sets the eviction policy and empties the cache.
+     * Sets the eviction policy and empties the cache. The assignment says each
+     * run has to start with an empty cache.
      *
      * @param cacheMode OFF, FIFO or OLDEST
      */
     public void setCacheMode(CacheMode cacheMode) {
         this.cacheMode = cacheMode;
-
+what
         synchronized (cache) {
             cache.clear();
         }
@@ -216,6 +193,7 @@ public class Client {
         return queries;
     }
 
+
     /**
      * Looks up the proxy stub in the registry.
      *
@@ -275,15 +253,8 @@ public class Client {
             throw new RemoteException("No server registered");
         }
 
-        // Look the server up once and keep the stub.
-        ServerInterface known = serverStubs.get(serverInfo.toString());
-        if (known != null) {
-            return known;
-        }
-
-        ServerInterface stub = connectToServer(serverInfo);
-        serverStubs.putIfAbsent(serverInfo.toString(), stub);
-        return stub;
+        // Connect to that server.
+        return connectToServer(serverInfo);
     }
 
     /**
@@ -292,8 +263,8 @@ public class Client {
      *
      * <p>Queries go to a thread pool, so a new query can be sent every
      * {@code interval} milliseconds without waiting for the previous one. Each
-     * result is stored at the index of its query, keeping the output in input
-     * file order.</p>
+     * result is stored at the index of its query, so the result list follows the
+     * input file even when requests finish out of order.</p>
      *
      * @param interval   delay in milliseconds between submitting queries
      * @throws RemoteException if communication with the proxy fails
@@ -312,7 +283,7 @@ public class Client {
 
         for (int i = 0; i < queries.size(); i++) {
 
-            // A lambda needs a variable that does not change.
+            // A lambda can only use a variable that does not change, so copy the index.
             final int queryIndex = i;
             Query query = queries.get(i);
 
@@ -326,10 +297,6 @@ public class Client {
 
                     if (result != null) {
                         cacheHit = true;
-
-                        // No server ran this query. The zone is the one that
-                        // answered it the first time.
-                        result = new QueryResult(result.value(), 0, 0, result.serverZone());
                     } else {
                         ServerInterface server = getServerForQuery(query, proxy);
 
@@ -360,7 +327,7 @@ public class Client {
             }
         }
 
-        // Stop taking new tasks. Submitted ones still finish.
+        // Stop taking new tasks, but let the submitted ones finish.
         executor.shutdown();
 
         try {
@@ -374,17 +341,9 @@ public class Client {
                 );
             }
 
-            String file = outputFileName();
-            writeResultsToFile(file);
-
-            long hits = results.stream()
-                    .filter(r -> r != null && r.cacheHit)
-                    .count();
-            long failed = results.stream().filter(r -> r == null).count();
-
-            System.out.println("Wrote " + results.size() + " results to " + file);
-            System.out.println("Client cache hits: " + hits + " of " + results.size()
-                    + ", failed queries: " + failed);
+            String outputFile = outputFileName();
+            writeResultsToFile(outputFile);
+            System.out.println("Wrote " + results.size() + " results to " + outputFile);
 
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -523,7 +482,8 @@ public class Client {
     }
 
     /**
-     * Line for a query that failed.
+     * Line for a query that failed. The assignment wants one line per query in
+     * the input file.
      */
     private String formatFailure(Query query) {
         return "FAILED " + query.originalQuery + " (request failed)";
@@ -556,7 +516,7 @@ public class Client {
      */
     void writeResultsToFile(String fileName) throws IOException {
         try (BufferedWriter writer =
-                     new BufferedWriter(new FileWriter(fileName, appendOutput))) {
+                     new BufferedWriter(new FileWriter(fileName))) {
 
             for (int i = 0; i < results.size(); i++) {
                 ClientResult clientResult = results.get(i);
@@ -618,7 +578,7 @@ public class Client {
 
     /**
      * Groups the results by method name and adds up the times. Failed queries
-     * are skipped.
+     * are skipped, so they do not affect the averages.
      *
      * @return statistics per method, in the order the methods first appear
      */
@@ -674,9 +634,6 @@ public class Client {
                 options.get("cache", "off").trim().toUpperCase()));
         client.setServerCacheEnabled(
                 Boolean.parseBoolean(options.get("server-cache", "false")));
-        client.setOutputFile(options.get("output", null));
-        client.setAppendOutput(
-                Boolean.parseBoolean(options.get("append", "false")));
 
         client.readQueries(input);
         System.out.println("Parsed " + client.getQueries().size() + " queries from " + input);
@@ -689,7 +646,8 @@ public class Client {
     }
 
     /**
-     * Waits until the proxy has at least one registered server.
+     * Waits until the proxy has at least one registered server, so the client
+     * does not start before the servers are up.
      *
      * @param host        proxy host
      * @param port        proxy registry port
@@ -707,7 +665,7 @@ public class Client {
                     return;
                 }
             } catch (RemoteException e) {
-                // Proxy not up yet. Keep trying until the deadline.
+                // Proxy not up yet; keep trying until the deadline.
             }
             Thread.sleep(500);
         }
@@ -716,3 +674,4 @@ public class Client {
                 + host + ":" + port + " within " + waitSeconds + " s");
     }
 }
+
