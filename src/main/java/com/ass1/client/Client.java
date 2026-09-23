@@ -73,6 +73,29 @@ public class Client {
     }
 
     /**
+     * Runs one query end to end: asks the proxy which server to use, connects to it,
+     * and invokes the matching remote method.
+     *
+     * @param query the query to run
+     * @param proxyStub a stub for the remote proxy
+     * @return the result returned by the chosen server
+     * @throws RemoteException   if no server is registered, or the remote call fails
+     * @throws NotBoundException if the chosen server is not bound in its own registry
+     */
+    private QueryResult executeRequest(Query query, ProxyInterface proxyStub)
+            throws RemoteException, NotBoundException {
+
+        ServerInfo serverInfo = proxyStub.getServer(query.zone);
+        if(serverInfo == null){
+            throw new RemoteException("No server Registered");
+        }
+
+        ServerInterface server = connectToServer(serverInfo);
+
+        return executeQuery(query, server);
+    }
+
+    /**
      * Reads an input file and parses every line into a query.
      *
      * @param filePath path to the query input file
