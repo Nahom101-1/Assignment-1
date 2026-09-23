@@ -50,6 +50,6 @@ public class Worker implements Runnable {
 
         long executionInMs = System.currentTimeMillis() - executionStartTime;
 
-        return new QueryResult(value, executionInMs, waitingTimeInMs, task.getClientZone());
+        return new QueryResult(value, executionInMs, waitingTimeInMs, task.getServerZone());
     }
 }
