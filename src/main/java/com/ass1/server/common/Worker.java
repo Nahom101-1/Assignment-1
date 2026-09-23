@@ -1,5 +1,7 @@
 package com.ass1.server.common;
 
+import com.ass1.common.QueryResult;
+
 import java.util.concurrent.BlockingQueue;
 
 public class Worker implements Runnable {
@@ -30,7 +32,7 @@ public class Worker implements Runnable {
     }
 
     /** Cache first, processor computation (and its simulated delay) only on a miss. */
-    private Result processTask(Task task) {
+    private QueryResult processTask(Task task) {
         System.out.println("Processing task: " + task.getCacheKey() + " from client zone: " + task.getClientZone());
         long executionStartTime = System.currentTimeMillis();
         long waitingTimeInMs = executionStartTime - task.queuedInitialTimeInMs;
@@ -48,6 +50,6 @@ public class Worker implements Runnable {
 
         long executionInMs = System.currentTimeMillis() - executionStartTime;
 
-        return new Result(value, executionInMs, waitingTimeInMs, task.getClientZone());
+        return new QueryResult(value, executionInMs, waitingTimeInMs, task.getClientZone());
     }
 }

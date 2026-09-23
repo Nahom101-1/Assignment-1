@@ -6,7 +6,7 @@ import com.ass1.common.ServerInfo;
 import com.ass1.proxy.ProxyInterface;
 import com.ass1.server.ServerInterface;
 
-import java.util.concurrent.Executor;
+import java.util.Collections;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.io.BufferedReader;
@@ -27,6 +27,8 @@ import java.util.concurrent.TimeUnit;
 public class Client {
 
     private final List<Query> queries = new ArrayList<>();
+    private final List<ClientResult> results =
+            Collections.synchronizedList(new ArrayList<>());
 
     /**
      * Returns the queries parsed so far.
@@ -77,58 +79,77 @@ public class Client {
     }
 
     /**
-     * Runs one query end to end: asks the proxy which server to use, connects to it,
-     * and invokes the matching remote method.
+     * Asks the proxy which server should handle the query and connects to
+     * the selected server.
      *
-     * @param query the query to run
+     * @param query the query that needs a server
      * @param proxyStub a stub for the remote proxy
-     * @return the result returned by the chosen server
-     * @throws RemoteException   if no server is registered, or the remote call fails
-     * @throws NotBoundException if the chosen server is not bound in its own registry
+     * @return a stub for the selected server
+     * @throws RemoteException if no server is registered or communication
+     *                         with the proxy fails
+     * @throws NotBoundException if the selected server is not bound in its registry
      */
-    private QueryResult executeRequest(Query query, ProxyInterface proxyStub)
-            throws RemoteException, NotBoundException {
+    ServerInterface getServerForQuery(
+            Query query,
+            ProxyInterface proxyStub
+    ) throws RemoteException, NotBoundException {
+
+        // Ask the proxy which server should handle this query.
         ServerInfo serverInfo = proxyStub.getServer(query.zone);
-        if(serverInfo == null){
-            throw new RemoteException("No server Registered");
+
+        if (serverInfo == null) {
+            throw new RemoteException("No server registered");
         }
 
-        ServerInterface server = connectToServer(serverInfo);
-
-        return executeQuery(query, server);
+        // Connect to the selected server and return its RMI stub.
+        return connectToServer(serverInfo);
     }
 
     /**
-     * Executes all parsed queries asynchronously with a fixed interval
-     * between each submitted request.
+     * Executes all parsed queries asynchronously with a fixed delay between
+     * submitting each query.
      *
-     * <p>Each query is executed on a separate worker thread so that the
-     * client does not have to wait for one request to finish before sending
-     * the next one. The client waits {@code interval} milliseconds between
-     * submitting requests.</p>
+     * <p>Queries are submitted to a thread pool so that a new query can be sent
+     * every {@code interval} milliseconds without waiting for the previous query
+     * to finish. Results are stored using the query's original index so that the
+     * final result list has the same order as the input file, even if requests
+     * finish in a different order.</p>
      *
-     * @param interval the time in milliseconds between submitting queries
+     * @param interval delay in milliseconds between submitting queries
      * @throws RemoteException if communication with the proxy fails
      * @throws NotBoundException if the proxy is not registered in the RMI registry
      */
     private void executeQueries(int interval) throws RemoteException, NotBoundException {
+        results.clear();
 
+        for (int i = 0; i < queries.size(); i++) {
+            results.add(null);
+        }
         ProxyInterface proxy = connectToProxy();
 
         // Thread pool manger
         ExecutorService executor = Executors.newCachedThreadPool();
 
-        for (Query query : queries) {
+        for (int i = 0; i < queries.size(); i++) {
+
+            // Keep a fixed copy of the query index for this worker.
+            // The loop variable i changes, but variables captured by a lambda must be final.
+            final int queryIndex = i;
+            Query query = queries.get(i);
 
             executor.submit(() -> {
                 try {
+                    ServerInterface server = getServerForQuery(query, proxy);
                     long startTime = System.currentTimeMillis();
-
-                    QueryResult result = executeRequest(query, proxy);
-
+                    QueryResult result = executeQuery(query, server);
                     long turnaroundTime =
                             System.currentTimeMillis() - startTime;
 
+                    // Store the completed request at its original query position.
+                    results.set(
+                            queryIndex,
+                            new ClientResult(query, result, turnaroundTime)
+                    );
                     System.out.println(
                             "Result: " + result.value()
                                     + ", Turnaround: " + turnaroundTime + " ms"
@@ -159,11 +180,11 @@ public class Client {
         try {
             // Wait for all submitted requests to complete.
             boolean finished =
-                    executor.awaitTermination(5, TimeUnit.MINUTES);
+                    executor.awaitTermination(2, TimeUnit.MINUTES);
 
             if (!finished) {
                 System.err.println(
-                        "Some requests did not finish within 5 minutes."
+                        "Some requests did not finish within 2 minutes."
                 );
             }
 
@@ -201,7 +222,8 @@ public class Client {
      * @throws IllegalArgumentException if the method name is not recognised
      */
     private Query parseQuery(String line) {
-        String[] parts = line.split("\\s+"); // \\s+ = one or more whitespace characters
+        String originalQuery = line.trim();
+        String[] parts = originalQuery.split("\\s+"); // \\s+ = one or more whitespace characters
         // Get the zone from the last element and parse it as an integer.
         int zone = Integer.parseInt(parts[parts.length - 1].replace("Zone:", ""));
 
@@ -211,7 +233,7 @@ public class Client {
                         " ",
                         Arrays.copyOfRange(parts, 1, parts.length - 1)
                 );
-                return new PopulationOfCountry(countryName, zone, line);
+                return new PopulationOfCountry(countryName, zone, originalQuery);
             }
 
             case "getNumberofCities": {
@@ -222,7 +244,7 @@ public class Client {
                         " ",
                         Arrays.copyOfRange(parts, 1, parts.length - 3)
                 );
-                return new NumberOfCities(countryName, threshold, compType, zone, line);
+                return new NumberOfCities(countryName, threshold, compType, zone, originalQuery);
             }
 
             case "getNumberofCountries": {
@@ -230,14 +252,14 @@ public class Client {
                 Comparison compType =
                         Comparison.valueOf(parts[parts.length - 2].toUpperCase());
                 int threshold = Integer.parseInt(parts[parts.length - 3]);
-                return new NumberOfCountries(cityCount, threshold, compType, zone, line);
+                return new NumberOfCountries(cityCount, threshold, compType, zone, originalQuery);
             }
 
             case "getNumberofCountriesMM": {
                 int cityCount = Integer.parseInt(parts[1]);
                 int minPopulation = Integer.parseInt(parts[2]);
                 int maxPopulation = Integer.parseInt(parts[3]);
-                return new NumberOfCountriesMM(cityCount, minPopulation, maxPopulation, zone, line);
+                return new NumberOfCountriesMM(cityCount, minPopulation, maxPopulation, zone, originalQuery);
             }
 
             default: {
@@ -257,7 +279,7 @@ public class Client {
      * @throws RemoteException          if the remote call fails
      * @throws IllegalArgumentException if the query type is not recognised
      */
-    private QueryResult executeQuery(Query query, ServerInterface server)
+    QueryResult executeQuery(Query query, ServerInterface server)
             throws RemoteException {
 
         if (query instanceof PopulationOfCountry q) {

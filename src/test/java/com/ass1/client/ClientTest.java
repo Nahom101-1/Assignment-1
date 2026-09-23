@@ -239,4 +239,56 @@ class ClientTest {
         assertThrows(NumberFormatException.class,
                 () -> parseLine("getNumberofCities Norway many min Zone:1"));
     }
+
+    // --------------------------------------------------------- originalQuery
+
+    @Test
+    void everyQueryTypeKeepsItsOriginalLine() throws IOException {
+        String population = "getPopulationofCountry Norway Zone:1";
+        String cities     = "getNumberofCities Norway 100000 min Zone:2";
+        String countries  = "getNumberofCountries 3 1616894 min Zone:3";
+        String countriesMm = "getNumberofCountriesMM 6 1677496 4406235 Zone:4";
+
+        List<Query> parsed = parseLines(population, cities, countries, countriesMm);
+
+        assertEquals(population,  parsed.get(0).originalQuery);
+        assertEquals(cities,      parsed.get(1).originalQuery);
+        assertEquals(countries,   parsed.get(2).originalQuery);
+        assertEquals(countriesMm, parsed.get(3).originalQuery);
+    }
+
+    @Test
+    void originalQueryIsNeverNullOrBlank() throws IOException {
+        for (Query query : parseLines(
+                "getPopulationofCountry United States Zone:1",
+                "getNumberofCities Norway 100000 max Zone:5")) {
+
+            assertNotNull(query.originalQuery);
+            assertFalse(query.originalQuery.isBlank());
+        }
+    }
+
+    @Test
+    void paddedLineStillParsesAndKeepsWhatWasRead() throws IOException {
+        Query query = parseLine("   getPopulationofCountry Norway Zone:1   ");
+
+        PopulationOfCountry population = assertInstanceOf(PopulationOfCountry.class, query);
+        assertEquals("Norway", population.countryName);
+        assertEquals(1, population.zone);
+        assertTrue(population.originalQuery.contains("getPopulationofCountry Norway Zone:1"));
+    }
+
+    @Test
+    void originalQueryMatchesTheRealInputFile() throws IOException {
+        Client client = new Client();
+        client.readQueries("src/test/resources/queries-test.txt");
+
+        List<String> lines = Files.readAllLines(Path.of("src/test/resources/queries-test.txt"));
+        List<Query> parsed = client.getQueries();
+
+        for (int i = 0; i < parsed.size(); i++) {
+            assertEquals(lines.get(i), parsed.get(i).originalQuery,
+                    "line " + (i + 1) + " should round-trip unchanged");
+        }
+    }
 }

@@ -1,9 +1,10 @@
 package com.ass1.server;
 
+import com.ass1.common.Comparison;
+import com.ass1.common.QueryResult;
 import com.ass1.common.ServerInfo;
 import com.ass1.proxy.ProxyInterface;
 import com.ass1.server.common.Cache;
-import com.ass1.server.common.Result;
 import com.ass1.server.common.Task;
 import com.ass1.server.common.Worker;
 import com.ass1.server.common.Processor;
@@ -63,28 +64,28 @@ public class Server implements ServerInterface {
     }
 
     @Override
-    public Result getPopulationOfCountry(String countryName, int clientZone) throws RemoteException {
+    public QueryResult getPopulationOfCountry(String countryName, int clientZone) throws RemoteException {
         return stageRequest("getPopulationOfCountry:" + countryName,
                 () -> processor.getPopulationOfCountry(countryName),
                 clientZone);
     }
 
     @Override
-    public Result getNumberOfCities(String countryName, int threshold, String comp, int clientZone) throws RemoteException {
+    public QueryResult getNumberOfCities(String countryName, int threshold, Comparison comp, int clientZone) throws RemoteException {
         return stageRequest("getNumberOfCities:" + countryName + ":" + threshold + ":" + comp,
-                () -> processor.getNumberOfCities(countryName, threshold, comp),
+                () -> processor.getNumberOfCities(countryName, threshold, comp.name()),
                 clientZone);
     }
 
     @Override
-    public Result getNumberOfCountries(int cityCount, int threshold, String comp, int clientZone) throws RemoteException {
+    public QueryResult getNumberOfCountries(int cityCount, int threshold, Comparison comp, int clientZone) throws RemoteException {
         return stageRequest("getNumberOfCountries:" + cityCount + ":" + threshold + ":" + comp,
-                () -> processor.getNumberOfCountries(cityCount, threshold, comp),
+                () -> processor.getNumberOfCountries(cityCount, threshold, comp.name()),
                 clientZone);
     }
 
     @Override
-    public Result getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation, int clientZone) throws RemoteException {
+    public QueryResult getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation, int clientZone) throws RemoteException {
         return stageRequest("getNumberOfCountriesMM:" + cityCount + ":" + minPopulation + ":" + maxPopulation,
                 () -> processor.getNumberOfCountriesMM(cityCount, minPopulation, maxPopulation),
                 clientZone);
@@ -97,7 +98,7 @@ public class Server implements ServerInterface {
     }
 
     /** Queues the request and blocks until the worker thread is done with it. */
-    private Result stageRequest(String cacheKey, LongSupplier computation, int clientZone) throws RemoteException {
+    private QueryResult stageRequest(String cacheKey, LongSupplier computation, int clientZone) throws RemoteException {
         simulateNetworkLatency(clientZone);
 
         Task task = new Task(cacheKey, computation, clientZone);
@@ -194,6 +195,7 @@ public class Server implements ServerInterface {
      * proxy looks the stub up there.
      */
     public void registerWithProxy(String proxyHost, int proxyPort, String serverHost, int serverPort) throws RemoteException {
+
 
         Registry proxyRegistry = LocateRegistry.getRegistry(proxyHost, proxyPort);
 
