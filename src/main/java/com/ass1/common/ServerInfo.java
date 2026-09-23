@@ -2,7 +2,7 @@ package com.ass1.common;
 
 import java.io.Serializable;
 
-
+/* Dataclass that is used for passing address and port of specific host */
 
 public class ServerInfo implements Serializable{
     private static final long serialVersionUID = 1L;
