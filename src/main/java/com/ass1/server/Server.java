@@ -61,8 +61,12 @@ public class Server implements ServerInterface {
     private Registry registry;
 
     public Server(Processor processor) {
+        this(processor, CACHE_CAPACITY, Cache.Policy.FIFO);
+    }
+
+    public Server(Processor processor, int cacheCapacity, Cache.Policy policy) {
         this.processor = processor;
-        Cache<String, Long> cache = new Cache<>(CACHE_CAPACITY);
+        Cache<String, Long> cache = new Cache<>(cacheCapacity, policy);
         this.requestWorker = new Thread(new Worker(cache, queue, this::logQueueSize), "requestWorker");
         this.requestWorker.start();
     }
@@ -201,10 +205,17 @@ public class Server implements ServerInterface {
         // container start order. 0 falls back to the proxy assigning one in registration order.
         int requestedZone = options.getInt("zone", 0);
 
+        // "none" runs without a cache.
+        String cacheOption = options.get("cache", "fifo");
+        boolean caching = !cacheOption.equalsIgnoreCase("none");
+        int capacity = caching ? options.getInt("cache-size", CACHE_CAPACITY) : 0;
+        Cache.Policy policy = caching ? Cache.Policy.of(cacheOption) : Cache.Policy.FIFO;
+
         // Baked into every stub this JVM exports, so it must be set before the first export.
         System.setProperty("java.rmi.server.hostname", serverHost);
 
-        Server server = new Server(new Processor(dataset));
+        Server server = new Server(new Processor(dataset), capacity, policy);
+        System.out.println("Cache: " + (caching ? policy + " (" + capacity + " entries)" : "off"));
         // Set before export so latency and the queue log use the right zone from the first request.
         server.zone = requestedZone;
 

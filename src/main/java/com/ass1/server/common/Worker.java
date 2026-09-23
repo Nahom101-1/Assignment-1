@@ -40,15 +40,18 @@ public class Worker implements Runnable {
         long executionStartTime = System.currentTimeMillis();
         long waitingTimeInMs = executionStartTime - task.queuedInitialTimeInMs;
 
-        Long cachedValue = cache.get(task.getCacheKey());
-        boolean cacheHit = cachedValue != null;
         long value;
 
-        if (cacheHit) {
-            value = cachedValue;
-        } else {
+        if (cache.isDisabled()) {
             value = task.getComputation().getAsLong();
-            cache.put(task.getCacheKey(), value);
+        } else {
+            Long cachedValue = cache.get(task.getCacheKey());
+            if (cachedValue != null) {
+                value = cachedValue;
+            } else {
+                value = task.getComputation().getAsLong();
+                cache.put(task.getCacheKey(), value);
+            }
         }
 
         long executionInMs = System.currentTimeMillis() - executionStartTime;
