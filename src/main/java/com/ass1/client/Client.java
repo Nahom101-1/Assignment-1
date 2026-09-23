@@ -6,19 +6,14 @@ import com.ass1.common.ServerInfo;
 import com.ass1.proxy.ProxyInterface;
 import com.ass1.server.ServerInterface;
 
-import java.util.Collections;
+import java.io.*;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -27,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class Client {
 
     private final List<Query> queries = new ArrayList<>();
-    private final List<ClientResult> results =
+    final List<ClientResult> results =
             Collections.synchronizedList(new ArrayList<>());
 
     /**
@@ -146,18 +141,10 @@ public class Client {
                             System.currentTimeMillis() - startTime;
 
                     // Store the completed request at its original query position.
-                    results.set(
-                            queryIndex,
-                            new ClientResult(query, result, turnaroundTime)
-                    );
-                    System.out.println(
-                            "Result: " + result.value()
-                                    + ", Turnaround: " + turnaroundTime + " ms"
-                                    + ", Execution: " + result.executionTimeMs() + " ms"
-                                    + ", Waiting: " + result.waitingTimeMs() + " ms"
-                                    + ", Server zone: " + result.serverZone()
-                    );
-
+                    ClientResult clientResult =
+                            new ClientResult(query, result, turnaroundTime);
+                    results.set(queryIndex, clientResult);
+                    System.out.println(formatResult(clientResult));
                 } catch (RemoteException | NotBoundException e) {
                     System.err.println(
                             "Request failed: " + e.getMessage()
@@ -178,19 +165,25 @@ public class Client {
         executor.shutdown();
 
         try {
-            // Wait for all submitted requests to complete.
             boolean finished =
                     executor.awaitTermination(2, TimeUnit.MINUTES);
 
             if (!finished) {
                 System.err.println(
-                        "Some requests did not finish within 2 minutes."
+                        "Some requests did not finish within 2 minutes. "
+                                + "Writing the results collected so far."
                 );
             }
 
+            // Written either way after a run that took minutes better than noting
+            writeResultsToFile("naive_server.txt");
+
         } catch (InterruptedException e) {
-            // Restore the interrupted status of the current thread.
             Thread.currentThread().interrupt();
+        } catch (IOException e) {
+            System.err.println(
+                    "Failed to write results: " + e.getMessage()
+            );
         }
     }
 
@@ -319,5 +312,138 @@ public class Client {
         throw new IllegalArgumentException(
                 "Unsupported query type: " + query.getClass().getSimpleName()
         );
+    }
+
+    /**
+     * Line for a query that never returned, so the output still has one entry per
+     * input line.
+     */
+    private String formatFailure(Query query) {
+        return "FAILED " + query.originalQuery + " (request failed)";
+    }
+
+    /**
+     * Formats one completed query as the output file expects it:
+     * {@code <result> <input query> (turnaround time: .. ms, execution time: .. ms,
+     * waiting time: .. ms, processed by Server ..)}
+     *
+     * @param clientResult the completed query
+     * @return the output line, without a trailing newline
+     */
+    private String formatResult(ClientResult clientResult) {
+        return clientResult.result.value()
+                + " " + clientResult.query.originalQuery
+                + " (turnaround time: " + clientResult.turnaroundTime + " ms"
+                + ", execution time: " + clientResult.result.executionTimeMs() + " ms"
+                + ", waiting time: " + clientResult.result.waitingTimeMs() + " ms"
+                + ", processed by Server " + clientResult.result.serverZone()
+                + ")";
+    }
+
+    /**
+     * Writes one line per query, a blank separator, then one summary line per
+     * query type.
+     *
+     * @param fileName file to create or overwrite
+     * @throws IOException if the file cannot be written
+     */
+    void writeResultsToFile(String fileName) throws IOException {
+        try (BufferedWriter writer =
+                     new BufferedWriter(new FileWriter(fileName))) {
+
+            for (int i = 0; i < results.size(); i++) {
+                ClientResult clientResult = results.get(i);
+
+                if (clientResult != null) {
+                    writer.write(formatResult(clientResult));
+                } else if (i < queries.size()) {
+                    writer.write(formatFailure(queries.get(i)));
+                } else {
+                    continue;
+                }
+                writer.newLine();
+            }
+
+            writer.newLine();
+
+            // Calculate statistics for each query type.
+            Map<String, QueryStats> statistics = calculateStatistics();
+
+            // Write statistics.
+            for (Map.Entry<String, QueryStats> entry : statistics.entrySet()) {
+                writer.write(
+                        formatStatistics(entry.getKey(), entry.getValue())
+                );
+                writer.newLine();
+            }
+        }
+    }
+
+    /**
+     * Method name a query belongs to, used to group the summary statistics.
+     * Spelled as in the input file, so the summary matches the queries above it.
+     *
+     * @param query the query to classify
+     * @return the method name from the input file
+     * @throws IllegalArgumentException if the query type is not recognised
+     */
+    private String getQueryType(Query query) {
+        if (query instanceof PopulationOfCountry) {
+            return "getPopulationofCountry";
+        }
+
+        if (query instanceof NumberOfCities) {
+            return "getNumberofCities";
+        }
+
+        if (query instanceof NumberOfCountries) {
+            return "getNumberofCountries";
+        }
+
+        if (query instanceof NumberOfCountriesMM) {
+            return "getNumberofCountriesMM";
+        }
+
+        throw new IllegalArgumentException(
+                "Unknown query type: " + query.getClass().getSimpleName()
+        );
+    }
+
+    /**
+     * Groups the completed queries by method name and totals their timings.
+     * Failed queries are skipped so they cannot skew the averages.
+     *
+     * @return statistics per method, in the order each method first appeared
+     */
+    private Map<String, QueryStats> calculateStatistics() {
+        Map<String, QueryStats> stats = new LinkedHashMap<>();
+
+        for (ClientResult clientResult : results) {
+            if (clientResult == null) {
+                continue;
+            }
+
+            String queryType = getQueryType(clientResult.query);
+
+            stats.putIfAbsent(queryType, new QueryStats());
+
+            stats.get(queryType).add(clientResult);
+        }
+
+        return stats;
+    }
+
+    /**
+     * Summary line:
+     * {@code <method> avg turn-around time: <A> ms, avg execution time: <B> ms,
+     * avg waiting time: <C> ms, min turn-around time: <D> ms, max turn-around time: <E> ms}
+     */
+    private String formatStatistics(String queryType, QueryStats stats) {
+        return queryType
+                + " avg turn-around time: " + stats.averageTurnaround() + " ms"
+                + ", avg execution time: " + stats.averageExecution() + " ms"
+                + ", avg waiting time: " + stats.averageWaiting() + " ms"
+                + ", min turn-around time: " + stats.minTurnaround + " ms"
+                + ", max turn-around time: " + stats.maxTurnaround + " ms";
     }
 }

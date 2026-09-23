@@ -120,7 +120,7 @@ public class Server implements ServerInterface {
     private QueryResult stageRequest(String cacheKey, LongSupplier computation, int clientZone) throws RemoteException {
         simulateNetworkLatency(clientZone);
 
-        Task task = new Task(cacheKey, computation, clientZone, zone);
+        Task task = new Task(cacheKey, computation, clientZone, this.zone);
         queue.add(task);
         logQueueSize();
         try {
