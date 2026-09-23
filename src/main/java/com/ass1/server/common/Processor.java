@@ -1,5 +1,7 @@
 package com.ass1.server.common;
 
+import com.ass1.common.Comparison;
+
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
@@ -52,8 +54,8 @@ public class Processor {
         return total[0];
     }
 
-    /** Cities in the given country whose population is >= (min) or <= (max) the threshold. */
-    public int getNumberOfCities(String countryName, int threshold, String comp) {
+    /** Cities in the given country whose population is >= (MIN) or <= (MAX) the threshold. */
+    public int getNumberOfCities(String countryName, int threshold, Comparison comp) {
         String wanted = key(countryName);
         boolean min = isMin(comp);
         int[] cities = {0};
@@ -67,7 +69,7 @@ public class Processor {
     }
 
     /** Countries having at least {@code cityCount} cities that satisfy the threshold. */
-    public int getNumberOfCountries(int cityCount, int threshold, String comp) {
+    public int getNumberOfCountries(int cityCount, int threshold, Comparison comp) {
         boolean min = isMin(comp);
         Map<String, Integer> matchesPerCountry = new HashMap<>();
 
@@ -141,12 +143,11 @@ public class Processor {
         return min ? population >= threshold : population <= threshold;
     }
 
-    private static boolean isMin(String comp) {
-        return comp != null && comp.trim().equalsIgnoreCase("min");
+    private static boolean isMin(Comparison comp) {
+        return comp == Comparison.MIN;
     }
 
     private static String key(String countryName) {
         return countryName == null ? "" : countryName.trim().toLowerCase(Locale.ROOT);
     }
 }
-
