@@ -3,7 +3,7 @@
 Distributed query service: a proxy routes client queries to four zone servers over Java RMI.
 
 ## Running with Docker
-
+On the root folder where the docker file is located, run:
 ```bash
 docker compose build             # build the image only
 docker compose up --build -d     # build + start proxy and 4 servers

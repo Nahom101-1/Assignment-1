@@ -48,20 +48,5 @@ public final class Args {
         }
     }
 
-    /** Returns true when the option is present and not set to "false". */
-    public boolean getBool(String name, boolean fallback) {
-        String raw = get(name, String.valueOf(fallback));
-        return !"false".equalsIgnoreCase(raw) && !"0".equals(raw);
-    }
-
-    /** Sets an option only when the user did not provide it. */
-    public void putIfAbsent(String name, String value) {
-        values.putIfAbsent(name.toLowerCase(), value);
-    }
-
-    @Override
-    public String toString() {
-        return values.toString();
-    }
 }
 
