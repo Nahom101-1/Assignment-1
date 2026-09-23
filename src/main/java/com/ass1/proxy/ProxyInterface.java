@@ -1,7 +1,6 @@
 package com.ass1.proxy;
-import java.rmi.*; 
+import java.rmi.*;
 import com.ass1.common.*;
-
 
 public interface ProxyInterface extends Remote{
     // Where clients and servers reach the proxy.
@@ -16,5 +15,3 @@ public interface ProxyInterface extends Remote{
     boolean hasRegisteredServers() throws RemoteException;
 
 }
-
-

@@ -1,11 +1,9 @@
 package com.ass1.server;
 
+import com.ass1.server.common.Result;
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
-
-import com.ass1.common.Comparison;
-import com.ass1.common.QueryResult;
-
 
 public interface ServerInterface extends Remote {
 
