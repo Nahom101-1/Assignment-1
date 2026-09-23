@@ -1,183 +1,212 @@
 package com.ass1.server;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.HashMap;
+import com.ass1.common.ServerInfo;
+import com.ass1.proxy.ProxyInterface;
+import com.ass1.server.common.Cache;
+import com.ass1.server.common.Result;
+import com.ass1.server.common.Task;
+import com.ass1.server.common.Worker;
+import com.ass1.server.common.Processor;
+import com.ass1.util.Args;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.nio.file.Path;
+import java.rmi.NoSuchObjectException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 
-public class Server implements ServerInterface{
-    
-  
-    public List<String[]> readCsv(){
-        // Helper method for reading .csv file and turning it to an array.  
-        // Storing .csv file content on a ArrayList.
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.function.LongSupplier;
 
-        List<String[]> dataset = new ArrayList<>();
+import static java.lang.Thread.sleep;
+
+/**
+ * A zone server that handles requests from clients and registers itself with the proxy. Each server has a zone number assigned by the proxy, which is used to simulate network latency for requests from clients in different zones.
+ * The server maintains a queue of requests to be processed by a worker thread, which handles the actual computation of the requests. The server also maintains a cache of results to improve performance for repeated requests.
+ * The server can be started and registered with the proxy using the InitializeServer method, and can be shut down using the shutdown method, which stops the worker thread and withdraws the server from RMI. The server can also report its current workload, which is the number of requests currently waiting in the queue.
+ */
+public class Server implements ServerInterface {
+    public static final String BIND_NAME = "ZoneServer";
+
+    private volatile int zone = 0;
+    public static final long BASE_DELAY_MS = 80;
+
+    /** Extra delay per zone of distance for a call from another zone. */
+    public static final long DELAY_PER_ZONE_MS = 30;
+    public static final int CACHE_CAPACITY = 150;
+
+    /** Queue of requests to be processed by the worker thread. */
+    private final BlockingQueue<Task> queue = new LinkedBlockingQueue<>();
+
+    /*** Processor that handles the actual computation of the requests. */
+    private final Processor processor;
+
+    /*** Worker thread that processes requests from the queue. */
+    private final Thread requestWorker;
+
+    /**
+     * The zone's registry. Held as a field on purpose: {@link LocateRegistry#createRegistry}
+     * returns the only strong reference to the registry it creates, and an unreferenced
+     * registry can be garbage collected, silently taking the binding down with it.
+     */
+    private Registry registry;
+
+    public Server(Processor processor) {
+        this.processor = processor;
+        Cache<String, Long> cache = new Cache<>(CACHE_CAPACITY);
+        this.requestWorker = new Thread(new Worker(cache, queue), "requestWorker");
+        this.requestWorker.start();
+    }
+
+    @Override
+    public Result getPopulationOfCountry(String countryName, int clientZone) throws RemoteException {
+        return stageRequest("getPopulationOfCountry:" + countryName,
+                () -> processor.getPopulationOfCountry(countryName),
+                clientZone);
+    }
+
+    @Override
+    public Result getNumberOfCities(String countryName, int threshold, String comp, int clientZone) throws RemoteException {
+        return stageRequest("getNumberOfCities:" + countryName + ":" + threshold + ":" + comp,
+                () -> processor.getNumberOfCities(countryName, threshold, comp),
+                clientZone);
+    }
+
+    @Override
+    public Result getNumberOfCountries(int cityCount, int threshold, String comp, int clientZone) throws RemoteException {
+        return stageRequest("getNumberOfCountries:" + cityCount + ":" + threshold + ":" + comp,
+                () -> processor.getNumberOfCountries(cityCount, threshold, comp),
+                clientZone);
+    }
+
+    @Override
+    public Result getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation, int clientZone) throws RemoteException {
+        return stageRequest("getNumberOfCountriesMM:" + cityCount + ":" + minPopulation + ":" + maxPopulation,
+                () -> processor.getNumberOfCountriesMM(cityCount, minPopulation, maxPopulation),
+                clientZone);
+    }
+
+    /** Number of requests currently waiting in this server's waiting list. */
+    @Override
+    public int getCurrentWorkload() throws RemoteException {
+        return queue.size();
+    }
+
+    /** Queues the request and blocks until the worker thread is done with it. */
+    private Result stageRequest(String cacheKey, LongSupplier computation, int clientZone) throws RemoteException {
+        simulateNetworkLatency(clientZone);
+
+        Task task = new Task(cacheKey, computation, clientZone);
+        queue.add(task);
         try {
-            // Temporary path for reading dataset.
-            BufferedReader br = new BufferedReader(new FileReader("src/main/java/com/ass1/Resources/exercise_1_dataset.csv"));
-            br.readLine(); //Skip header.
-            String line;
-
-            // Loop that copies each Row of the .csv file and saving each line on the ArrayList untill it reaches the end.
-            while((line = br.readLine()) != null){
-                String[] values = line.split(";");
-                dataset.add(values);
-            }
-            br.close();
-        } catch(Exception e){
-            e.printStackTrace();
+            return task.result.get();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new RemoteException("Interrupted while waiting for " + cacheKey, e);
+        } catch (ExecutionException e) {
+            throw new RemoteException("Failed to process " + cacheKey, e);
         }
-
-        return dataset;
-    }
-    
-    public int getPopulationofCountry(String countryName) {
-        List<String[]> data = readCsv(); 
-        int population = 0;
-
-        //Loop through dataset and matching countryName with row. 
-        //if it matches the population on index 4 is added to population total.
-        for(String[] row : data){
-            if(countryName.equals(row[3])){
-                population += Integer.parseInt(row[4]);
-            }
-        }
-        return population;
     }
 
-    public int getNumberofCities(String countryName, int threshold, String comp) {
-        List<String[]> data = readCsv();
-        int totalCities = 0;
-        
-
-        //Loop through data set and matching countryName with row.
-        //If there's a match, we compare population to threshold based on the selected comp "min" or "max".
-        //If it meets those requirements totalCities are incremented by 1.
-        for(String[] row : data){
-            int population = Integer.parseInt(row[4]);
-
-            if(countryName.equals(row[3])){
-                if(comp.equalsIgnoreCase("min")){
-                    if(population >= threshold){
-                    totalCities += 1;
-                    }
-
-                } else if(comp.equalsIgnoreCase("max")){
-                    if(population < threshold){
-                        totalCities += 1;
-                    }
-                }
+    /** Sleeps 80 ms for a call from the same zone. 80 + 30 * distance for a call from another zone. */
+    private void simulateNetworkLatency(int clientZone) {
+        if(clientZone == zone) {
+            try {
+                sleep(BASE_DELAY_MS);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
         }
-
-        return totalCities;
-    }
-    public int getNumberofCountries(int citycount, int threshold, String comp) {
-        
-        //Method is suppoused to return the amount of countries, that has more or equal to CityCount. 
-        //The threshold for how large each city is based on comp and threshold.
-        //Example: Cities are, less or equal to 200,000.
-       
-        List<String[]> data = readCsv();
-        int numberOfCountries = 0;
-
-        //A country can have more cities that meet the requirements of a city.
-        //We're using a hashmap to store: CountryName and CityCount that are qualified.
-        HashMap<String, Integer> countryAndCitycount = new HashMap<>(); 
-
-        //Loop through dataset
-        for(String[] row : data){
-            String countryName = row[3];
-            int population = Integer.parseInt(row[4]);
-
-            //Skip rows in the arrayList that doesn't have names/blank.
-            if(countryName.isBlank()){
-                continue;
-            }
-
-            //Comparing rows with comp and threshold. 
-            //If the requirements are met, countryName and 1 is added into the HashMap.
-            //If the countryName already exist in the HashMap, merge allows us to merge countryNames and add 1 so we avoid duplicates.
-            if(comp.equalsIgnoreCase("min")){
-                if(population >= threshold){
-                    countryAndCitycount.merge(countryName, 1, Integer::sum);
-                }
-            } else if(comp.equalsIgnoreCase("max")){
-                if(population <= threshold){
-                    countryAndCitycount.merge(countryName, 1, Integer::sum);
-                }
+        else{
+            long distance = Math.abs(clientZone - zone);
+            try {
+                sleep(BASE_DELAY_MS + DELAY_PER_ZONE_MS * distance);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
         }
-
-        //Loop through HashMap to find countries that have cities that meet the required citycount.
-        for(int countries : countryAndCitycount.values()){
-            if(countries >= citycount){
-                numberOfCountries += 1;
-            }
-        }
-
-        return numberOfCountries;
-    }
-    public int getNumberofCountriesMM(int citycount, int minpopulation, int maxpopulation) {
-        //This method uses the same logic as before, except population is based on minimum- and maxiumum population.
-        //Qualified cities are now between min and max.
-
-        List<String[]> data = readCsv();
-        int numberOfCountries = 0;
-        HashMap<String, Integer> countryAndCitycount = new HashMap<>();
-
-        for(String[] row : data){
-            String countryName = row[3];
-            int population = Integer.parseInt(row[4]);
-            if(countryName.isBlank()){
-                continue;
-            }
-
-            if(population >= minpopulation && population <= maxpopulation){
-                countryAndCitycount.merge(countryName, 1, Integer::sum);
-            } 
-        }
-
-        for(int countries : countryAndCitycount.values()){
-            if(countries >= citycount){
-                numberOfCountries += 1;
-            }
-        }
-
-        return numberOfCountries;
     }
 
-    public int getCurrentWorkload() {
-        return 0;
+    /** Stops the worker thread and withdraws the server from RMI. Safe to call twice. */
+    public void shutdown() {
+        requestWorker.interrupt();
+
+        if (registry != null) {
+            try {
+                registry.unbind(BIND_NAME);
+            } catch (Exception ignored) {
+                // Already gone, or the registry died with the process that owns it.
+            }
+        }
+        try {
+            UnicastRemoteObject.unexportObject(this, true);
+        } catch (NoSuchObjectException e) {
+            // Never exported, or already unexported: nothing to undo.
+        }
+    }
+
+    /**
+     * Starts one zone server and registers it with the proxy.
+     *
+     */
+    public static void StartServer(Args options) throws Exception {
+
+        String serverHost = options.get("server-host", "localhost");
+        int serverPort = options.getInt("server-port", 1101);
+
+        String proxyHost = options.get("proxy-host", "localhost");
+        int proxyPort = options.getInt("proxy-port", 1099);
+
+        Path dataset = Path.of(options.get("dataset", "data/exercise_1_dataset.csv"));
+
+        // Baked into every stub this JVM exports, so it must be set before the first export.
+        System.setProperty("java.rmi.server.hostname", serverHost);
+
+        Server server = new Server(new Processor(dataset)); // zone is set during registration
+
+        boolean started = false;
+        try {
+            ServerInterface stub = (ServerInterface) UnicastRemoteObject.exportObject(server, serverPort);
+
+            server.registry = LocateRegistry.createRegistry(serverPort);
+            server.registry.rebind(BIND_NAME, stub);
+
+            server.registerWithProxy(proxyHost, proxyPort, serverHost, serverPort);
+            started = true;
+        } finally {
+            // Without this a failed startup leaves the worker thread and RMI's
+            // non-daemon threads running, so the JVM never exits.
+            if (!started) {
+                server.shutdown();
+            }
+            System.out.println("Server started at " + serverHost + ":" + serverPort + " and registered with proxy at " + proxyHost + ":" + proxyPort);
+        }
     }
 
 
-    public static void main(String[] args){
-        // Simple local testing for methods. Based on examples on exercise_1 document.
-        Server server = new Server();
-        //int test1 = server.getPopulationofCountry("Norway");
-        //int test2 = server.getPopulationofCountry("Sweden");
-        //int test3 = server.getNumberofCities("Norway", 100000, "min");
-        //int test4 = server.getNumberofCountries(2, 5000000, "min");
-        int test5 = server.getNumberofCountriesMM(30, 100000, 800000);
+    /**
+     * Announces this server to the proxy and adopts the zone number it hands back.
+     * The {@link ServerInfo} must describe <em>this</em> server's registry, since the
+     * proxy looks the stub up there.
+     */
+    public void registerWithProxy(String proxyHost, int proxyPort, String serverHost, int serverPort) throws RemoteException {
 
-        //System.out.println("getPopulationofCountry test");
-        //System.out.println("Expected response:\n Norway: 3162856 \n Sweden: 9362428"); 
-        //System.out.println("\n Actual response: \n Norway: " + test1 + "\n Sweden: " + test2);
-        
-        //System.out.println("getNumberofCities test.");
-        //System.out.println("Expected response: 4");
-        //System.out.println("Actual response: " + test3);
+        Registry proxyRegistry = LocateRegistry.getRegistry(proxyHost, proxyPort);
 
-        //System.out.println("getNumberofCountries test");
-        //System.out.println("Expected response: 7");
-        //System.out.println("Actual response:" + test4);
-        
-        System.out.println("getNumberofCountriesMM test");
-        System.out.println("Expected response: 30");
-        System.out.println("Actual response: " + test5);
+        ProxyInterface proxyStub;
+        try {
+            proxyStub = (ProxyInterface) proxyRegistry.lookup(ProxyInterface.BINDING_NAME);
+        } catch (NotBoundException e) {
+            // Registry answered but nothing is bound under that name: the proxy is not up yet.
+            throw new RemoteException("No proxy bound as '" + ProxyInterface.BINDING_NAME
+                    + "' at " + proxyHost + ":" + proxyPort + ". Start the proxy first.", e);
+        }
+
+        this.zone = proxyStub.registerNewServer(new ServerInfo(BIND_NAME, serverHost, serverPort));
+        System.out.println("Registered with proxy at " + proxyHost + ":" + proxyPort + " as zone " + zone);
     }
 }
