@@ -1,5 +1,6 @@
 package com.ass1.server.common;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
@@ -13,6 +14,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import com.ass1.common.Comparison;
 /**
  * Answers the four dataset queries.
  *
@@ -31,153 +33,183 @@ public class Processor {
     private static final int COUNTRY_COLUMN = 3;
     private static final int POPULATION_COLUMN = 4;
 
-    /**
-     * One entry per country: city populations (ascending) + precomputed sum.
-     *
-     * @param cityPopulations sorted ascending
-     */
-    private record CountryIndex(int[] cityPopulations, long totalPopulation) {
+    /*
+    * Stores the path to the dataset CSV file.
+    * The path is provided when Processor is created.
+    */
+    private final Path dataset;
 
-        /**
-         * Number of cities with population >= threshold.
-         */
-        int countAtLeast(int threshold) {
-            return cityPopulations.length - lowerBound(threshold);
+    /*
+    * Check that the dataset file actually exists and can be read.
+    * If not, stop immediately with a clear error message.
+    */
+    public Processor(Path dataset){
+        if(!Files.isReadable(dataset)){
+            throw new IllegalArgumentException("Dataset file not found: " +dataset.toAbsolutePath());
         }
 
-        /**
-         * Number of cities with population <= threshold.
-         */
-        int countAtMost(int threshold) {
-            return lowerBound(threshold + 1);
-        }
+        /*
+        * Saves an absolute, normalized version of the path. 
+        * Example: data/exercise_1_dataset.csv becomes C:\Users\...\exercise_1_dataset.csv
+        */
+        this.dataset = dataset.toAbsolutePath().normalize();
+    }
 
-        /**
-         * Number of cities with min <= population <= max.
-         */
-        int countBetween(int min, int max) {
-            if (min > max) {
-                return 0;
-            }
-            return lowerBound(max + 1) - lowerBound(min);
-        }
+    public long getPopulationOfCountry(String countryName){
+        long totalPopulation = 0; 
 
-        /**
-         * Index of the first element >= value (classic lower bound).
-         */
-        private int lowerBound(int value) {
-            int low = 0;
-            int high = cityPopulations.length;
-            while (low < high) {
-                int mid = (low + high) >>> 1;
-                if (cityPopulations[mid] < value) {
-                    low = mid + 1;
-                } else {
-                    high = mid;
+        try (BufferedReader reader = Files.newBufferedReader(dataset)){
+            reader.readLine(); /* skip header */
+
+            String line;
+
+            while((line = reader.readLine()) != null){
+                String[] columns =line.split(";", -1);
+
+                if(columns.length <= POPULATION_COLUMN){
+                    continue;
+                }
+
+                String country = columns[COUNTRY_COLUMN].trim();
+                String populationText = columns[POPULATION_COLUMN].trim();
+
+                if (country.equalsIgnoreCase(countryName) && !populationText.isEmpty()){
+                    totalPopulation += Long.parseLong(populationText);
                 }
             }
-            return low;
-        }
-    }
-
-    private final Map<String, CountryIndex> index;
-
-    public Processor(Path dataset) {
-        if (!Files.isReadable(dataset)) {
-            throw new IllegalArgumentException("Dataset file not found: " + dataset.toAbsolutePath());
+        } catch (IOException e){
+            throw new RuntimeException("Could not read dataset", e);
         }
 
-        this.index = Processor.parse(dataset.toAbsolutePath().normalize());
+        return totalPopulation;
     }
+    
+    public int getNumberOfCities(String countryName, int threshold, Comparison comp){
+        int totalCities = 0;
+        try(BufferedReader reader = Files.newBufferedReader(dataset)){
 
-    public long getPopulationOfCountry(String countryName) {
-        CountryIndex country = index.get(key(countryName));
-        return country == null ? 0L : country.totalPopulation;
-    }
+            reader.readLine();
+            String line;
+            while((line = reader.readLine()) != null){
+                String[] columns = line.split(";", -1);
 
-    public int getNumberOfCities(String countryName, int threshold, String comp) {
-        CountryIndex country = index.get(key(countryName));
-        if (country == null) {
-            return 0;
+                if(columns.length <= POPULATION_COLUMN){
+                    continue;
+                }
+
+                String country = columns[COUNTRY_COLUMN].trim();
+                String populationText = columns[POPULATION_COLUMN].trim();
+
+                if(!country.equalsIgnoreCase(countryName) || populationText.isEmpty()){
+                    continue;
+                }
+                
+                int population = Integer.parseInt(populationText);
+                if(comp == Comparison.MIN && population >= threshold){
+                    totalCities++;
+                }
+
+                if(comp == Comparison.MAX && population <= threshold){
+                    totalCities++;
+                }
+            }
+                
+
+        } catch(IOException e){
+            throw new RuntimeException("Could not read dataset", e);
         }
-        return isMin(comp) ? country.countAtLeast(threshold) : country.countAtMost(threshold);
+
+        return totalCities;
+        
     }
 
-    public int getNumberOfCountries(int cityCount, int threshold, String comp) {
-        boolean min = isMin(comp);
-        int countries = 0;
-        for (CountryIndex country : index.values()) {
-            int matching = min ? country.countAtLeast(threshold) : country.countAtMost(threshold);
-            if (matching >= cityCount) {
-                countries++;
+    public int getNumberOfCountries(int cityCount, int threshold, Comparison comp){
+        Map<String, Integer> countryCounts = new HashMap<>();
+
+        try(BufferedReader reader = Files.newBufferedReader(dataset)){
+            reader.readLine();
+            String line;
+
+            while((line = reader.readLine()) != null){
+                String[] columns = line.split(";", -1);
+
+                if(columns.length <= POPULATION_COLUMN){
+                    continue;
+                }
+
+                String country = columns[COUNTRY_COLUMN].trim();
+                String populationText = columns[POPULATION_COLUMN].trim();
+                
+                if(country.isEmpty() || populationText.isEmpty()){
+                    continue;
+                }
+
+                int population = Integer.parseInt(populationText);
+
+                boolean matches = (comp == Comparison.MIN && population >= threshold) || (comp == Comparison.MAX && population <= threshold);
+
+                if(matches){
+                    countryCounts.merge(country, 1, Integer::sum);
+                }
+            }
+
+        } catch(IOException e){
+            throw new RuntimeException("Could not read dataset", e);
+        }
+
+        int numberOfCountries = 0;
+
+        for(int count : countryCounts.values()) {
+            if(count >= cityCount){
+                numberOfCountries++;
             }
         }
-        return countries;
+
+        return numberOfCountries;
     }
 
-    public int getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation) {
-        int countries = 0;
-        for (CountryIndex country : index.values()) {
-            if (country.countBetween(minPopulation, maxPopulation) >= cityCount) {
-                countries++;
+    public int getNumberOfCountriesMM(int cityCount, int minPopulation, int maxPopulation){
+        Map<String, Integer> countryCounts = new HashMap<>();
+
+        try(BufferedReader reader = Files.newBufferedReader(dataset)){
+            
+            reader.readLine();
+            String line;
+            
+            while((line = reader.readLine()) != null){
+
+                String[] columns = line.split(";", -1);
+
+                if(columns.length <= POPULATION_COLUMN){
+                    continue;
+                }
+
+                String country = columns[COUNTRY_COLUMN].trim();
+                String populationText = columns[POPULATION_COLUMN].trim();
+
+                if(country.isEmpty() || populationText.isEmpty()){
+                    continue;
+                }
+
+                int population = Integer.parseInt(populationText);
+
+                if(population >= minPopulation && population <= maxPopulation){
+                    countryCounts.merge(country, 1, Integer::sum);
+                }
+            }
+
+        } catch(IOException e){ 
+            throw new RuntimeException("Could not read dataset", e);
+        }
+
+        int numberOfCountries = 0;
+        for(int count : countryCounts.values()){
+            if(count >= cityCount){
+                numberOfCountries++;
             }
         }
-        return countries;
+
+        return numberOfCountries;
     }
-
-    private static boolean isMin(String comp) {
-        return comp != null && comp.trim().equalsIgnoreCase("min");
-    }
-
-    private static String key(String countryName) {
-        return countryName == null ? "" : countryName.trim().toLowerCase(Locale.ROOT);
-    }
-
-    private static Map<String, CountryIndex> parse(Path dataset) {
-        // populationsByCountry = "Belgium" -> [300, 100, 50, ...], "Norway" -> [100, 50, 10, ...]
-        Map<String, List<Integer>> populationsByCountry = new HashMap<>();
-
-        try (Stream<String> lines = Files.lines(dataset, StandardCharsets.UTF_8)) {
-            lines.skip(1).forEach(line -> collect(line, populationsByCountry));
-        } catch (IOException e) {
-            throw new UncheckedIOException("Could not read dataset " + dataset, e);
-        }
-
-        // index = "Belgium" -> CountryIndex([50, 100, 300], 450), "Norway" -> CountryIndex([10, 50, 100], 160)
-        Map<String, CountryIndex> index = new HashMap<>(populationsByCountry.size() * 2);
-
-        populationsByCountry.forEach((country, populations) -> {
-            int[] sorted = new int[populations.size()];
-            long total = 0;
-            for (int i = 0; i < sorted.length; i++) {
-                sorted[i] = populations.get(i);
-                total += sorted[i];
-            }
-            Arrays.sort(sorted);
-            index.put(country, new CountryIndex(sorted, total));
-        });
-        return Map.copyOf(index);
-    }
-
-    private static void collect(String line, Map<String, List<Integer>> target) {
-        if (line.isBlank()) {
-            return;
-        }
-        String[] columns = line.split(";", -1);
-        if (columns.length <= POPULATION_COLUMN) {
-            return; // broken line
-        }
-        String country = columns[COUNTRY_COLUMN].trim();
-        String populationText = columns[POPULATION_COLUMN].trim();
-        if (country.isEmpty() || populationText.isEmpty()) {
-            return;
-        }
-        int population;
-        try {
-            population = Integer.parseInt(populationText);
-        } catch (NumberFormatException ignored) {
-            return; // city without a usable population number
-        }
-        target.computeIfAbsent(key(country), k -> new ArrayList<>()).add(population);
-    }
+    
 }
