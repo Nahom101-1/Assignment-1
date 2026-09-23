@@ -13,7 +13,12 @@ public class Cache<K, V> extends LinkedHashMap<K, V> {
         OLDEST;
 
         public static Policy of(String value) {
-            return valueOf(value.trim().toUpperCase());
+            try {
+                return valueOf(value.trim().toUpperCase(java.util.Locale.ROOT));
+            } catch (IllegalArgumentException e) {
+                throw new IllegalArgumentException(
+                        "Unknown cache mode '" + value + "'. Use none, fifo or oldest.", e);
+            }
         }
     }
 

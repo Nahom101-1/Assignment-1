@@ -97,7 +97,6 @@ public class Client {
      */
     public void setCacheMode(CacheMode cacheMode) {
         this.cacheMode = cacheMode;
-what
         synchronized (cache) {
             cache.clear();
         }
@@ -629,8 +628,7 @@ what
 
         Client client = new Client();
         client.setProxy(proxyHost, proxyPort);
-        client.setCacheMode(CacheMode.valueOf(
-                options.get("cache", "off").trim().toUpperCase()));
+        client.setCacheMode(CacheMode.of(options.get("cache", "off")));
         client.setServerCacheEnabled(
                 Boolean.parseBoolean(options.get("server-cache", "false")));
 

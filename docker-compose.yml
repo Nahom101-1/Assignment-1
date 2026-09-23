@@ -22,7 +22,7 @@ services:
   server1:
     <<: *common
     container_name: server1
-    command: ["server", "--server-host", "server1", "--server-port", "1101",
+    command: ["server", "--server-host", "server1", "--server-port", "1101", "--zone", "1",
               "--proxy-host", "proxy", "--proxy-port", "1099"]
     ports:
       - "1101:1101"
@@ -34,7 +34,7 @@ services:
   server2:
     <<: *common
     container_name: server2
-    command: ["server", "--server-host", "server2", "--server-port", "1102",
+    command: ["server", "--server-host", "server2", "--server-port", "1102", "--zone", "2",
               "--proxy-host", "proxy", "--proxy-port", "1099"]
     ports:
       - "1102:1102"
@@ -44,7 +44,7 @@ services:
   server3:
     <<: *common
     container_name: server3
-    command: ["server", "--server-host", "server3", "--server-port", "1103",
+    command: ["server", "--server-host", "server3", "--server-port", "1103", "--zone", "3",
               "--proxy-host", "proxy", "--proxy-port", "1099"]
     ports:
       - "1103:1103"
@@ -54,10 +54,20 @@ services:
   server4:
     <<: *common
     container_name: server4
-    command: ["server", "--server-host", "server4", "--server-port", "1104",
+    command: ["server", "--server-host", "server4", "--server-port", "1104", "--zone", "4",
               "--proxy-host", "proxy", "--proxy-port", "1099"]
     ports:
       - "1104:1104"
+    depends_on: [proxy]
+    restart: on-failure
+
+  server5:
+    <<: *common
+    container_name: server5
+    command: ["server", "--server-host", "server5", "--server-port", "1105", "--zone", "5",
+              "--proxy-host", "proxy", "--proxy-port", "1099"]
+    ports:
+      - "1105:1105"
     depends_on: [proxy]
     restart: on-failure
 

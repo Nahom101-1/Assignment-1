@@ -207,7 +207,7 @@ public class Server implements ServerInterface {
 
         // "none" runs without a cache.
         String cacheOption = options.get("cache", "fifo");
-        boolean caching = !cacheOption.equalsIgnoreCase("none");
+        boolean caching = !cacheOption.equalsIgnoreCase("none") && !cacheOption.equalsIgnoreCase("off");
         int capacity = caching ? options.getInt("cache-size", CACHE_CAPACITY) : 0;
         Cache.Policy policy = caching ? Cache.Policy.of(cacheOption) : Cache.Policy.FIFO;
 
