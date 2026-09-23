@@ -11,7 +11,8 @@ class QueryStatsTest {
         return new ClientResult(
                 new PopulationOfCountry("Norway", 1, "getPopulationofCountry Norway Zone:1"),
                 new QueryResult(1L, execution, waiting, 1),
-                turnaround);
+                turnaround,
+                false);
     }
 
     @Test

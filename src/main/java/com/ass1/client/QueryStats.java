@@ -1,11 +1,8 @@
 package com.ass1.client;
 
 /**
- * Running totals for one query type, used to build the summary lines at the end
- * of the output file.
- *
- * <p>Accumulated as results arrive rather than stored, so only the five reported
- * numbers are kept per method.
+ * Totals for one query type. Used for the summary lines at the end of the
+ * output file.
  */
 class QueryStats {
     long totalTurnaround = 0;
@@ -18,9 +15,9 @@ class QueryStats {
     int count = 0;
 
     /**
-     * Folds one completed query into the totals.
+     * Adds one result to the totals.
      *
-     * @param clientResult the query to count
+     * @param clientResult the result to count
      */
     void add(ClientResult clientResult) {
         long turnaround = clientResult.turnaroundTime;

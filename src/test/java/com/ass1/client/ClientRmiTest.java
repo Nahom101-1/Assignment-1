@@ -25,7 +25,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/** Two-hop lookup against a real RMI registry started inside this JVM. */
+/** Tests the two lookups against a real RMI registry started inside the test JVM. */
 class ClientRmiTest {
 
     private static final String BOUND_NAME = "test-server";

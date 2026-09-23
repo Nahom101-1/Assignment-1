@@ -24,7 +24,8 @@ class ClientOutputTest {
         return new ClientResult(
                 new PopulationOfCountry(country, zone, line),
                 new QueryResult(value, execution, waiting, serverZone),
-                turnaround);
+                turnaround,
+                false);
     }
 
     private static ClientResult cities(String country, int zone, long value, long turnaround) {
@@ -32,7 +33,8 @@ class ClientOutputTest {
         return new ClientResult(
                 new NumberOfCities(country, 100000, Comparison.MIN, zone, line),
                 new QueryResult(value, 5L, 15L, 2),
-                turnaround);
+                turnaround,
+                false);
     }
 
     private List<String> write(Client client) throws IOException {
