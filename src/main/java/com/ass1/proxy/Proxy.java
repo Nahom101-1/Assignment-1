@@ -11,13 +11,20 @@ import java.util.concurrent.Executors;
 
 import com.ass1.common.ServerInfo;
 import com.ass1.server.ServerInterface;
+import com.ass1.util.Args;
 
-public class Proxy extends UnicastRemoteObject implements ProxyInterface{
+/**
+ * Routes client queries to zone servers.
+ *
+ * <p>Deliberately does <em>not</em> extend {@link UnicastRemoteObject}. {@code super(PORT)}
+ * would export the proxy before the field initializers below had run, leaving
+ * {@code registeredServers} and {@code workloadPoller} null while the object was already
+ * listening. It is exported explicitly in {@link #startProxy} once fully constructed.
+ */
+public class Proxy implements ProxyInterface{
 
-    // Exports on the registry's port, so Docker only has to publish that one port.
-    public Proxy() throws RemoteException {
-        super(PORT);
-    }
+    /** Keeps the registry reachable: an unreferenced registry can be garbage collected. */
+    private Registry registry;
 
     static class RegisteredServer{
         final ServerInfo serverInfo;
@@ -125,14 +132,24 @@ public class Proxy extends UnicastRemoteObject implements ProxyInterface{
         return !registeredServers.isEmpty();
     }
 
-    public static void main(String[] args) throws RemoteException {
+    /** Publishes the proxy. Does not loop: RMI keeps the JVM alive once something is exported. */
+    public static Proxy startProxy(Args options) throws RemoteException {
+        // Falls back to -Djava.rmi.server.hostname before "localhost", so that flag is not clobbered.
+        String hostname = options.get("host",
+                System.getProperty("java.rmi.server.hostname", "localhost"));
+
         // Written into the proxy's stub, so it must be reachable by every caller. Set before exporting.
-        String hostname = args.length > 0 ? args[0] : "localhost";
         System.setProperty("java.rmi.server.hostname", hostname);
 
         Proxy proxy = new Proxy();
-        Registry registry = LocateRegistry.createRegistry(PORT);
-        registry.rebind(BINDING_NAME, proxy);
+
+        // Exported on the registry's port, so Docker only has to publish that one port.
+        ProxyInterface stub = (ProxyInterface) UnicastRemoteObject.exportObject(proxy, PORT);
+
+        proxy.registry = LocateRegistry.createRegistry(PORT);
+        proxy.registry.rebind(BINDING_NAME, stub);
+
         System.out.println("Proxy listening on " + hostname + ":" + PORT + " as '" + BINDING_NAME + "'");
+        return proxy;
     }
 }
