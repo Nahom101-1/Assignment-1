@@ -6,6 +6,9 @@ import com.ass1.common.ServerInfo;
 import com.ass1.proxy.ProxyInterface;
 import com.ass1.server.ServerInterface;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,6 +19,7 @@ import java.rmi.registry.Registry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Client for reading and executing statistics queries.
@@ -84,7 +88,6 @@ public class Client {
      */
     private QueryResult executeRequest(Query query, ProxyInterface proxyStub)
             throws RemoteException, NotBoundException {
-
         ServerInfo serverInfo = proxyStub.getServer(query.zone);
         if(serverInfo == null){
             throw new RemoteException("No server Registered");
@@ -93,6 +96,81 @@ public class Client {
         ServerInterface server = connectToServer(serverInfo);
 
         return executeQuery(query, server);
+    }
+
+    /**
+     * Executes all parsed queries asynchronously with a fixed interval
+     * between each submitted request.
+     *
+     * <p>Each query is executed on a separate worker thread so that the
+     * client does not have to wait for one request to finish before sending
+     * the next one. The client waits {@code interval} milliseconds between
+     * submitting requests.</p>
+     *
+     * @param interval the time in milliseconds between submitting queries
+     * @throws RemoteException if communication with the proxy fails
+     * @throws NotBoundException if the proxy is not registered in the RMI registry
+     */
+    private void executeQueries(int interval) throws RemoteException, NotBoundException {
+
+        ProxyInterface proxy = connectToProxy();
+
+        // Thread pool manger
+        ExecutorService executor = Executors.newCachedThreadPool();
+
+        for (Query query : queries) {
+
+            executor.submit(() -> {
+                try {
+                    long startTime = System.currentTimeMillis();
+
+                    QueryResult result = executeRequest(query, proxy);
+
+                    long turnaroundTime =
+                            System.currentTimeMillis() - startTime;
+
+                    System.out.println(
+                            "Result: " + result.value()
+                                    + ", Turnaround: " + turnaroundTime + " ms"
+                                    + ", Execution: " + result.executionTimeMs() + " ms"
+                                    + ", Waiting: " + result.waitingTimeMs() + " ms"
+                                    + ", Server zone: " + result.serverZone()
+                    );
+
+                } catch (RemoteException | NotBoundException e) {
+                    System.err.println(
+                            "Request failed: " + e.getMessage()
+                    );
+                }
+            });
+
+            // Wait before submitting the next request.
+            try {
+                Thread.sleep(interval);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
+        }
+
+        // Stop accepting new tasks while allowing submitted tasks to finish.
+        executor.shutdown();
+
+        try {
+            // Wait for all submitted requests to complete.
+            boolean finished =
+                    executor.awaitTermination(5, TimeUnit.MINUTES);
+
+            if (!finished) {
+                System.err.println(
+                        "Some requests did not finish within 5 minutes."
+                );
+            }
+
+        } catch (InterruptedException e) {
+            // Restore the interrupted status of the current thread.
+            Thread.currentThread().interrupt();
+        }
     }
 
     /**
