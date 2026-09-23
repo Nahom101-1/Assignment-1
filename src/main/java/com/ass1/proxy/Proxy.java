@@ -51,14 +51,13 @@ public class Proxy implements ProxyInterface{
 
     // Home zone's server unless overloaded, then least loaded elsewhere, ties by clockwise distance.
     public synchronized ServerInfo getServer(int zone) {
-        int serverCount = registeredServers.size();
-        if (serverCount == 0) {
+        if (registeredServers.isEmpty()) {
             return null;
         }
 
-        // Zones are handed out as 1..serverCount, so anything outside that wraps clockwise to zone 1.
-        int homeZone = (zone >= 1 && zone <= serverCount) ? zone : 1;
-        RegisteredServer homeServer = registeredServers.get(homeZone - 1);
+        int zoneCount = highestZone();
+        RegisteredServer homeServer = firstServerClockwiseFrom(zone, zoneCount);
+        int homeZone = homeServer.serverZone;
 
         RegisteredServer chosen = homeServer;
         if (homeServer.waitingList >= OVERLOAD_THRESHOLD) {
@@ -68,7 +67,7 @@ public class Proxy implements ProxyInterface{
                 if (candidate == homeServer) {
                     continue;
                 }
-                int distance = (candidate.serverZone - homeZone + serverCount) % serverCount;
+                int distance = (candidate.serverZone - homeZone + zoneCount) % zoneCount;
                 boolean better = best == null
                         || candidate.waitingList < best.waitingList
                         || (candidate.waitingList == best.waitingList && distance < bestDistance);
@@ -85,6 +84,36 @@ public class Proxy implements ProxyInterface{
 
         countRequest(chosen);
         return chosen.serverInfo;
+    }
+
+    // Size of the zone ring: zones run 1..highestZone, and a zone may have no server.
+    private int highestZone() {
+        int highest = 0;
+        for (RegisteredServer server : registeredServers) {
+            highest = Math.max(highest, server.serverZone);
+        }
+        return highest;
+    }
+
+    private RegisteredServer serverInZone(int zone) {
+        for (RegisteredServer server : registeredServers) {
+            if (server.serverZone == zone) {
+                return server;
+            }
+        }
+        return null;
+    }
+
+    // The requested zone's server, or the next zone clockwise that has one.
+    private RegisteredServer firstServerClockwiseFrom(int zone, int zoneCount) {
+        int start = (zone >= 1 && zone <= zoneCount) ? zone : 1;
+        for (int step = 0; step < zoneCount; step++) {
+            RegisteredServer server = serverInZone((start - 1 + step) % zoneCount + 1);
+            if (server != null) {
+                return server;
+            }
+        }
+        return registeredServers.get(0);
     }
 
     // Caller must hold the lock. Polls the server in the background every POLL_INTERVAL requests.
@@ -121,7 +150,12 @@ public class Proxy implements ProxyInterface{
 
         // synchronized because RMI calls arrive on separate threads.
         synchronized (this) {
-            RegisteredServer newServer = new RegisteredServer(serverInfo, stub, nextZone++);
+            // A server that declares its own zone keeps it, so the mapping survives restarts and
+            // does not depend on which container happens to register first.
+            int assignedZone = serverInfo.zone > 0 ? serverInfo.zone : nextZone;
+            nextZone = Math.max(nextZone, assignedZone + 1);
+
+            RegisteredServer newServer = new RegisteredServer(serverInfo, stub, assignedZone);
             registeredServers.add(newServer);
             System.out.println("Registered " + serverInfo.name + " at " + serverInfo.address + ":" + serverInfo.port + " as zone " + newServer.serverZone);
             return newServer.serverZone;

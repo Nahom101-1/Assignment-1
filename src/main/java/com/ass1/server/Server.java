@@ -101,11 +101,24 @@ public class Server implements ServerInterface {
         return queue.size();
     }
 
+    private String queueLogFileName() {
+        return "data/server_" + zone + "_queue.csv";
+    }
+
+    /** Empties this zone's queue log so one run's samples never sit on top of the previous run's. */
+    private synchronized void startQueueLog() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(queueLogFileName(), false))) {
+            writer.write("");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private synchronized void logQueueSize(){
         long timestamp = System.currentTimeMillis();
         int queueSize = queue.size();
 
-        String fileName = "data/server_" + zone + "_queue.csv";
+        String fileName = queueLogFileName();
 
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))){
             writer.write(timestamp + "," + queueSize);
@@ -184,10 +197,16 @@ public class Server implements ServerInterface {
 
         Path dataset = Path.of(options.get("dataset", "data/exercise_1_dataset.csv"));
 
+        // Declaring the zone keeps the zone/server mapping stable across restarts and across
+        // container start order. 0 falls back to the proxy assigning one in registration order.
+        int requestedZone = options.getInt("zone", 0);
+
         // Baked into every stub this JVM exports, so it must be set before the first export.
         System.setProperty("java.rmi.server.hostname", serverHost);
 
-        Server server = new Server(new Processor(dataset)); // zone is set during registration
+        Server server = new Server(new Processor(dataset));
+        // Set before export so latency and the queue log use the right zone from the first request.
+        server.zone = requestedZone;
 
         boolean started = false;
         try {
@@ -196,7 +215,8 @@ public class Server implements ServerInterface {
             server.registry = LocateRegistry.createRegistry(serverPort);
             server.registry.rebind(BIND_NAME, stub);
 
-            server.registerWithProxy(proxyHost, proxyPort, serverHost, serverPort);
+            server.registerWithProxy(proxyHost, proxyPort, serverHost, serverPort, requestedZone);
+            server.startQueueLog();
             started = true;
         } finally {
             // Without this a failed startup leaves the worker thread and RMI's
@@ -214,7 +234,7 @@ public class Server implements ServerInterface {
      * The {@link ServerInfo} must describe <em>this</em> server's registry, since the
      * proxy looks the stub up there.
      */
-    public void registerWithProxy(String proxyHost, int proxyPort, String serverHost, int serverPort) throws RemoteException {
+    public void registerWithProxy(String proxyHost, int proxyPort, String serverHost, int serverPort, int requestedZone) throws RemoteException {
 
 
         Registry proxyRegistry = LocateRegistry.getRegistry(proxyHost, proxyPort);
@@ -228,7 +248,7 @@ public class Server implements ServerInterface {
                     + "' at " + proxyHost + ":" + proxyPort + ". Start the proxy first.", e);
         }
 
-        this.zone = proxyStub.registerNewServer(new ServerInfo(BIND_NAME, serverHost, serverPort));
+        this.zone = proxyStub.registerNewServer(new ServerInfo(BIND_NAME, serverHost, serverPort, requestedZone));
         System.out.println("Registered with proxy at " + proxyHost + ":" + proxyPort + " as zone " + zone);
     }
 }
