@@ -50,22 +50,49 @@ def read_queue(path):
     return times, lengths
 
 
+def round_up(value, step=100):
+    return int((value // step + 1) * step)
+
+
+def binned_median(times, size=50):
+    """Median of every `size` queries"""
+    centres, medians = [], []
+    for start in range(0, len(times), size):
+        chunk = sorted(times[start:start + size])
+        if chunk:
+            centres.append(start + len(chunk) / 2)
+            medians.append(chunk[len(chunk) // 2])
+    return centres, medians
+
+
 def turnaround_graph(interval):
     # One panel per configuration. All five on the same axes is unreadable.
-    figure, axes = plt.subplots(len(RUNS), 1, sharex=True, sharey=True,
-                                figsize=(10, 10))
+    runs = [(c, r, l, read_turnaround(RESULTS / f"{r}_T{interval}"))
+            for c, (r, l) in zip(COLORS, RUNS)]
 
-    for axis, color, (run, label) in zip(axes, COLORS, RUNS):
-        times = read_turnaround(RESULTS / f"{run}_T{interval}")
-        if times:
-            axis.plot(range(1, len(times) + 1), times, color=color, linewidth=0.4)
-        axis.set_title(label, fontsize=10, loc="left")
+    everything = sorted(t for _, _, _, times in runs for t in times)
+    top = round_up(everything[int(len(everything) * 0.99)])
+
+    figure, axes = plt.subplots(len(runs), 1, sharex=True, sharey=True,
+                                figsize=(10, 11))
+
+    for axis, (color, run, label, times) in zip(axes, runs):
+        x = range(1, len(times) + 1)
+        axis.scatter(x, times, s=2, color=color, alpha=0.3, linewidths=0)
+        bx, by = binned_median(times)
+        axis.plot(bx, by, color=color, linewidth=1.8)
+
+        above = sum(1 for t in times if t > top)
+        note = f"   ({above} above the axis)" if above else ""
+        axis.set_title(label + note, fontsize=10, loc="left")
         axis.set_ylabel("ms")
         axis.grid(alpha=0.3)
 
     axes[-1].set_xlabel("Query number")
-    axes[0].set_ylim(bottom=0)
-    figure.suptitle(f"Turn-around time per query, T = {interval} ms")
+    axes[0].set_ylim(0, top)
+    figure.suptitle(f"Turn-around time per query, T = {interval} ms"
+                    "\ndots: individual queries, line: median of every 50",
+                    fontsize=12)
     figure.tight_layout()
     figure.savefig(GRAPHS / f"turnaround_T{interval}.png", dpi=150)
     plt.close(figure)
@@ -95,14 +122,16 @@ def queue_graph(run, label, interval):
                  color=color, linewidth=1.3, label=f"Server {zone}")
 
     plt.axhline(18, color="gray", linestyle="--", linewidth=1)
-    plt.text(0, 18.5, "overload threshold (18)", color="gray", fontsize=9)
+    plt.text(0, 18.4, "overload threshold (18)", color="gray", fontsize=9)
 
     plt.xlabel(f"Seconds since Unix time {start // 1000}")
     plt.ylabel("Queue length")
     plt.title(f"Queue length per server, {label}, T = {interval} ms")
-    plt.legend(ncol=5)
+    # Outside the axes, so it never sits on top of the data.
+    plt.legend(ncol=5, loc="lower center", bbox_to_anchor=(0.5, -0.38),
+               frameon=False)
     plt.grid(alpha=0.3)
-    plt.ylim(bottom=0, top=20)
+    plt.ylim(bottom=0, top=21)
     plt.tight_layout()
     plt.savefig(GRAPHS / f"queue_{run}_T{interval}.png", dpi=150)
     plt.close()
