@@ -295,6 +295,7 @@ public class Client {
 
                     if (result != null) {
                         cacheHit = true;
+                        result = new QueryResult(result.value(), 0, 0, result.serverZone());
                     } else {
                         ServerInterface server = getServerForQuery(query, proxy);
 

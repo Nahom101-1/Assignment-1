@@ -48,10 +48,6 @@ public class Main {
                                   --server-cache true|false   servers are caching, picks
                                                               server_cache.txt over
                                                               naive_server.txt          (default false)
-                                  --output      <path>  write here instead of the
-                                                        default name for the run
-                                  --append  true|false  add to the output file instead
-                                                        of replacing it            (default false)
                                   --wait-seconds <s>    how long to wait for servers    (default 60)
                         """);
                 System.exit(2);

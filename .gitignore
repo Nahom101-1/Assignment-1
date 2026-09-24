@@ -37,3 +37,18 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### Build and run output ###
+# Jar and docker image tar built for submission
+dist/
+# Queue logs a server writes next to the dataset on every run
+data/server_*_queue.csv
+# Output files a client writes when run outside the results folders
+/naive_server.txt
+/server_cache.txt
+/client_cache.txt
+
+### Python (plot_graphs.py) ###
+.venv/
+__pycache__/
+*.pyc

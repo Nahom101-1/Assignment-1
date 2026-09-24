@@ -57,8 +57,11 @@ services:
     command: ["server", "--server-host", "server5", "--server-port", "1105", "--zone", "5",
               "--proxy-host", "proxy", "--cache", "${SERVER_CACHE:-none}"]
 
+  # Behind a profile so "up" starts only the proxy and the servers.
   client:
     <<: *app
+    profiles:
+      - measure
     working_dir: /app/data
     entrypoint: ["java", "-jar", "/app/solution.jar"]
     command: ["client", "--proxy-host", "proxy", "--input", "exercise_1_input.txt",

@@ -207,7 +207,7 @@ public class Server implements ServerInterface {
         int requestedZone = options.getInt("zone", 0);
 
         // "none" runs without a cache.
-        String cacheOption = options.get("cache", "fifo");
+        String cacheOption = options.get("cache", "none");
         boolean caching = !cacheOption.equalsIgnoreCase("none") && !cacheOption.equalsIgnoreCase("off");
         int capacity = caching ? options.getInt("cache-size", CACHE_CAPACITY) : 0;
         Cache.Policy policy = caching ? Cache.Policy.of(cacheOption) : Cache.Policy.FIFO;
@@ -238,8 +238,9 @@ public class Server implements ServerInterface {
             // non-daemon threads running, so the JVM never exits.
             if (!started) {
                 server.shutdown();
+            } else {
+                System.out.println("Server started at " + serverHost + ":" + serverPort + " and registered with proxy at " + proxyHost + ":" + proxyPort);
             }
-            System.out.println("Server started at " + serverHost + ":" + serverPort + " and registered with proxy at " + proxyHost + ":" + proxyPort);
         }
     }
 
