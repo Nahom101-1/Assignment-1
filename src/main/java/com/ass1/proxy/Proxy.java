@@ -14,12 +14,9 @@ import com.ass1.server.ServerInterface;
 import com.ass1.util.Args;
 
 /**
- * Routes client queries to zone servers.
- *
- * <p>Deliberately does <em>not</em> extend {@link UnicastRemoteObject}. {@code super(PORT)}
- * would export the proxy before the field initializers below had run, leaving
- * {@code registeredServers} and {@code workloadPoller} null while the object was already
- * listening. It is exported explicitly in {@link #startProxy} once fully constructed.
+ * Routes client queries to zone servers. 
+ * Does not extend UnicastRemoteobject because its constructor would export the proxy before the fields are set. 
+ * The proxy is exported in startProxy instead.
  */
 public class Proxy implements ProxyInterface{
 
@@ -32,8 +29,10 @@ public class Proxy implements ProxyInterface{
         final int serverZone;
         // Assignments since the last poll.
         int requestsSinceLastPoll;
+        // length of waiting list from last poll, not live data
         int waitingList;
 
+        // What the proxy stores about each server
         RegisteredServer(ServerInfo serverInfo, ServerInterface stub, int serverZone) {
             this.serverInfo = serverInfo;
             this.stub = stub;
@@ -86,7 +85,7 @@ public class Proxy implements ProxyInterface{
         return chosen.serverInfo;
     }
 
-    // Size of the zone ring: zones run 1..highestZone, and a zone may have no server.
+    // size of the zone ring zones run 1..highestZone, and a zone may have no server.
     private int highestZone() {
         int highest = 0;
         for (RegisteredServer server : registeredServers) {
@@ -95,6 +94,7 @@ public class Proxy implements ProxyInterface{
         return highest;
     }
 
+    // check if there is server in given zone
     private RegisteredServer serverInZone(int zone) {
         for (RegisteredServer server : registeredServers) {
             if (server.serverZone == zone) {
@@ -133,7 +133,7 @@ public class Proxy implements ProxyInterface{
                 server.waitingList = workload;
             }
         } catch (Exception e) {
-            // Broad on purpose: an exception escaping a pool task vanishes silently. The old value is kept.
+            // Catch everything so that the error doesnt disappear 
             System.err.println("Workload poll failed for " + server.serverInfo.name + ": " + e);
         }
     }
@@ -166,9 +166,9 @@ public class Proxy implements ProxyInterface{
         return !registeredServers.isEmpty();
     }
 
-    /** Publishes the proxy. Does not loop: RMI keeps the JVM alive once something is exported. */
+    // Creates registry on port 1099 and binds the proxy in it
     public static Proxy startProxy(Args options) throws RemoteException {
-        // Falls back to -Djava.rmi.server.hostname before "localhost", so that flag is not clobbered.
+        // use --host or rmi server hostname or localhost if not set 
         String hostname = options.get("host",
                 System.getProperty("java.rmi.server.hostname", "localhost"));
 
