@@ -55,8 +55,8 @@ public class Proxy implements ProxyInterface{
             return null;
         }
 
-        int zoneCount = highestZone();
-        RegisteredServer homeServer = firstServerClockwiseFrom(zone, zoneCount);
+        int highestZone = highestZone();
+        RegisteredServer homeServer = firstServerClockwiseFrom(zone, highestZone);
         int homeZone = homeServer.serverZone;
 
         RegisteredServer chosen = homeServer;
@@ -67,7 +67,7 @@ public class Proxy implements ProxyInterface{
                 if (candidate == homeServer) {
                     continue;
                 }
-                int distance = (candidate.serverZone - homeZone + zoneCount) % zoneCount;
+                int distance = (candidate.serverZone - homeZone + highestZone) % highestZone;
                 boolean better = best == null
                         || candidate.waitingList < best.waitingList
                         || (candidate.waitingList == best.waitingList && distance < bestDistance);
@@ -105,10 +105,10 @@ public class Proxy implements ProxyInterface{
     }
 
     // The requested zone's server, or the next zone clockwise that has one.
-    private RegisteredServer firstServerClockwiseFrom(int zone, int zoneCount) {
-        int start = (zone >= 1 && zone <= zoneCount) ? zone : 1;
-        for (int step = 0; step < zoneCount; step++) {
-            RegisteredServer server = serverInZone((start - 1 + step) % zoneCount + 1);
+    private RegisteredServer firstServerClockwiseFrom(int zone, int highestZone) {
+        int start = (zone >= 1 && zone <= highestZone) ? zone : 1;
+        for (int step = 0; step < highestZone; step++) {
+            RegisteredServer server = serverInZone((start - 1 + step) % highestZone + 1);
             if (server != null) {
                 return server;
             }
@@ -138,7 +138,7 @@ public class Proxy implements ProxyInterface{
         }
     }
 
-    // Looks the server up before taking a zone, so a bad address is rejected without leaving a gap.
+    // Looks the server up before taking a zone, so a bad address is rejected without reserving the zone number. 
     public int registerNewServer(ServerInfo serverInfo) throws RemoteException {
         ServerInterface stub;
         try {
@@ -150,8 +150,7 @@ public class Proxy implements ProxyInterface{
 
         // synchronized because RMI calls arrive on separate threads.
         synchronized (this) {
-            // A server that declares its own zone keeps it, so the mapping survives restarts and
-            // does not depend on which container happens to register first.
+            // A server that declares its own zone keeps it, if not it gets assigned the zone after the current highest zone. . 
             int assignedZone = serverInfo.zone > 0 ? serverInfo.zone : nextZone;
             nextZone = Math.max(nextZone, assignedZone + 1);
 
@@ -162,6 +161,7 @@ public class Proxy implements ProxyInterface{
         }
     }
 
+    // Clients can check if there are any servers before asking for one. 
     public synchronized boolean hasRegisteredServers() {
         return !registeredServers.isEmpty();
     }
