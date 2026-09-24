@@ -220,12 +220,15 @@ public class Server implements ServerInterface {
         // Set before export so latency and the queue log use the right zone from the first request.
         server.zone = requestedZone;
 
+        // Since the assignment text asks for unique names. If zone is not yet known we refer to the port
+        server.bindName = requestedZone > 0 ? "zoneserver_" + requestedZone: "zoneserver_port_" + serverPort;
+
         boolean started = false;
         try {
             ServerInterface stub = (ServerInterface) UnicastRemoteObject.exportObject(server, serverPort);
 
             server.registry = LocateRegistry.createRegistry(serverPort);
-            server.registry.rebind(bindName, stub);
+            server.registry.rebind(server.bindName, stub);
 
             server.registerWithProxy(proxyHost, proxyPort, serverHost, serverPort, requestedZone);
             server.startQueueLog();
