@@ -35,7 +35,8 @@ import static java.lang.Thread.sleep;
  * The server can be started and registered with the proxy using the InitializeServer method, and can be shut down using the shutdown method, which stops the worker thread and withdraws the server from RMI. The server can also report its current workload, which is the number of requests currently waiting in the queue.
  */
 public class Server implements ServerInterface {
-    public static final String BIND_NAME = "ZoneServer";
+
+    private String bindName; 
 
     private volatile int zone = 0;
     public static final long BASE_DELAY_MS = 80;
@@ -175,7 +176,7 @@ public class Server implements ServerInterface {
 
         if (registry != null) {
             try {
-                registry.unbind(BIND_NAME);
+                registry.unbind(bindName);
             } catch (Exception ignored) {
                 // Already gone, or the registry died with the process that owns it.
             }
@@ -224,7 +225,7 @@ public class Server implements ServerInterface {
             ServerInterface stub = (ServerInterface) UnicastRemoteObject.exportObject(server, serverPort);
 
             server.registry = LocateRegistry.createRegistry(serverPort);
-            server.registry.rebind(BIND_NAME, stub);
+            server.registry.rebind(bindName, stub);
 
             server.registerWithProxy(proxyHost, proxyPort, serverHost, serverPort, requestedZone);
             server.startQueueLog();
@@ -259,7 +260,7 @@ public class Server implements ServerInterface {
                     + "' at " + proxyHost + ":" + proxyPort + ". Start the proxy first.", e);
         }
 
-        this.zone = proxyStub.registerNewServer(new ServerInfo(BIND_NAME, serverHost, serverPort, requestedZone));
+        this.zone = proxyStub.registerNewServer(new ServerInfo(bindName, serverHost, serverPort, requestedZone));
         System.out.println("Registered with proxy at " + proxyHost + ":" + proxyPort + " as zone " + zone);
     }
 }
