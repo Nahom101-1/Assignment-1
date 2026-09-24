@@ -1,85 +1,79 @@
 # Run with:  docker compose up --build
-#
-# Every container resolves the others by service name ("proxy", "server1", ...),
-# which is why each server advertises its own service name as --server-host.
-# Advertising "localhost" here would make the proxy dial itself.
 
-x-common: &common
-  build: .
+# Shared proxy connection settings
+x-proxy-env: &proxy-env
+  PROXY_HOST: proxy
+  PROXY_PORT: "1099"
+
+# Shared settings for all servers
+x-server-common: &server-common
   image: ass1-solution
+  command: ["server"]
+  depends_on:
+    - proxy
+  restart: on-failure
 
 services:
   proxy:
-    <<: *common
-    container_name: proxy
-    command: ["proxy", "--host", "proxy"]
+    build: .
+    image: ass1-solution
+    command: ["proxy"]
+    environment:
+      HOST: proxy
+      PORT: "1099"
     ports:
       - "1099:1099"
-    # Without this the proxy stays down after any stop/crash, and every server
-    # crash-loops forever trying to register against nothing.
     restart: unless-stopped
 
   server1:
-    <<: *common
-    container_name: server1
-    command: ["server", "--server-host", "server1", "--server-port", "1101", "--zone", "1",
-              "--proxy-host", "proxy", "--proxy-port", "1099"]
-    ports:
-      - "1101:1101"
-    depends_on: [proxy]
-    # The server exits immediately if the proxy is not accepting yet;
-    # restarting is the retry loop.
-    restart: on-failure
+      <<: *server-common
+      environment:
+        <<: *proxy-env
+        SERVER_HOST: server1
+        SERVER_PORT: "1101"
+        SERVER_ZONE: "1"
 
   server2:
-    <<: *common
-    container_name: server2
-    command: ["server", "--server-host", "server2", "--server-port", "1102", "--zone", "2",
-              "--proxy-host", "proxy", "--proxy-port", "1099"]
-    ports:
-      - "1102:1102"
-    depends_on: [proxy]
-    restart: on-failure
+      <<: *server-common
+      environment:
+        <<: *proxy-env
+        SERVER_HOST: server2
+        SERVER_PORT: "1102"
+        SERVER_ZONE: "2"
 
   server3:
-    <<: *common
-    container_name: server3
-    command: ["server", "--server-host", "server3", "--server-port", "1103", "--zone", "3",
-              "--proxy-host", "proxy", "--proxy-port", "1099"]
-    ports:
-      - "1103:1103"
-    depends_on: [proxy]
-    restart: on-failure
+      <<: *server-common
+      environment:
+        <<: *proxy-env
+        SERVER_HOST: server3
+        SERVER_PORT: "1103"
+        SERVER_ZONE: "3"
 
   server4:
-    <<: *common
-    container_name: server4
-    command: ["server", "--server-host", "server4", "--server-port", "1104", "--zone", "4",
-              "--proxy-host", "proxy", "--proxy-port", "1099"]
-    ports:
-      - "1104:1104"
-    depends_on: [proxy]
-    restart: on-failure
+      <<: *server-common
+      environment:
+        <<: *proxy-env
+        SERVER_HOST: server4
+        SERVER_PORT: "1104"
+        SERVER_ZONE: "4"
 
   server5:
-    <<: *common
-    container_name: server5
-    command: ["server", "--server-host", "server5", "--server-port", "1105", "--zone", "5",
-              "--proxy-host", "proxy", "--proxy-port", "1099"]
-    ports:
-      - "1105:1105"
-    depends_on: [proxy]
+      <<: *server-common
+      environment:
+        <<: *proxy-env
+        SERVER_HOST: server5
+        SERVER_PORT: "1105"
+        SERVER_ZONE: "5"
+  client:
+    image: ass1-solution
+    command: [ "client" ]
+    environment:
+      <<: *proxy-env
+    depends_on:
+      - server1
+      - server2
+      - server3
+      - server4
+      - server5
     restart: on-failure
-
-  # Run the client INSIDE the network once Client.java is implemented.
-  # From the macOS host the names "proxy"/"server1" do not resolve, even though
-  # the ports are published: RMI stubs carry the container name, not localhost.
-  # Uncomment when ready:
-  #
-  # client:
-  #   <<: *common
-  #   container_name: client
-  #   command: ["client", "--proxy-host", "proxy", "--proxy-port", "1099"]
-  #   depends_on: [server1, server2, server3, server4]
-  #   restart: on-failure
 
