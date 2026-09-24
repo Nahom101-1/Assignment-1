@@ -1,79 +1,73 @@
-# Run with:  docker compose up --build
+# docker compose up --build -d     start the proxy and the five servers
+# docker compose run client        run one measurement
+#
+# Containers reach each other by service name, so each one advertises its own
+# name.
+# SERVER_CACHE / CLIENT_CACHE select the cache for a run, T the interval.
+#
+# ./data is mounted, so the queue logs and the output file stay on the host.
 
-# Shared proxy connection settings
-x-proxy-env: &proxy-env
-  PROXY_HOST: proxy
-  PROXY_PORT: "1099"
-
-# Shared settings for all servers
-x-server-common: &server-common
+x-app: &app
+  build: .
   image: ass1-solution
-  command: ["server"]
-  depends_on:
-    - proxy
   restart: on-failure
+  volumes:
+    - ./data:/app/data
 
 services:
   proxy:
-    build: .
-    image: ass1-solution
-    command: ["proxy"]
-    environment:
-      HOST: proxy
-      PORT: "1099"
+    <<: *app
+    command: ["proxy", "--host", "proxy"]
     ports:
       - "1099:1099"
     restart: unless-stopped
 
   server1:
-      <<: *server-common
-      environment:
-        <<: *proxy-env
-        SERVER_HOST: server1
-        SERVER_PORT: "1101"
-        SERVER_ZONE: "1"
+    <<: *app
+    depends_on:
+      - proxy
+    command: ["server", "--server-host", "server1", "--server-port", "1101", "--zone", "1",
+              "--proxy-host", "proxy", "--cache", "${SERVER_CACHE:-none}"]
 
   server2:
-      <<: *server-common
-      environment:
-        <<: *proxy-env
-        SERVER_HOST: server2
-        SERVER_PORT: "1102"
-        SERVER_ZONE: "2"
+    <<: *app
+    depends_on:
+      - proxy
+    command: ["server", "--server-host", "server2", "--server-port", "1102", "--zone", "2",
+              "--proxy-host", "proxy", "--cache", "${SERVER_CACHE:-none}"]
 
   server3:
-      <<: *server-common
-      environment:
-        <<: *proxy-env
-        SERVER_HOST: server3
-        SERVER_PORT: "1103"
-        SERVER_ZONE: "3"
+    <<: *app
+    depends_on:
+      - proxy
+    command: ["server", "--server-host", "server3", "--server-port", "1103", "--zone", "3",
+              "--proxy-host", "proxy", "--cache", "${SERVER_CACHE:-none}"]
 
   server4:
-      <<: *server-common
-      environment:
-        <<: *proxy-env
-        SERVER_HOST: server4
-        SERVER_PORT: "1104"
-        SERVER_ZONE: "4"
+    <<: *app
+    depends_on:
+      - proxy
+    command: ["server", "--server-host", "server4", "--server-port", "1104", "--zone", "4",
+              "--proxy-host", "proxy", "--cache", "${SERVER_CACHE:-none}"]
 
   server5:
-      <<: *server-common
-      environment:
-        <<: *proxy-env
-        SERVER_HOST: server5
-        SERVER_PORT: "1105"
-        SERVER_ZONE: "5"
+    <<: *app
+    depends_on:
+      - proxy
+    command: ["server", "--server-host", "server5", "--server-port", "1105", "--zone", "5",
+              "--proxy-host", "proxy", "--cache", "${SERVER_CACHE:-none}"]
+
   client:
-    image: ass1-solution
-    command: [ "client" ]
-    environment:
-      <<: *proxy-env
+    <<: *app
+    working_dir: /app/data
+    entrypoint: ["java", "-jar", "/app/solution.jar"]
+    command: ["client", "--proxy-host", "proxy", "--input", "exercise_1_input.txt",
+              "--interval", "${T:-50}",
+              "--cache", "${CLIENT_CACHE:-off}",
+              "--server-cache", "${SERVER_CACHE_ENABLED:-false}"]
     depends_on:
       - server1
       - server2
       - server3
       - server4
       - server5
-    restart: on-failure
-
